@@ -1,0 +1,54 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: 鱼C笔记——三元操作符
+#+DATE: <2019-02-06 Wed>
+#+AUTHOR: Ynjxsjmh
+#+EMAIL: ynjxsjmh@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.1 (Org mode 9.1.9)
+#+FILETAGS: :python3:鱼C笔记:
+
+对于以前三元操作符的 =(x < y and [x] or [y])[0]= 理解：
+
+优先级顺序： =比较运算 > not > and > or=
+
+因此首先计算 x<y:
+- 如果是 True，即 True and [x] 结果为 [x]，[x] or [y]=[x]，则 [x][0]=x（输出列表的第一个元素）
+- 如果是 False，即 False and [x]=False，False or [y]=[y]，[y][0]=y。实现的功能是 x if x < y else y，即三元操作。
+
+而 (x < y and [x] or [y])[0] 为何不采用 x <y and x or y 呢？
+
+若采用 x < y and x or y，则当 x=0，y>0 时，x <y and x =0（带入 x, y 即 True and 0）；接下来执行 or 操作，0 or y 结果为 y，使结果出错（我们意图这个表达式能有三元操作符 ----x if x < y else y 的效果，所以在 x = 0, y> 0 时我们想要得到结果 x），故而采用列表的形式。
+
+------------
+现在的三元操作符为： =x if x < y else y=
+
+一个三元操作符使用的例子
+
+请将以下代码修改为三元操作符实现：
+#+BEGIN_SRC python
+x, y, z = 6, 5, 4
+if x < y:
+    small = x
+    if z < small:
+        small = z
+    elif y < z:
+        small = y
+    else:
+        small = z      #此段代码是找到x, y, z的最小值 
+#+END_SRC
+
+
+实现结果：
+#+BEGIN_SRC python
+small = x if (x < y and x < z) else (y if y < z else z)
+#+END_SRC
+
+
+
+
