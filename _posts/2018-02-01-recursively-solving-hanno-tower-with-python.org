@@ -64,3 +64,5 @@ def hanoi(n, x, y, z): #将x上的n个盘子借助y移动到z上
 n = int(input('请输入汉诺塔的盘子数'))
 hanoi(n, 'x', 'y', 'z')
 #+END_SRC
+
+#+RESULTS:
