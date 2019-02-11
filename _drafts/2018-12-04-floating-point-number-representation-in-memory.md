@@ -10,7 +10,6 @@ tags:
 - 
 ---
 
-{:toc}
 
 本文译自 《计算机科学基础——从数据操纵到计算理论》
 
@@ -45,7 +44,8 @@ ps. 书上算上这个有三个例子，这里只举一个。
 
 #### 例子
 将小数 0.4 转化为 6 位二进制数。
-![在这里插入图片描述](https://github.com/Ynjxsjmh/ynjxsjmh.github.io/blob/master/img/2018/2018-12-04-01-01.png)
+
+![在这里插入图片描述](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-12-04-01-01.png)
 
 ## 归一化（NORMALIZATION）
 为了表示 71.3125（+1000111.0101），我们需要在内存中存上符号、所有比特位和小数点的位置。虽然这个可以实现，但是这将数的操作弄得复杂了。你需要一个浮点数的标准表示形式。解决方法就是 `归一化` 。归一化就是移动十进制点使得这个点的左边只有一个 1。
@@ -82,7 +82,8 @@ $Sign: + \space \space \space \space \space \space \space   Exponent:6  \space \
 
 ## IEEE 标准（IEEE STANDRADS）
 IEEE 定义了三种存储浮点数的标准，两种用来表示存储在内存中的数（单精度和双精度）。框框中间的数表示位数。
-![在这里插入图片描述](https://github.com/Ynjxsjmh/ynjxsjmh.github.io/blob/master/img/2018/2018-12-04-01-02.png)
+
+![在这里插入图片描述](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-12-04-01-02.png)
 
 ### 单精度表示法（Single-Precision Presentation）
 在内存中使用单精度格式存储一个归一化过后的浮点数的步骤是：
@@ -107,7 +108,7 @@ IEEE 定义了三种存储浮点数的标准，两种用来表示存储在内存
 
 1. 使用最左边的那位作为符号位
 2. 把接下来的 8 位转化为十进制，然后减去 127。这部分就是指数
-3. 在后 23 位前加上 `1.`。你可以忽略右边多余的 0
+3. 在后 23 位前加上 `1.` 。你可以忽略右边多余的 0
 4. 使用指数值将小数点移动到正确的位置
 5. 将整部分转化为十进制（Change the whole part to decimal）
 6. 将小数部分转化为十进制 （Change the fraction part to decimal）

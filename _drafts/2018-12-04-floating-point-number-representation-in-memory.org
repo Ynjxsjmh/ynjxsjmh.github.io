@@ -1,4 +1,4 @@
-#+OPTIONS: ':nil *:t -:t ::t <:t H:5 \n:nil ^:{} arch:headline
+#+OPTIONS: ':nil *:t -:t ::t <:t H:5 \n:nil ^:t arch:headline
 #+OPTIONS: author:t broken-links:nil c:nil creator:nil
 #+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
@@ -64,7 +64,9 @@ ps. 书上算上这个有三个例子，这里只举一个。
      :END:
 
 将小数 0.4 转化为 6 位二进制数。
-[[https://github.com/Ynjxsjmh/ynjxsjmh.github.io/blob/master/img/2018/2018-12-04-01-01.png]]
+
+#+CAPTION: 在这里插入图片描述
+[[https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-12-04-01-01.png]]
 
 ** 归一化（NORMALIZATION）
    :PROPERTIES:
@@ -101,8 +103,6 @@ $\space \space \space \space \space \space \space \space \space \space \space \s
 ------------------------------------------------------------------------------------------------
 $Sign: + \space \space \space \space \space \space \space Exponent:6 \space \space \space \space \space \space \space\space\space \space \space\space \space \space \space Mantissa: 0001110101$
 
-（这个东西用 Katex 真难弄，最底下附张魔改图[fn:1]）
-
 *** 符号（Sign）
     :PROPERTIES:
     :CUSTOM_ID: 符号sign
@@ -132,7 +132,9 @@ $Sign: + \space \space \space \space \space \space \space Exponent:6 \space \spa
 
 IEEE
 定义了三种存储浮点数的标准，两种用来表示存储在内存中的数（单精度和双精度）。框框中间的数表示位数。
-[[https://github.com/Ynjxsjmh/ynjxsjmh.github.io/blob/master/img/2018/2018-12-04-01-02.png]]
+
+#+CAPTION: 在这里插入图片描述
+[[https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-12-04-01-02.png]]
 
 *** 单精度表示法（Single-Precision Presentation）
     :PROPERTIES:
@@ -143,7 +145,7 @@ IEEE
 
 1. 用 0（正数） 或 1（负数） 存储符号
 2. =以余127码存储指数= (Store the exponent (power of 2) as
-   Excess_127[fn:2]) 博主注：就是给指数加上 127
+   Excess_127[fn:1]) 博主注：就是给指数加上 127
 3. 使用无符号整数存储尾数（Store the mantissa as an unsigned integer）
 
 **** 例子
@@ -167,7 +169,7 @@ IEEE
 
 1. 使用最左边的那位作为符号位
 2. 把接下来的 8 位转化为十进制，然后减去 127。这部分就是指数
-3. 在后 23 位前加上 =1.=。你可以忽略右边多余的 0
+3. 在后 23 位前加上 =1.= 。你可以忽略右边多余的 0
 4. 使用指数值将小数点移动到正确的位置
 5. 将整部分转化为十进制（Change the whole part to decimal）
 6. 将小数部分转化为十进制 （Change the fraction part to decimal）
@@ -201,9 +203,6 @@ $$
 
 一个在线转换的网址是 [[http://www.styb.cn/cms/ieee_754.php]]
 
-[fn:1] #+CAPTION: 在这里插入图片描述
-       [[https://github.com/Ynjxsjmh/ynjxsjmh.github.io/blob/master/img/2018/2018-12-04-01-03.png]]
-
-[fn:2] Excess_127 是余 127 码。这部分的知识可以搜索=余码系统=(Excess
+[fn:1] Excess_127 是余 127 码。这部分的知识可以搜索=余码系统=(Excess
        System)，其中的 127 被称为=幻数=(the magic
        number)。不懂的可以暂时理解 余码 为 移位。

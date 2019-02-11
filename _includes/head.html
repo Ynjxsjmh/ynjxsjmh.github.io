@@ -56,12 +56,24 @@
 	<!-- support math by Ynjxsjmh -->
 	<!-- katex is another choice, but I don't know how to use it -->
 	<!-- copy from pkuwwt.github.io/linux/2013-12-03-jekyll-using-mathjax/ -->
+	<!-- segmentfault.com/a/1190000008317350 good article -->
 	<script type="text/x-mathjax-config">
+		showProcessingMessages: false, //关闭js加载过程信息
+		messageStyle: "none", //不显示信息
+		extensions: ["tex2jax.js"],
+		jax: ["input/TeX", "output/HTML-CSS"],
 		MathJax.Hub.Config({
-								tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-                          });
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+			},
+			"HTML-CSS": {
+				availableFonts: ["STIX","TeX"], //可选字体
+				showMathMenu: false //关闭右击菜单显示
+			}
+		});
 	</script>
 	<script type="text/javascript"
-		src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 	</script>
 </head>
