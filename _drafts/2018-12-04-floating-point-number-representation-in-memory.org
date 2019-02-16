@@ -203,6 +203,6 @@ $$
 
 一个在线转换的网址是 [[http://www.styb.cn/cms/ieee_754.php]]
 
-[fn:1] Excess_127 是余 127 码。这部分的知识可以搜索=余码系统=(Excess
+[fn:1] Excess_127 是余 127 码。这部分的知识可以搜索 =余码系统= (Excess
        System)，其中的 127 被称为=幻数=(the magic
        number)。不懂的可以暂时理解 余码 为 移位。
