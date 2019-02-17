@@ -13,7 +13,7 @@ https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/
 前 3 部分是文章日期，中间一个是该日期中的第几篇文章，最后是这篇文章中的第几幅图片。
 
 ** org 文件形成
-因为有一部分的文章先前是在 CSDN 的编辑器上完成，而一开始我使用的是 *富文本编辑器* ，后来才学会 Markdown 进而使用 *Markdown* 编辑器。
+因为有一部分的文章先前是在 CSDN 的编辑器上完成，而一开始我使用的是 *富文本编辑器* ，后来才学会 Markdown 进而使用 *Markdown 编辑器* 。
 
 对于这部分的文章：
 - *富文本编辑器* 写的文章直接改成 org 文件
