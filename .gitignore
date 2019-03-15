@@ -33,3 +33,7 @@ Temporary Items
 
 # debug file
 _site
+
+/_drafts/*.html
+/_backup/*.html
+/_posts/*.html
