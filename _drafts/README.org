@@ -17,10 +17,14 @@ https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/
 
 对于这部分的文章：
 - *富文本编辑器* 写的文章直接改成 org 文件
-- *Markdown 编辑器* 写的文章先修改成 origin.md 文件，再使用 pandoc 转化成 org 文件。最后使用 ox-gfm 将 org 文件转化成 md 文件。这样做的原因是使用 ox-gfm 转化成的 md 文件带目录，可能有其他的方式，以后找找。
+- *Markdown 编辑器* 写的文章先修改成 origin.md 文件，再使用 pandoc 转化成 org 文件。最后使用 ox-gfm 的 =org-gfm-export-as-markdown= [fn:1] 将 org 文件转化成 md 文件。这样做的原因是使用 ox-gfm 转化成的 md 文件带目录，可能有其他的方式，以后找找。
+
+使用 ox-gfm 转化后数学公式 $ 会被替换成 \(，$$ 会被替换成 \{。得用自己写的函数 =brackets-to-dollar= 重新转成美元符。
 
 使用 pandoc 将 md 转化为 org 后，org 换行会出错。不过因为 =#OPTIONS= 设置了 =\n:nil= ，因此是以空行来表示换行的，所以换行不必多费心。唯一需要注意的一点是列表会出错，需要修改。
 
 使用 ox-gfm 将 org 转化为 md 时，首先要执行一下 =org-reload= 才能正常使用其功能。
 
-最后将修改好的 md 文件复制到 =./_post= 目录下，再使用 =jekyll serve= 命令就可以在浏览器中预览了。
+最后将修改好的 md 文件复制到 =./_post= 目录下，再使用 =jekyll serve= 或 =jekyll s= 命令就可以在浏览器中预览了。
+
+[fn:1] 如果出现 =org-export-barf-if-invalid-backend: Unknown "nil" back-end: Aborting export= 错误，执行一下 =C-u M-x org-reload=
