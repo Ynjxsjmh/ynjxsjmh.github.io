@@ -1,0 +1,44 @@
+digraph G {
+    rankdir = "LR";
+    compound=true;
+    node [type=circle];
+
+    subgraph cluster3 {
+        S3 [label="S"];
+        begin3 [style=invis];
+        Z3 [label="Z" shape=doublecircle];
+        begin3 -> S3;
+        S3 -> Z3 [label="a1|a2|a3"];
+    }
+
+    subgraph cluster1 {
+        cluster1_one [label="1" shape=doublecircle];
+        cluster1_two [label="2" shape=doublecircle];
+        cluster1_three [label="3" shape=doublecircle];
+        begin1 [style=invis];
+        S1 [label="S"];
+        begin1 -> S1;
+        S1 -> cluster1_one [label="a1"];
+        S1 -> cluster1_two [label="a2"];
+        S1 -> cluster1_three [label="a3"];
+    }
+
+    subgraph cluster2 {
+        cluster2_one [label="1" shape=doublecircle];
+        cluster2_two [label="2" shape=doublecircle];
+        cluster2_three [label="3" shape=doublecircle];
+        begin2 [style=invis];
+        S2 [label="S2"];
+        begin2 -> S2;
+        S2 -> cluster2_one [label="a1"];
+        S2 -> cluster2_two [label="a2"];
+        S2 -> cluster2_three [label="a3"];
+
+        Z [shape=doublecircle];
+        cluster2_one -> Z [label="ε"];
+        cluster2_two -> Z [label="ε"];
+        cluster2_three -> Z [label="ε"];
+    }
+
+    cluster1_two -> begin2 [ltail=cluster1 lhead=cluster2];
+}

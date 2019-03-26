@@ -1,0 +1,57 @@
+digraph G {
+    rankdir = "LR";
+    compound=true;
+    node [type=circle];
+
+    subgraph cluster3 {
+        cluster3_one [label="1"];
+        cluster3_two [label="2"];
+        cluster3_three [label="3"];
+        cluster3_one -> cluster3_two [label="ε"];
+        cluster3_two -> cluster3_three [label="ε"];
+        cluster3_two -> cluster3_two [label="b"];
+    }
+
+    subgraph cluster2 {
+        cluster2_one [label="1"];
+        cluster2_two [label="2"];
+        cluster2_three [style=invis label="3"]
+        cluster2_one:se -> cluster2_two [label="b"];
+        cluster2_one -> cluster2_two:nw [label="a"];
+        cluster2_two -> cluster2_three [style=invis];
+    }
+
+    subgraph cluster1 {
+        cluster1_one [label="1"];
+        cluster1_two [label="2"];
+        cluster1_three [label="3"];
+        cluster1_one -> cluster1_two [label="a"];
+        cluster1_two -> cluster1_three [label="b"];
+    }
+
+
+    subgraph "cluster1_1" {
+        "cluster1_1_one" [label="1"];
+        "cluster1_1_two" [label="2"];
+        "cluster1_1_one" -> "cluster1_1_two" [label="ab"];
+    }
+
+
+    subgraph "cluster2_2" {
+        "cluster2_2_one" [label="1"];
+        "cluster2_2_two" [label="2"];
+        "cluster2_2_one" -> "cluster2_2_two" [label="a|b"];
+    }
+
+    subgraph "cluster3_3" {
+        "cluster3_3_one" [label="1"];
+        "cluster3_3_two" [label="2"];
+        "cluster3_3_one" -> "cluster3_3_two" [label="b*"];
+    }
+
+    "cluster1_1_two" -> "cluster1_one" [ltail="cluster1_1" lhead="cluster1"];
+
+    cluster2_2_two -> cluster2_one [ltail=cluster2_2 lhead=cluster2];
+
+    cluster3_3_two -> cluster3_one [ltail=cluster3_3 lhead=cluster3];
+}

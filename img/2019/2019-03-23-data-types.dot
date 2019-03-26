@@ -1,0 +1,13 @@
+graph G {
+    splines=ortho;
+
+    {1, 2, 3 [width=0, shape=point, style=invis];}
+    {rank=same; 1 -- 2 -- 3;}
+
+    Data -- 2;
+    1 -- Text;
+    1 -- Number;
+    2 -- Image;
+    3 -- Audio;
+    3 -- Video;
+}
