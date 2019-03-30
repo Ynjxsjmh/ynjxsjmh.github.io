@@ -1,0 +1,28 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:5 \n:nil ^:{} arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+DATE: <2019-03-30 Sat>
+#+AUTHOR: Ynjxsjmh
+#+EMAIL: ynjxsjmh@gmail.com
+#+FILETAGS: ::
+
+* Introduce
+Fork from [[https://github.com/qiubaiying/qiubaiying.github.io][qiubaiying.github.io]]
+
+* Further work
+** DONE Add =Archive=
+   CLOSED: [2019-03-30 Sat 20:42]
+   - State "DONE"       from "TODO"       [2019-03-30 Sat 20:42]
+** TODO Add =Search=
+** TODO Add =Categories=
+** DONE Optimize =Tags= layout
+   CLOSED: [2019-03-30 Sat 21:05]
+   - State "DONE"       from "TODO"       [2019-03-30 Sat 21:05]
+** TODO Accurate post time to minute
+** TODO Show access number
+** TODO Picture changes when clicked
+** TODO Show article page
+** DONE Support math using MathJax
+
