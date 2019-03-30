@@ -36,7 +36,7 @@ tags:
 
 对任一确定有限自动机A，存在一正则表达式e,使得L(A)=L(e),反之亦然。
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-21-dfa-re-nfa-relationship.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-21-dfa-re-nfa-relationship.png)
 
 
 <a id="org709c102"></a>
@@ -45,7 +45,7 @@ tags:
 
 现在有一个DFA，要构造正则表达式，我们就给出几种构造的规则。
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-21-dfa-to-re.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-21-dfa-to-re.png)
 
 如图所示可以构造出三种规则：
 
@@ -67,14 +67,14 @@ tags:
 
 当出现多个终止节点时，我们可以通过将这些终止节点都连接到一个同一个虚拟的终止节点。
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-21-stop-state.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-21-stop-state.png)
 
 
 <a id="org298ede7"></a>
 
 ## 例子
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-26-dfa-to-re-example.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-26-dfa-to-re-example.png)
 
 
 <a id="org880285a"></a>
@@ -83,13 +83,13 @@ tags:
 
 Thompson结构
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-21-re-to-nfa.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-21-re-to-nfa.png)
 
 我们注意到第三张图有两个空边，我们可能会想能不能省略掉最后那个空边呢？
 
 答案是不行的，因为在某些情况下可能会有错误。
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-21-re-to-nfa-wrong.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-21-re-to-nfa-wrong.png)
 
 本来ab后面不能接d，但是这么画完，可能就接d了。所以最后要有空边。
 
@@ -102,7 +102,7 @@ Thompson结构
 
 给出一个正则表达式 (a|b)(c|d)\*(e|f), 将其转化为 NFA
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-26-re-to-nfa-example.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-26-re-to-nfa-example.png)
 
 
 <a id="org3c169f1"></a>
@@ -180,7 +180,7 @@ Ia = ε\_CLOSURE(J)
 
 #### 例子
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-26-nfa-to-dfa-example.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-26-nfa-to-dfa-example.png)
 
 过程如下：
 
@@ -206,7 +206,7 @@ Ia = ε\_CLOSURE(J)
 
 `+ -` 分别是起始状态和终止状态。
 
-转换后的结果如图所示 ![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-26-nfa-to-dfa-result.png)
+转换后的结果如图所示 ![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-26-nfa-to-dfa-result.png)
 
 -   {1, 2} 对应 1
 -   {2, 4, 5, 6, 7} 对应 2

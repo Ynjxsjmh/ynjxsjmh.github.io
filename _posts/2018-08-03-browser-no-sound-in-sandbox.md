@@ -25,7 +25,7 @@ tags:
 
 # 方法一：降低安全等级
 
-![img](../img/2018/2018-08-03-01-01.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-08-03-01-01.png)
 
 第一步：在火狐地址栏键入 about:config 来到下图这样的页面
 
@@ -35,14 +35,14 @@ tags:
 
 值得注意的是，有人将其降为 0 都没有用：
 
-![img](../img/2018/2018-08-03-01-02.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-08-03-01-02.png)
 
 
 <a id="orgea633f8"></a>
 
 # 方法二
 
-![img](../img/2018/2018-08-03-01-03.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-08-03-01-03.png)
 
 第一步：进入 about:config 页面
 
@@ -50,10 +50,10 @@ tags:
 
 如果上述方法都不行的话，可以参考一下这个：
 
-![img](../img/2018/2018-08-03-01-04.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-08-03-01-04.png)
 
 主要的就是将 **browser.tabs.remote.autostart.2** 这一项人为设为 false
 
 ps. 5.26 版的 sandbox 应该修复了此问题
 
-![img](../img/2018/2018-08-03-01-05.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-08-03-01-05.png)

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      编码方式
+title:      数据表示
 subtitle:   
 date:       2019-03-30 18:42
 author:     在到处之间找我
@@ -40,7 +40,7 @@ tags:
 
 现在的数据有各种各样的形式，比如：数值、文本、图像、视频和音频（如下图所示）。人们需要处理这些数据类型。
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-23-data-types.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-23-data-types.png)
 
 -   一个工程程序使用计算机主要是处理数值：做算术、求解代数或三角方程、寻找微分方程的根等等。
 -   一个单词处理程序使用计算机主要是处理文本：调整、移动、删除等等。
@@ -83,7 +83,7 @@ tags:
 
 现在的问题是，计算机内存是如何知道存储的位模式代表什么类型的数据？它其实不知道。计算机内存只是将这些数据存储为位模式。将位模式转化为数字、文本或者其他数据类型是输入输出设备或者程序的责任。换句话说，数据在进入计算机时进行编码，在向用户呈现时进行解码。
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-23-examples-of-bit-patterns.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-23-examples-of-bit-patterns.png)
 
 
 <a id="orgcd14b79"></a>
@@ -108,7 +108,7 @@ tags:
 
 你可以用位模式表示每个符号。换句话说，四个符号组成的诸如 “BYTE” 的文本可以表示为 4 个位模式，其中每个位模式定义单个符号（如下图）。
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-24-representing-symbols-using-bit-pattern.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-24-representing-symbols-using-bit-pattern.png)
 
 现在的问题是：要表示一个语言中的一个符号，位模式需要多少比特？这取决于集合中有多少个符号。比如，如果你创造了一个只有英文大写字母的语言，你只需要 26 个符号。为了表示这个语言，位模式必须能够表示至少 26 个符号。对于另一种语言，比如中文，你也许需要更多的符号。表示语言中符号的位模式的长度取决于该语言中使用的符号数。想要表示更多的符号就需要更长的位模式。
 
@@ -142,7 +142,7 @@ tags:
 
 美国国家标准学会（American National Standards Institute，ANSI）开发了一套称做ASCII（American Standard Code for Information Interchange，美国信息交换标准代码）的编码。这套编码使用 7比特表示每个符号。这意味着它可以定义 128（2^7）种不同的符号。完整的 ASCII 码位模式在附录 A 中，下图表示了 “BYTE” 的 ASCII 码表示形式。
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-24-representing-of-the-word-byte-in-ascii-code.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-24-representing-of-the-word-byte-in-ascii-code.png)
 
 下面的内容强调了这套编码的一些特点：
 
@@ -201,7 +201,7 @@ tags:
 
 现在，有两种方式表示存储在计算机中的图像：位图（bitmap graphic）或者矢量图（vector graphic）。
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-29-image-representation-methods.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-29-image-representation-methods.png)
 
 
 <a id="org9828cdf"></a>
@@ -212,13 +212,13 @@ tags:
 
 在把一个图像划分成像素之后，每个像素被分配一个位模式。模式的大小和值取决于图像本身。对于一个只由黑点和白点组成的图像（国际象棋棋盘），一个1比特长的位模式就足以表示一个像素。模式0表示黑色像素，模式1表示白色像素。然后将这些这些模式一个接一个记录下来并存储在计算机中。下图显示了这种图像及其表示。
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-29-bitmap-graphic-method-of-a-black-and-white-image.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-29-bitmap-graphic-method-of-a-black-and-white-image.png)
 
 如果一个图像不是由纯白或纯黑像素组成，你可以增加位模式的长度来表示灰度值（gray scales）。比如，为了表示4级的灰度值，你可以使用2位的位模式。黑色像素可以使用00表示，01表示暗灰像素，10表示亮灰像素，11表示白色像素。
 
 为了表示彩色图像，每个彩色像素被分解成三原色：红色、绿色和蓝色（RGB）。然后测量每种颜色的亮度，并为其分配位模式（通常为8位）。换句话说，每个像素有三个位模式：一个用来表示红色的亮度、一个表示绿色的亮度、一个表示蓝色的亮度。比如，下图显示了使用四个位模式表示彩色图像中某些像素。
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-29-representation-of-color-pixels.png)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-29-representation-of-color-pixels.png)
 
 
 <a id="orge28c2b9"></a>
@@ -239,7 +239,7 @@ tags:
 3.  量化的值被转化成位模式。比如，数字25被转化成位模式 00011001
 4.  存储位模式
 
-![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-30-audio-representation.jpg)
+![img](https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-30-audio-representation.jpg)
 
 
 <a id="org8244638"></a>

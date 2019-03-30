@@ -19,7 +19,7 @@
 
 * 方法一：降低安全等级
 
-[[file:../img/2018/2018-08-03-01-01.png]]
+[[file:https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-08-03-01-01.png]]
 
 第一步：在火狐地址栏键入 about:config 来到下图这样的页面
 
@@ -31,11 +31,11 @@
 
 值得注意的是，有人将其降为 0 都没有用：
 
-[[file:../img/2018/2018-08-03-01-02.png]]
+[[file:https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-08-03-01-02.png]]
 
 * 方法二
 
-[[file:../img/2018/2018-08-03-01-03.png]]
+[[file:https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-08-03-01-03.png]]
 
 
 第一步：进入 about:config 页面
@@ -45,7 +45,7 @@
 
 如果上述方法都不行的话，可以参考一下这个：
 
-[[file:../img/2018/2018-08-03-01-04.png]]
+[[file:https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-08-03-01-04.png]]
 
 
 
@@ -53,4 +53,4 @@
 
 ps.  5.26 版的 sandbox 应该修复了此问题
 
-[[file:../img/2018/2018-08-03-01-05.png]]
+[[file:https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2018/2018-08-03-01-05.png]]

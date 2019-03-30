@@ -13,12 +13,12 @@
 * 定理
 对任一确定有限自动机A，存在一正则表达式e,使得L(A)=L(e),反之亦然。
 
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-21-dfa-re-nfa-relationship.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-21-dfa-re-nfa-relationship.png
 
 * DFA 到正则表达式
 现在有一个DFA，要构造正则表达式，我们就给出几种构造的规则。
 
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-21-dfa-to-re.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-21-dfa-to-re.png
 
 如图所示可以构造出三种规则：
 - 各节点连接在一起，这个跟我们认识的结果是一样的。我们接受的就是a和b的连接相当于说接受ab到3状态
@@ -34,21 +34,21 @@ https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03
 ** 终止状态集的处理
 当出现多个终止节点时，我们可以通过将这些终止节点都连接到一个同一个虚拟的终止节点。
 
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-21-stop-state.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-21-stop-state.png
 
 ** 例子
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-26-dfa-to-re-example.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-26-dfa-to-re-example.png
 
 * 正则表达式到 NFA
 Thompson结构
 
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-21-re-to-nfa.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-21-re-to-nfa.png
 
 我们注意到第三张图有两个空边，我们可能会想能不能省略掉最后那个空边呢？
 
 答案是不行的，因为在某些情况下可能会有错误。
 
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-21-re-to-nfa-wrong.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-21-re-to-nfa-wrong.png
 
 本来ab后面不能接d，但是这么画完，可能就接d了。所以最后要有空边。
 
@@ -57,7 +57,7 @@ https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03
 ** 例子
 给出一个正则表达式 (a|b)(c|d)*(e|f), 将其转化为 NFA
 
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-26-re-to-nfa-example.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-26-re-to-nfa-example.png
 
 
 * NFA 到 DFA
@@ -96,7 +96,7 @@ NFA的确定化：由NFA构造出与其等价的DFA称为NFA确定化
 3. 若I'={S1,…,Sn}是A'的一个状态,且存在一个Si是A的终止状态，则令I'为A'的终止状态。
 
 **** 例子
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-26-nfa-to-dfa-example.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-26-nfa-to-dfa-example.png
 
 过程如下：
 - NFA的初始状态是1，该状态可以接收一个空闭包ε到状态2。因此DFA的初始状态是 {1,2}
@@ -123,7 +123,7 @@ https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03
 
 
 转换后的结果如图所示
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-26-nfa-to-dfa-result.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-26-nfa-to-dfa-result.png
 
 - {1, 2} 对应 1
 - {2, 4, 5, 6, 7} 对应 2
