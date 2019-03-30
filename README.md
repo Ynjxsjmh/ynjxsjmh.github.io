@@ -2,7 +2,7 @@
 Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github.io)
 
 ## Further work
-- [ ] add `Archive`
+- [x] add `Archive`
 - [ ] add `Search`
 - [ ] add `Categories`
 - [ ] accurate post time to minute
