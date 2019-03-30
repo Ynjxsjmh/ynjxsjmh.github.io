@@ -6,8 +6,9 @@ date:       2019-02-09 20:35
 author:     在到处之间找我
 header-img: 
 catalog: true
+category: Sandbox
 tags:
-- sandbox
+- Sandbox
 ---
 
 解决方法就是手动在该沙盒中运行输入法

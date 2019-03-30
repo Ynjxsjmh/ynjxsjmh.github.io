@@ -6,6 +6,7 @@ date:       2019-02-11 20:15
 author:     在到处之间找我
 header-img: 
 catalog: true
+category: 计算机组成原理
 tags:
 - 
 ---

@@ -11,12 +11,16 @@
 * Introduce
 Fork from [[https://github.com/qiubaiying/qiubaiying.github.io][qiubaiying.github.io]]
 
+Some features from [[https://github.com/BruceZhaoR/brucezhaor.github.io][brucezhaor.github.io]]
+
 * Further work
 ** DONE Add =Archive=
    CLOSED: [2019-03-30 Sat 20:42]
    - State "DONE"       from "TODO"       [2019-03-30 Sat 20:42]
 ** TODO Add =Search=
-** TODO Add =Categories=
+** DONE Add =Categories=
+   CLOSED: [2019-03-30 Sat 21:37]
+   - State "DONE"       from "TODO"       [2019-03-30 Sat 21:37]
 ** DONE Optimize =Tags= layout
    CLOSED: [2019-03-30 Sat 21:05]
    - State "DONE"       from "TODO"       [2019-03-30 Sat 21:05]

@@ -6,8 +6,9 @@ date:       2019-02-16 21:13
 author:     在到处之间找我
 header-img: 
 catalog: true
+category: Emacs
 tags:
-- emacs
+- Emacs
 ---
 
   - [寻找并下载插件](#寻找并下载插件)

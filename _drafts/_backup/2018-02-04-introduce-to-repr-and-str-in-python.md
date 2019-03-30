@@ -6,8 +6,9 @@ date:       2019-02-09 11:29
 author:     在到处之间找我
 header-img: 
 catalog: true
+category: Python
 tags:
-- python
+- Python
 ---
 
   - [例子](#orgc1a2726)

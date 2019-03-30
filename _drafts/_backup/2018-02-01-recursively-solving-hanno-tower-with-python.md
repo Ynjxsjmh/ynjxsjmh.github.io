@@ -6,10 +6,11 @@ date:       2019-02-08 23:47
 author:     在到处之间找我
 header-img: 
 catalog: true
+category: Python
 tags:
-- python
+- Python
 - recursive
-- fishcnote
+- FishCNote
 ---
 
 想象有三根柱子 x, y, z，我们要将 x 上的 64 个盘子移动到 z 上。

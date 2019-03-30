@@ -6,8 +6,9 @@ date:       2019-02-16 20:05
 author:     在到处之间找我
 header-img: 
 catalog: true
+category: Emacs
 tags:
-- emacs
+- Emacs
 ---
 
 毫无疑问，使用 emacs 自带的 elpa 包管理器下载和管理插件是最便捷的方法

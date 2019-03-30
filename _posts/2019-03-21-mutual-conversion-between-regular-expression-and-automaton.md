@@ -6,6 +6,7 @@ date:       2019-03-26 23:37
 author:     在到处之间找我
 header-img: 
 catalog: true
+category: 编译原理
 tags:
 - 编译原理 
 ---
