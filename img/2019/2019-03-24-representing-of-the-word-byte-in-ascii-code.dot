@@ -1,0 +1,13 @@
+digraph G {
+    node [shape=box];
+    B [label=<<FONT POINT-SIZE="25" FACE="boldfontname">B</FONT>>];
+    Y [label=<<FONT POINT-SIZE="25" FACE="boldfontname">Y</FONT>>];
+    T [label=<<FONT POINT-SIZE="25" FACE="boldfontname">T</FONT>>];
+    E [label=<<FONT POINT-SIZE="25" FACE="boldfontname">E</FONT>>];
+    {rank=same; B  Y  T  E}
+
+    B -> "1000010";
+    Y -> "1011001";
+    T -> "1010100";
+    E -> "1000101";
+}

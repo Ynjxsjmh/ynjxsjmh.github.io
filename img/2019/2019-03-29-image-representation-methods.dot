@@ -1,0 +1,11 @@
+graph G {
+    splines=ortho;
+    node [shape=box];
+
+    {1, 2, 3 [width=0, shape=point, style=invis];}
+    {rank=same; 1 -- 2 -- 3;}
+
+    Image -- 2;
+    1 -- Bitmap;
+    3 -- Vector;
+}

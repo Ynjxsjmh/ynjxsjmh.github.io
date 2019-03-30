@@ -1,0 +1,18 @@
+digraph G {
+    node [shape=box];
+    edge [arrowhead=none];
+
+    a1 [shape=circle,label="",height=0.01,width=0.01];
+    a2 [shape=circle,label="",height=0.01,width=0.01];
+    a3 [shape=circle,label="",height=0.01,width=0.01];
+    a4 [shape=circle,label="",height=0.01,width=0.01];
+    a5 [shape=circle,label="",height=0.01,width=0.01];
+    {rank=same; a1 -> a2 -> a3 -> a4 -> a5};
+
+    Data -> a3;
+    a1 -> Text;
+    a2 -> Number;
+    a3 -> Image;
+    a4 -> Audio;
+    a5 -> Video;
+}

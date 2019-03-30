@@ -1,0 +1,30 @@
+digraph G {
+    rankdir = "LR";
+    compound=true;
+    node [shape=circle];
+
+    subgraph cluster2 {
+        label = "Conversion Result"
+        " 4 " [shape=doublecircle]
+        begin1 [style=invis, fixedsize=true, width=0.1, height=0.1];
+        begin1 -> " 0 ";
+        " 0 " -> " 1 ":nw [label="a"];
+        " 0 " -> " 1 ":sw [label="b"];
+        " 1 " -> " 2 " [label="ε"];
+        " 2 ":n -> " 2 ":ne [label="c"];
+        " 2 ":we -> " 2 ":sw [label="d"];
+        " 2 " -> " 3 " [label="ε"];
+        " 3 " -> " 4 ":nw [label="e"];
+        " 3 " -> " 4 ":sw [label="f"];
+    }
+
+    subgraph cluster1 {
+        "3" [shape=doublecircle]
+
+        begin [style=invis, fixedsize=true, width=0.1, height=0.1];
+        begin -> "0";
+        "0" -> "1" [label="a|b"];
+        "1" -> "2" [label="(c|d)*"]
+        "2" -> "3" [label="e|f"];
+    }
+}

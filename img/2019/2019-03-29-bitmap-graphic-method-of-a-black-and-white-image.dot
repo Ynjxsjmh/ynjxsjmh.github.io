@@ -1,0 +1,28 @@
+digraph G {
+    node [shape=box, label=""];
+
+    subgraph cluster0 {
+        label = "Image"
+        {rank=same; 00 10 20 30[style=filled] 40[style=filled] 50 60 70}
+        {rank=same; 01 11 21[style=filled] 31[style=filled] 41[style=filled] 51[style=filled] 61 71}
+        {rank=same; 02 12 22[style=filled] 32[style=filled] 42[style=filled] 52[style=filled] 62 72}
+        {rank=same; 03 13 23 33[style=filled] 43[style=filled] 53 63 73}
+        00 -> 01 -> 02 -> 03 [style=invis];
+    }
+
+    subgraph cluster1 {
+        label = "Matrix Representation"
+        {rank=same; "00 "[label="0"] "10 "[label="0"] "20 "[label="0"] "30 "[label="1"] "40 "[label="1"] "50 "[label="0"] "60 "[label="0"] "70 "[label="0"]}
+        {rank=same; "01 "[label="0"] "11 "[label="0"] "21 "[label="1"] "31 "[label="1"] "41 "[label="1"] "51 "[label="1"] "61 "[label="0"] "71 "[label="0"]}
+        {rank=same; "02 "[label="0"] "12 "[label="0"] "22 "[label="1"] "32 "[label="1"] "42 "[label="1"] "52 "[label="1"] "62 "[label="0"] "72 "[label="0"]}
+        {rank=same; "03 "[label="0"] "13 "[label="0"] "23 "[label="0"] "33 "[label="1"] "43 "[label="1"] "53 "[label="0"] "63 "[label="0"] "73 "[label="0"]}
+        "00 " -> "01 " -> "02 " -> "03 " [style=invis];
+    }
+
+    subgraph cluster2 {
+        label = "Linear Representation"
+        wenzi [label="00011000 00111100 00111100 00011000"];
+    }
+
+    03 -> wenzi [style=invis];
+}

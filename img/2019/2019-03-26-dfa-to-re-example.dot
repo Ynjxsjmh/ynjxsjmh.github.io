@@ -1,0 +1,29 @@
+digraph G {
+    rankdir = "LR";
+    node [shape=circle];
+
+    subgraph cluster2 {
+        label = "Conversion Result"
+        Z [shape=doublecircle]
+        begin2 [style=invis];
+        begin2 -> S;
+        S -> Z [label="a(ab|ba)a*b"];
+    }
+
+    subgraph cluster1 {
+        6 [shape=doublecircle]
+
+        begin [style=invis];
+        begin -> 1;
+        1 -> 2 [label="a"];
+        2 -> 3 [label="a"];
+        2 -> 4 [label="b"];
+
+        3 -> 5 [label="b"];
+        4 -> 5 [label="a"];
+
+        5 -> 5 [label="a"];
+        5 -> 6 [label="b"];
+    }
+
+}

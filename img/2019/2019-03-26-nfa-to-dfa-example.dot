@@ -1,0 +1,27 @@
+digraph G {
+    rankdir = "LR";
+    compound=true;
+    node [shape=circle];
+
+    6 [shape=doublecircle]
+    7 [shape=doublecircle]
+    9 [shape=doublecircle]
+
+    begin [style=invis];
+    begin -> 1;
+    1 -> 5 [label="a"];
+    1 -> 2 [label="ε"];
+    1 -> 4 [label="a"];
+
+    5 -> 6 [label="ε"];
+    2 -> 3 [label="b"];
+    4 -> 7 [label="ε"];
+
+    6 -> 2 [label="ε"];
+    6 -> 9 [label="b"];
+
+    3 -> 8 [label="ε"];
+    7 -> 9 [label="b"];
+
+    8 -> 9 [label="a"];
+}

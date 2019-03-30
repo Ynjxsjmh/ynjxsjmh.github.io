@@ -1,0 +1,50 @@
+digraph G {
+    node [shape=plaintext];
+
+    R [fontsize=30];
+    G [fontsize=30];
+    B [fontsize=30];
+
+    R -> rr
+    G -> rg
+    B -> rb
+
+    rr [label="11111111"];
+    rg [label="00000000"];
+    rb [label="00000000"];
+
+    gr [label="00000000"];
+    gg [label="11111111"];
+    gb [label="00000000"];
+
+    br [label="00000000"];
+    bg [label="00000000"];
+    bb [label="11111111"];
+
+    wr [label="11111111"];
+    wg [label="11111111"];
+    wb [label="11111111"];
+
+    {rank=same; Red rr rg rb}
+    {rank=same  Green gr gg gb}
+    {rank=same  Blue br bg bb}
+    {rank=same  White wr wg wb}
+
+    Red -> Green -> Blue -> White [style=invis]
+
+    rr -> rg -> rb [style=invis];
+    gr -> gg -> gb [style=invis];
+    br -> bg -> bb [style=invis];
+    wr -> wg -> wb [style=invis];
+
+    Red   [label="Red   (with 100% intensity)"];
+    Green [label="Green (with 100% intensity)"]
+    Blue  [label="Blue  (with 100% intensity)"] ;
+    White [label="White (with 100% intensity)"] ;
+
+    Red -> rr;
+    Green -> gr;
+    Blue -> br
+    White -> wr
+
+}

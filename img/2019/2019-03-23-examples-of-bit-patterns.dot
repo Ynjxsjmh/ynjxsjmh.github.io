@@ -1,0 +1,32 @@
+digraph G {
+    rankdir = "LR";
+    splines=ortho;
+
+    node [shape=record];
+
+    code5 [label="Coding"];
+    code4 [label="Coding"];
+    code3 [label="Coding"];
+    code2 [label="Coding"];
+    code1 [label="Coding"];
+
+    decode1 [label="Decoding"];
+    decode2 [label="Decoding"];
+    decode3 [label="Decoding"];
+    decode4 [label="Decoding"];
+    decode5 [label="Decoding"];
+
+    Text -> code1
+    Number -> code2
+    Image -> code3
+    Audio -> code4
+    Video -> code5
+
+    memory [label="M\n\ne\n\nm\n\no\n\nr\n\ny", height=4, style=filled];
+
+    code1 -> "1001....111" -> memory -> "1111...111" -> decode1 -> " Text  ";
+    code2 -> "1111....101" -> memory -> "1101...101" -> decode2 -> " Number";
+    code3 -> "1111....111" -> memory -> "1011...000" -> decode3 -> " Image ";
+    code4 -> "1000....000" -> memory -> "0101...001" -> decode4 -> " Audio ";
+    code5 -> "1011....001" -> memory -> "1111...011" -> decode5 -> " Video ";
+}

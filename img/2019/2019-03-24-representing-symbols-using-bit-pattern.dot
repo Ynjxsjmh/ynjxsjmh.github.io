@@ -1,0 +1,18 @@
+digraph G {
+    splines=line
+    node [shape=box];
+    B [label=<<FONT POINT-SIZE="25" FACE="boldfontname">B</FONT>>];
+    Y [label=<<FONT POINT-SIZE="25" FACE="boldfontname">Y</FONT>>];
+    T [label=<<FONT POINT-SIZE="25" FACE="boldfontname">T</FONT>>];
+    E [label=<<FONT POINT-SIZE="25" FACE="boldfontname">E</FONT>>];
+    {rank=same; B  Y  T  E}
+
+    B:sw -> "101...101":nw;
+    B:se -> "101...101":ne;
+    Y:sw -> "111...100":nw;
+    Y:se -> "111...100":ne;
+    T:sw -> "110...100":nw;
+    T:se -> "110...100":ne;
+    E:sw -> "000...101":nw;
+    E:se -> "000...101":ne;
+}
