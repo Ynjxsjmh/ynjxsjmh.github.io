@@ -3,12 +3,11 @@
 #+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+OPTIONS: timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Spring Demo 介绍
+#+TITLE: 十一、Spring 入门
 #+DATE: <2019-03-13 Tue>
 #+AUTHOR: Ynjxsjmh
 #+EMAIL: ynjxsjmh@gmail.com
 #+FILETAGS: ::
-
 
 这是一个 Java 项目，不是 web 项目。
 
@@ -27,33 +26,33 @@ User.java
 #+BEGIN_SRC java
 package cn.atcast.a_hello;
 public class User {
-	private int id;
-	private String name;
+    private int id;
+    private String name;
 
-	public User() {
-		super();
-	    System.out.println("------User对象创建------");
-	}
+    public User() {
+        super();
+        System.out.println("------User对象创建------");
+    }
 
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public void init_user() {
-		System.out.println("创建对象之后，初始化");
-	}
-	public void destroy_user() {
-	    System.out.println("IOC容器销毁，user对象回收!");
-	}
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void init_user() {
+        System.out.println("创建对象之后，初始化");
+    }
+    public void destroy_user() {
+        System.out.println("IOC容器销毁，user对象回收!");
+    }
 }
 #+END_SRC
 
@@ -76,11 +75,11 @@ applicationContext.xml
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-	
-	<!-- IOC容器的配置： 要创建的所有的对象都配置在这里 -->
-	<bean id="user" class="cn.atcast.a_hello.User" init-method="init_user" destroy-method="destroy_user" scope="singleton" lazy-init="false"></bean>
+    
+    <!-- IOC容器的配置： 要创建的所有的对象都配置在这里 -->
+    <bean id="user" class="cn.atcast.a_hello.User" init-method="init_user" destroy-method="destroy_user" scope="singleton" lazy-init="false"></bean>
 
-	<bean id="user1" class="cn.atcast.a_hello.User"></bean>
+    <bean id="user1" class="cn.atcast.a_hello.User"></bean>
 </beans> 
 #+END_SRC
 
@@ -102,31 +101,31 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 public class App1_get_ioc {
-	// 1. 通过工厂类得到IOC容器创建的对象
-	@Test
-	public void testIOC() throws Exception {
-		// 创建对象
-		// 原来创建对象是 User user = new User();
-		// 现在，把对象的创建交给spring的IOC容器
+    // 1. 通过工厂类得到IOC容器创建的对象
+    @Test
+    public void testIOC() throws Exception {
+        // 创建对象
+        // 原来创建对象是 User user = new User();
+        // 现在，把对象的创建交给spring的IOC容器
         // 读配置文件的方式有很多种，这里只是其中一种，这种过时了。
-		Resource resource = new ClassPathResource("cn/atcast/a_hello/applicationContext.xml");
-		// 创建容器对象(Bean的工厂), IOC容器 = 工厂类 + applicationContext.xml
-		BeanFactory factory = new XmlBeanFactory(resource);
-		// 得到容器创建的对象，getBean 的参数就是刚才写的配置文件里的 id
-		User user = (User) factory.getBean("user");
-		System.out.println(user.getId());
-	}
-	
-	//2. （方便）直接得到IOC容器对象 
-	@Test
-	public void testAc() throws Exception {
-		// 得到IOC容器对象
-		ApplicationContext ac = new ClassPathXmlApplicationContext("cn/itcast/a_hello/applicationContext.xml");
-		// 从容器中获取bean
-		User user = (User) ac.getBean("user");
-		System.out.println(user);
+        Resource resource = new ClassPathResource("cn/atcast/a_hello/applicationContext.xml");
+        // 创建容器对象(Bean的工厂), IOC容器 = 工厂类 + applicationContext.xml
+        BeanFactory factory = new XmlBeanFactory(resource);
+        // 得到容器创建的对象，getBean 的参数就是刚才写的配置文件里的 id
+        User user = (User) factory.getBean("user");
+        System.out.println(user.getId());
+    }
+    
+    //2. （方便）直接得到IOC容器对象 
+    @Test
+    public void testAc() throws Exception {
+        // 得到IOC容器对象
+        ApplicationContext ac = new ClassPathXmlApplicationContext("cn/itcast/a_hello/applicationContext.xml");
+        // 从容器中获取bean
+        User user = (User) ac.getBean("user");
+        System.out.println(user);
         // 这种方法只是在测试的时候这样用，整合的时候是另一种方法拿到 bean——自动注入。
-	}
+    }
 }
 #+END_SRC
 
@@ -144,22 +143,22 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 public class App2_bean {
-	@Test
-	public void testIOC() throws Exception {
-		// 得到IOC容器对象  【用实现类，因为要调用销毁的方法】
-		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("cn/atcast/a_hello/applicationContext.xml");
-		System.out.println("-----容器创建-----");
-		
-		// 从容器中获取bean
-		User user1 = (User) ac.getBean("user");
-		User user2 = (User) ac.getBean("user");
-		
-		System.out.println(user1);
-		System.out.println(user2);
-		
-		// 销毁容器对象 
-		ac.destroy();
-	}
+    @Test
+    public void testIOC() throws Exception {
+        // 得到IOC容器对象  【用实现类，因为要调用销毁的方法】
+        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("cn/atcast/a_hello/applicationContext.xml");
+        System.out.println("-----容器创建-----");
+        
+        // 从容器中获取bean
+        User user1 = (User) ac.getBean("user");
+        User user2 = (User) ac.getBean("user");
+        
+        System.out.println(user1);
+        System.out.println(user2);
+        
+        // 销毁容器对象 
+        ac.destroy();
+    }
 }
 #+END_SRC
 
@@ -190,8 +189,8 @@ IOC容器创建对象：(使用了反射)
 1. 调用无参数构造器
 2. 带参数构造器
 3. 工厂创建对象（工厂创建模式）
-		- 工厂类，静态方法创建对象
-		- 工厂类，非静态方法创建对象
+        - 工厂类，静态方法创建对象
+        - 工厂类，非静态方法创建对象
 
 ** User 对象
 User.java
@@ -253,43 +252,43 @@ ref 解决了对象之间的依赖关系，其值是另一个对象的 id。
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-	
-	<!-- ###############对象创建############### -->
-	
-	<!-- 1. 默认无参数构造器 -->
+    
+    <!-- ###############对象创建############### -->
+    
+    <!-- 1. 默认无参数构造器 -->
     <!-- User user = new User() -->
-	<bean id="user1" class="cn.atcast.b_create_obj.User"></bean>
-	
-	<!-- 2. 带参数构造器 -->
+    <bean id="user1" class="cn.atcast.b_create_obj.User"></bean>
+    
+    <!-- 2. 带参数构造器 -->
     <!-- User user = new User(1, "Tom") -->
-	<bean id="user2" class="cn.atcast.b_create_obj.User">
-		<constructor-arg index="0" type="int" value="100"></constructor-arg>
-			<!-- 引用类型必须写全名 -->
-		<constructor-arg index="1" type="java.lang.String" value="Jack"></constructor-arg>
-	</bean>
-	<!-- 定义一个字符串，值是"Jack" ;  String s = new String("jack")-->
-	<bean id="str" class="java.lang.String">
-		<constructor-arg value="Jack"></constructor-arg>
-	</bean>
-	<bean id="user3" class="cn.atcast.b_create_obj.User">
-		<constructor-arg index="0" type="int" value="100"></constructor-arg>
-		<constructor-arg index="1" type="java.lang.String" ref="str"></constructor-arg>
-	</bean>
-	
-	<!-- 3. 工厂类创建对象 -->
-	<!-- # 3.1 工厂类，实例方法 -->
-	<!-- 先创建工厂 -->
-	<bean id="factory" class="cn.atcast.b_create_obj.ObjectFactory"></bean>
+    <bean id="user2" class="cn.atcast.b_create_obj.User">
+        <constructor-arg index="0" type="int" value="100"></constructor-arg>
+            <!-- 引用类型必须写全名 -->
+        <constructor-arg index="1" type="java.lang.String" value="Jack"></constructor-arg>
+    </bean>
+    <!-- 定义一个字符串，值是"Jack" ;  String s = new String("jack")-->
+    <bean id="str" class="java.lang.String">
+        <constructor-arg value="Jack"></constructor-arg>
+    </bean>
+    <bean id="user3" class="cn.atcast.b_create_obj.User">
+        <constructor-arg index="0" type="int" value="100"></constructor-arg>
+        <constructor-arg index="1" type="java.lang.String" ref="str"></constructor-arg>
+    </bean>
+    
+    <!-- 3. 工厂类创建对象 -->
+    <!-- # 3.1 工厂类，实例方法 -->
+    <!-- 先创建工厂 -->
+    <bean id="factory" class="cn.atcast.b_create_obj.ObjectFactory"></bean>
     <!-- 告诉 Spring 通过哪个工厂的哪个方法创建对象 -->
-	<!-- 再创建user对象，用factory方的实例方法 -->
-	<bean id="user4" factory-bean="factory" factory-method="getInstance"></bean>
-	
-	<!-- # 3.2 工厂类： 静态方法 -->
-	<!-- 
-		class 指定的就是工厂类型
-		factory-method  一定是工厂里面的“静态方法”
-	 -->
-	<bean id="user5" class="cn.atcast.b_create_obj.ObjectFactory" factory-method="getStaticInstance"></bean>
+    <!-- 再创建user对象，用factory方的实例方法 -->
+    <bean id="user4" factory-bean="factory" factory-method="getInstance"></bean>
+    
+    <!-- # 3.2 工厂类： 静态方法 -->
+    <!-- 
+        class 指定的就是工厂类型
+        factory-method  一定是工厂里面的“静态方法”
+     -->
+    <bean id="user5" class="cn.atcast.b_create_obj.ObjectFactory" factory-method="getStaticInstance"></bean>
 </beans>
 #+END_SRC
 
@@ -298,15 +297,15 @@ ref 解决了对象之间的依赖关系，其值是另一个对象的 id。
 package cn.atcast.b_create_obj;
 // 工厂，创建对象
 public class ObjectFactory {
-	// 实例方法创建对象
-	public User getInstance() {
-		return new User(100,"工厂：调用实例方法");
-	}
-	
-	// 静态方法创建对象
-	public static User getStaticInstance() {
-		return new User(101,"工厂：调用静态方法");
-	}
+    // 实例方法创建对象
+    public User getInstance() {
+        return new User(100,"工厂：调用实例方法");
+    }
+    
+    // 静态方法创建对象
+    public static User getStaticInstance() {
+        return new User(101,"工厂：调用静态方法");
+    }
 }
 #+END_SRC
 
@@ -319,15 +318,15 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
-	// 测试：对象创建
-	@Test
-	public void testIOC() throws Exception {
-		// 创建IOC容器对象
-		ApplicationContext ac = new ClassPathXmlApplicationContext("cn/atcast/b_create_obj/bean.xml");
-		// 获取容器中的对象
-		User user = (User) ac.getBean("user5");
-		System.out.println(user);
-	}
+    // 测试：对象创建
+    @Test
+    public void testIOC() throws Exception {
+        // 创建IOC容器对象
+        ApplicationContext ac = new ClassPathXmlApplicationContext("cn/atcast/b_create_obj/bean.xml");
+        // 获取容器中的对象
+        User user = (User) ac.getBean("user5");
+        System.out.println(user);
+    }
 }
 #+END_SRC
 
@@ -348,48 +347,48 @@ User.java
 #+BEGIN_SRC java
 package cn.atcast.c_property;
 public class User {
-	private int id;
-	private String name;
-	
-	//通过容器注入属性值
-	public void setId(int id) {
-		this.id = id;
-	}
-	//通过容器注入属性值
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + "]";
-	}
-	
-	public User() {
-		super();
-	    System.out.println("---User对象创建【无参数构造器");
-	}
-	
-	public User(int id, String name) {
-	    System.out.println("User对象创建【带参数构造器】");
-		this.id = id;
-		this.name = name;
-	}
+    private int id;
+    private String name;
+    
+    //通过容器注入属性值
+    public void setId(int id) {
+        this.id = id;
+    }
+    //通过容器注入属性值
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public int getId() {
+        return id;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", name=" + name + "]";
+    }
+    
+    public User() {
+        super();
+        System.out.println("---User对象创建【无参数构造器");
+    }
+    
+    public User(int id, String name) {
+        System.out.println("User对象创建【带参数构造器】");
+        this.id = id;
+        this.name = name;
+    }
 
-	public void init_user() {
-		System.out.println("创建对象之后，初始化");
-	}
-	public void destroy_user() {
-		System.out.println("IOC容器销毁，user对象回收!");
-	}
+    public void init_user() {
+        System.out.println("创建对象之后，初始化");
+    }
+    public void destroy_user() {
+        System.out.println("IOC容器销毁，user对象回收!");
+    }
 }
 #+END_SRC
 
@@ -397,9 +396,9 @@ public class User {
 #+BEGIN_SRC java
 package cn.atcast.c_property;
 public class UserDao {
-	public void save() {
-		System.out.println("DB:保存用户");
-	}
+    public void save() {
+        System.out.println("DB:保存用户");
+    }
 }
 #+END_SRC
 
@@ -407,14 +406,14 @@ public class UserDao {
 #+BEGIN_SRC java
 package cn.atcast.c_property;
 public class UserService {
-	private UserDao userDao; // = new UserDao();
-	// IOC：对象的创建交给spring的外部容器完成
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
-	}
-	public void save() {
-		userDao.save();
-	}
+    private UserDao userDao; // = new UserDao();
+    // IOC：对象的创建交给spring的外部容器完成
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+    public void save() {
+        userDao.save();
+    }
 }
 #+END_SRC
 
@@ -422,16 +421,16 @@ public class UserService {
 #+BEGIN_SRC java
 package cn.atcast.c_property;
 public class UserAction {
-	// Service: springIOC容器注入
-	private UserService userService;
+    // Service: springIOC容器注入
+    private UserService userService;
 public void setUserService(UserService userService) {
-		this.userService = userService;
-	}
+        this.userService = userService;
+    }
 
-	public String execute() {
-		userService.save();
-		return null;
-	}
+    public String execute() {
+        userService.save();
+        return null;
+    }
 }
 #+END_SRC
 
@@ -447,47 +446,47 @@ public void setUserService(UserService userService) {
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-	
-	<!-- ###############对象属性赋值############### -->
-	<!--  1) 通过构造函数 -->
-	<bean id="user1" class="cn.atcast.c_property.User" scope="prototype">
-		<constructor-arg value="100"></constructor-arg>
-		<constructor-arg value="Tom"></constructor-arg>
-	</bean>
-	<!-- 2) 通过set方法给属性注入值 -->
-	<bean id="user2" class="cn.atcast.c_property.User" scope="prototype">
-		<property name="id" value="101"></property>
-		<property name="name" value="Jack"></property>
-	</bean>
-	
-	<!-- action/service/dao -->
-	<!-- dao instance -->
-	<bean id="userDao" class="cn.atcast.c_property.UserDao"></bean>
+    
+    <!-- ###############对象属性赋值############### -->
+    <!--  1) 通过构造函数 -->
+    <bean id="user1" class="cn.atcast.c_property.User" scope="prototype">
+        <constructor-arg value="100"></constructor-arg>
+        <constructor-arg value="Tom"></constructor-arg>
+    </bean>
+    <!-- 2) 通过set方法给属性注入值 -->
+    <bean id="user2" class="cn.atcast.c_property.User" scope="prototype">
+        <property name="id" value="101"></property>
+        <property name="name" value="Jack"></property>
+    </bean>
+    
+    <!-- action/service/dao -->
+    <!-- dao instance -->
+    <bean id="userDao" class="cn.atcast.c_property.UserDao"></bean>
 
-	<!-- service instance -->
-	<bean id="userService" class="cn.atcast.c_property.UserService">
-		<property name="userDao" ref="userDao"></property>
-	</bean>
-	
-	<!-- action instance -->
-	<bean id="userAction1" class="cn.atcast.c_property.UserAction">
-		<property name="userService" ref="userService"></property>
-	</bean>
-	
-	<!-- ##############内部bean############## -->
-	<bean id="userAction2" class="cn.atcast.c_property.UserAction">
+    <!-- service instance -->
+    <bean id="userService" class="cn.atcast.c_property.UserService">
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+    
+    <!-- action instance -->
+    <bean id="userAction1" class="cn.atcast.c_property.UserAction">
+        <property name="userService" ref="userService"></property>
+    </bean>
+    
+    <!-- ##############内部bean############## -->
+    <bean id="userAction2" class="cn.atcast.c_property.UserAction">
 
-		<property name="userService">
-			<bean class="cn.atcast.c_property.UserService">
-				<property name="userDao">
-					<bean class="cn.atcast.c_property.UserDao"></bean>
-				</property>
-			</bean>
-		</property> <!--不推荐-->
+        <property name="userService">
+            <bean class="cn.atcast.c_property.UserService">
+                <property name="userDao">
+                    <bean class="cn.atcast.c_property.UserDao"></bean>
+                </property>
+            </bean>
+        </property> <!--不推荐-->
 
-<property name="userService"> ref="userService"		</property>
+<property name="userService"> ref="userService"     </property>
 
-	</bean>
+    </bean>
 </beans>
 #+END_SRC
 
@@ -504,25 +503,25 @@ public void setUserService(UserService userService) {
     http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-	
-	<!-- 3. p名称空间
-		给对象属性注入值：
-			# p 名称空间给对象的属性注入值
-			 (spring3.0以上版本才支持)
-	 -->
-	 <bean id="userDao" class="cn.atcast.c_property.UserDao"></bean>
-	 
-	 <bean id="userService" class="cn.atcast.c_property.UserService" p:userDao-ref="userDao"></bean>
-	 
-	 <bean id="userAction" class="cn.atcast.c_property.UserAction" p:userService-ref="userService"></bean>
-	
-	<!-- 传统的注入： 
-	 <bean id="user" class="cn.atcast.c_property.User" >
-	 	<property name="name" value="xxx"></property>
-	 </bean>
-	-->
-	<!-- p名称空间优化后 -->
-	<bean id="user" class="cn.atcast.c_property.User" p:name="Jack0001"></bean>
+    
+    <!-- 3. p名称空间
+        给对象属性注入值：
+            # p 名称空间给对象的属性注入值
+             (spring3.0以上版本才支持)
+     -->
+     <bean id="userDao" class="cn.atcast.c_property.UserDao"></bean>
+     
+     <bean id="userService" class="cn.atcast.c_property.UserService" p:userDao-ref="userDao"></bean>
+     
+     <bean id="userAction" class="cn.atcast.c_property.UserAction" p:userService-ref="userService"></bean>
+    
+    <!-- 传统的注入： 
+     <bean id="user" class="cn.atcast.c_property.User" >
+        <property name="name" value="xxx"></property>
+     </bean>
+    -->
+    <!-- p名称空间优化后 -->
+    <bean id="user" class="cn.atcast.c_property.User" p:name="Jack0001"></bean>
 </beans>
 #+END_SRC
 
@@ -533,16 +532,16 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App_p {
-	// 创建容器对象
-	private ApplicationContext ac = new ClassPathXmlApplicationContext("cn/atcast/c_property/bean_p.xml");
-	
-	@Test
-	public void testExecuteAction() {
-		// 从容器中获取Action
-		UserAction userAction = (UserAction) ac.getBean("userAction");
-		userAction.execute();
-		System.out.println(ac.getBean("user"));
-	}
+    // 创建容器对象
+    private ApplicationContext ac = new ClassPathXmlApplicationContext("cn/atcast/c_property/bean_p.xml");
+    
+    @Test
+    public void testExecuteAction() {
+        // 从容器中获取Action
+        UserAction userAction = (UserAction) ac.getBean("userAction");
+        userAction.execute();
+        System.out.println(ac.getBean("user"));
+    }
 }
 #+END_SRC
 
@@ -560,9 +559,9 @@ byType通过参数的数据类型自动自动装配，如果一个bean的数据�
 #+BEGIN_SRC java
 package cn.atcast.d_auto;
 public class UserDao {
-	public void save() {
-		System.out.println("DB:保存用户");
-	}
+    public void save() {
+        System.out.println("DB:保存用户");
+    }
 }
 #+END_SRC
 
@@ -570,15 +569,15 @@ public class UserDao {
 #+BEGIN_SRC java
 package cn.atcast.d_auto;
 public class UserService {
-	private UserDao userDao; // = new UserDao();
-	// IOC：对象的创建交给spring的外部容器完成
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
-	}
+    private UserDao userDao; // = new UserDao();
+    // IOC：对象的创建交给spring的外部容器完成
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
-	public void save() {
-		userDao.save();
-	}
+    public void save() {
+        userDao.save();
+    }
 }
 #+END_SRC
 
@@ -586,15 +585,15 @@ public class UserService {
 #+BEGIN_SRC java
 package cn.atcast.d_auto;
 public class UserAction {
-	// Service: springIOC容器注入
-	private UserService userService;
-	public void setUserService(UserService userService) {
-		this.userService = userService;
-	}
-	public String execute() {
-		userService.save();
-		return null;
-	}
+    // Service: springIOC容器注入
+    private UserService userService;
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+    public String execute() {
+        userService.save();
+        return null;
+    }
 }
 #+END_SRC
 
@@ -610,18 +609,18 @@ public class UserAction {
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd" default-autowire="byType">
-	
-	<!-- ###############自动装配############### -->  
-	<bean id="userDao" class="cn.atcast.d_auto.UserDao"></bean>	
-	<bean id="userService" class="cn.atcast.d_auto.UserService"></bean>
-	
+    
+    <!-- ###############自动装配############### -->  
+    <bean id="userDao" class="cn.atcast.d_auto.UserDao"></bean> 
+    <bean id="userService" class="cn.atcast.d_auto.UserService"></bean>
+    
 <!--如果根据类型自动装配： 必须确保IOC容器中只有一个该类型的对象 -->
-	<bean id="userAction" class="cn.atcast.d_auto.UserAction"></bean>
-	
-	<!--   报错： 因为上面已经有一个该类型的对象，且使用了根据类型自动装配-->
-	<!--因为在userAction中有一个数据类型为UserService的属性，而在此处有两个bean的class都是UserService，所以不知道用那个，会报错-->
-	<bean id="userService_test" class="cn.atcast.d_auto.UserService" autowire="byType"></bean>
-	 
+    <bean id="userAction" class="cn.atcast.d_auto.UserAction"></bean>
+    
+    <!--   报错： 因为上面已经有一个该类型的对象，且使用了根据类型自动装配-->
+    <!--因为在userAction中有一个数据类型为UserService的属性，而在此处有两个bean的class都是UserService，所以不知道用那个，会报错-->
+    <bean id="userService_test" class="cn.atcast.d_auto.UserService" autowire="byType"></bean>
+     
 </beans>
 #+END_SRC
 
@@ -635,16 +634,16 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
-	// 创建容器对象
-	private ApplicationContext ac = 
-		new ClassPathXmlApplicationContext("cn/atcast/d_auto/bean.xml");
+    // 创建容器对象
+    private ApplicationContext ac = 
+        new ClassPathXmlApplicationContext("cn/atcast/d_auto/bean.xml");
 
-	@Test
-	public void testExecuteAction() {
-		// 从容器中获取Action
-		UserAction userAction = (UserAction) ac.getBean("userService_test");
-		userAction.execute();
-	}
+    @Test
+    public void testExecuteAction() {
+        // 从容器中获取Action
+        UserAction userAction = (UserAction) ac.getBean("userService_test");
+        userAction.execute();
+    }
 }
 #+END_SRC
 
@@ -667,8 +666,8 @@ public class App {
 | @Autowired  | 属性注入 byType   更倾向于用类型    |
 
 总结：
-	1.  使用注解，可以简化配置，且可以把对象加入IOC容器,及处理依赖关系(DI)
-	2.  注解可以和XML配置一起使用。
+    1.  使用注解，可以简化配置，且可以把对象加入IOC容器,及处理依赖关系(DI)
+    2.  注解可以和XML配置一起使用。
     3.  @Resource的作用相当于@Autowired，只不过@Autowired按byType自动注入，而@Resource默认按 byName自动注入罢了
 
 *** spring与Struts框架整合
@@ -685,9 +684,9 @@ import org.springframework.stereotype.Repository;
 //@Component  //加入ioc容器的UserDao对象的引用名称，默认与类名一样，且第一个字母小写。
 @Repository   // 在持久层可以选择用这个注解
 public class UserDao {
-	public void save() {
-		System.out.println("DB:保存用户!!!");
-	}
+    public void save() {
+        System.out.println("DB:保存用户!!!");
+    }
 }
 #+END_SRC
 
@@ -700,24 +699,24 @@ import org.springframework.stereotype.Service;
 //@Component  //在控制层、持久层、业务层都使用@Component,不容易区分。
 @Service   // 表示业务逻辑层的组件
 public class UserService {
-	// 会从IOC容器中找userDao对象，注入到当前字段
-	/*
-	 * <bean id="" class=""> 
-	 *	  <property name="userDao" ref="userDao" />    @Resource相当于这里的配置
-	 * </bean>
-	 */
-	
+    // 会从IOC容器中找userDao对象，注入到当前字段
+    /*
+     * <bean id="" class=""> 
+     *    <property name="userDao" ref="userDao" />    @Resource相当于这里的配置
+     * </bean>
+     */
+    
 //@Resource(name = "userDao") //根据名称查找（优先使用）
-	@Resource   //根据类型查找 
-	private UserDao userDao;
-	
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
-	}
+    @Resource   //根据类型查找 
+    private UserDao userDao;
+    
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
-	public void save() {
-		userDao.save();
-	}
+    public void save() {
+        userDao.save();
+    }
 }
 #+END_SRC
 
@@ -731,17 +730,17 @@ import org.springframework.stereotype.Controller;
 //@Component   //更简化的写法
 @Controller  // 控制层的组件
 public class UserAction {
-	//@Resource(name = "userService")
-	@Resource
-	private UserService userService;
-	public void setUserService(UserService userService) {
-		this.userService = userService;
-	}
+    //@Resource(name = "userService")
+    @Resource
+    private UserService userService;
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
 
-	public String execute() {
-		userService.save();
-		return null;
-	}
+    public String execute() {
+        userService.save();
+        return null;
+    }
 }
 #+END_SRC
 
@@ -757,9 +756,9 @@ public class UserAction {
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-	
-	<!-- 开启注解扫描 -->
-	<context:component-scan base-package="cn.atcast.e_anno"></context:component-scan>
+    
+    <!-- 开启注解扫描 -->
+    <context:component-scan base-package="cn.atcast.e_anno"></context:component-scan>
 </beans>
 #+END_SRC
 
@@ -772,14 +771,16 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
-	// 创建容器对象
-	private ApplicationContext ac = 
-		new ClassPathXmlApplicationContext("cn/atcast/e_anno/bean.xml");
-	@Test
-	public void testExecuteAction() {
-		// 从容器中获取Action
-		UserAction userAction = (UserAction) ac.getBean("userAction");
-		userAction.execute();
-	}
+    // 创建容器对象
+    private ApplicationContext ac = 
+        new ClassPathXmlApplicationContext("cn/atcast/e_anno/bean.xml");
+    @Test
+    public void testExecuteAction() {
+        // 从容器中获取Action
+        UserAction userAction = (UserAction) ac.getBean("userAction");
+        userAction.execute();
+    }
 }
 #+END_SRC
+
+本章源码见 =SpringDemo01=

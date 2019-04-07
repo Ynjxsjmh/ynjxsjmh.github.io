@@ -10,10 +10,13 @@
 #+FILETAGS: :编译原理:自动机:
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/orgstyle.css" />
 
-* 定理
+* 定理S
 对任一确定有限自动机A，存在一正则表达式e,使得L(A)=L(e),反之亦然。
 
 https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-21-dfa-re-nfa-relationship.png
+
+对字母表 \sum 上的每一个正则表达式 R，都存在一个 \sum 上的非确定有限自动机 M，使得 L(M)=L(R)；
+反之，对于字母表 \sum 上的每一个非确定有限自动机 M，也存在一个 \sum 上的正则表达式 R，使得 L(R)=L(M)
 
 * DFA 到正则表达式
 现在有一个DFA，要构造正则表达式，我们就给出几种构造的规则。
@@ -58,7 +61,6 @@ https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/20
 给出一个正则表达式 (a|b)(c|d)*(e|f), 将其转化为 NFA
 
 https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-26-re-to-nfa-example.png
-
 
 * NFA 到 DFA
 ** 自动机等价和确定化

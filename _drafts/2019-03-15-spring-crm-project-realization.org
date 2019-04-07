@@ -3,7 +3,7 @@
 #+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+OPTIONS: timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Spring Struts 整合 CRM 实现 —— 完成客户增加
+#+TITLE: 十二、Spring 客户增加之项目实现
 #+DATE: <2019-03-15 Tue>
 #+AUTHOR: Ynjxsjmh
 #+EMAIL: ynjxsjmh@gmail.com
@@ -12,22 +12,21 @@
 * 需求
 使用Spring的IOC完成保存客户的操作:
 
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-15-01-01.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-15-01-01.png
 
 * 项目实现文件结构
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-15-01-02.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-15-01-02.png
 
 Spring 和项目整合的难点有两个：
 - 所有对象的创建都交给 Spring 来处理。比如 Struts2 中 Action 的生成交给 Spring 处理;
 - Hibernate 配置文件可以不要，交给 Spring 进行处理
-
 
 * 客户的DAO层
 CustomerDao
 #+BEGIN_SRC java
 package com.atcast.dao;
 public interface CustomerDao {
-	public void save();
+    public void save();
 }
 #+END_SRC
 
@@ -35,9 +34,9 @@ CustomerDaoImpl.java
 #+BEGIN_SRC java
 package com.atcast.dao;
 public class CustomerDaoImpl implements CustomerDao {
-	public void save() {
-		System.out.println("持久层：保存客户...");
-	}
+    public void save() {
+        System.out.println("持久层：保存客户...");
+    }
 }
 #+END_SRC
 
@@ -46,7 +45,7 @@ CustomerService.java
 #+BEGIN_SRC java
 package com.atcast.service;
 public interface CustomerService {
-	public void save();
+    public void save();
 }
 #+END_SRC
 
@@ -55,15 +54,15 @@ CustomerServiceImpl.java
 package com.atcast.service;
 import com.atcast.dao.CustomerDao;
 public class CustomerServiceImpl implements CustomerService {
-	private CustomerDao customerDao;
-	public void setCustomerDao(CustomerDao customerDao) {
-		this.customerDao = customerDao;
-	}
-	
-	public void save() {
-		System.out.println("业务层：保存客户...");
-		customerDao.save();
-	}
+    private CustomerDao customerDao;
+    public void setCustomerDao(CustomerDao customerDao) {
+        this.customerDao = customerDao;
+    }
+    
+    public void save() {
+        System.out.println("业务层：保存客户...");
+        customerDao.save();
+    }
 }
 #+END_SRC
 
@@ -80,21 +79,21 @@ add.jsp
   <display-name>day35_crm</display-name>
   <!-- 配置WEB整合的监听器 -->
   <listener>
-  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
   <!-- 加载方式：默认只能加载WEB-INF目录下的配置文件，提供配置方式，加载src目录下 -->
   <context-param>
-  	<param-name>contextConfigLocation</param-name>
+    <param-name>contextConfigLocation</param-name>
   <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
   
   <filter>
-  	<filter-name>struts2</filter-name>
-  	<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
   </filter>
   <filter-mapping>
-  	<filter-name>struts2</filter-name>
-  	<url-pattern>/*</url-pattern>
+    <filter-name>struts2</filter-name>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
   
   <welcome-file-list>
@@ -112,13 +111,13 @@ add.jsp
 #+BEGIN_SRC nxml
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
-	"http://struts.apache.org/dtds/struts-2.3.dtd">
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
     <package name="crm" namespace="/" extends="struts-default">
-    	<!--  <action name="customer_*" class="com.atcast.web.action.CustomerAction" method="{1}"> --> customer_save
+        <!--  <action name="customer_*" class="com.atcast.web.action.CustomerAction" method="{1}"> --> customer_save
         <action name="customer_*" class="customerAction" method="{1}">
-    	</action>
+        </action>
     </package>
 </struts>
 #+END_SRC
@@ -133,19 +132,19 @@ applicationContext.xml
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans 
       http://www.springframework.org/schema/beans/spring-beans.xsd">
-   		<!-- 配置持久层 -->
-   	<bean id="customerDao" class="com.atcast.dao.CustomerDaoImpl"/>
-   	
-   	<!-- 配置客户的业务层 -->
-   	<bean id="customerService" class="com.atcast.service.CustomerServiceImpl">
-   		<property name="customerDao" ref="customerDao"/>
-   	</bean>
-   	
-	<!-- 配置客户模块 -->
-	<!-- 强调：以后配置Action，必须是多例的 -->
-	<bean id="customerAction" class="com.atcast.web.action.CustomerAction" scope="prototype">
-		<property name="customerService" ref="customerService"/>
-	</bean>
+        <!-- 配置持久层 -->
+    <bean id="customerDao" class="com.atcast.dao.CustomerDaoImpl"/>
+    
+    <!-- 配置客户的业务层 -->
+    <bean id="customerService" class="com.atcast.service.CustomerServiceImpl">
+        <property name="customerDao" ref="customerDao"/>
+    </bean>
+    
+    <!-- 配置客户模块 -->
+    <!-- 强调：以后配置Action，必须是多例的 -->
+    <bean id="customerAction" class="com.atcast.web.action.CustomerAction" scope="prototype">
+        <property name="customerService" ref="customerService"/>
+    </bean>
 </beans> 
 #+END_SRC
 
@@ -160,20 +159,22 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author Administrator
  */
 public class CustomerAction extends ActionSupport{
-	private static final long serialVersionUID = 113695314694166436L;
-	    // 提供service的成员属性，提供set方法
-		private CustomerService customerService;
-		public void setCustomerService(CustomerService customerService) {
-			this.customerService = customerService;
-		}
-	/**
-	 * 保存客户
-	 * @return
-	 */
-	public String save(){
-		System.out.println("WEB层：保存客户...");
-		customerService.save();
-		return NONE;
-	}
+    private static final long serialVersionUID = 113695314694166436L;
+        // 提供service的成员属性，提供set方法
+        private CustomerService customerService;
+        public void setCustomerService(CustomerService customerService) {
+            this.customerService = customerService;
+        }
+    /**
+     * 保存客户
+     * @return
+     */
+    public String save(){
+        System.out.println("WEB层：保存客户...");
+        customerService.save();
+        return NONE;
+    }
 }
 #+END_SRC
+
+本章代码见 =SpringCRM01=

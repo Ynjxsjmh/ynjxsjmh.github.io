@@ -1,3 +1,27 @@
+so with the text...
+#+NAME: code:1
+#+BEGIN_SRC shell-script
+echo hello world 
+#+END_SRC
+[[code:1]] is a reference to src block
+
+#+NAME: eqn:1
+\begin{equation}
+    f(x) =  \sum\limits_0^\infty(f^{(n)}(x)|_{x=0} \cdot x)
+\end{equation}
+
+And this is an equation [[eqn:1]]
+
+
+- one item
+- <<target>>another item
+Here we refer to item [[target]].  [[target][Find my target]]
+
+
+$\xRightarrow[\text{below}]{\text{above}}$
+
+
+
 +------------+-----------+----------+----------+-------------+
 |            |             Singular            | Plural      |
 |            +-----------+----------+----------+-------------+

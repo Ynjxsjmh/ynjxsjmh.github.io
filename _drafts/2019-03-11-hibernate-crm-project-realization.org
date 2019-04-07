@@ -3,7 +3,7 @@
 #+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+OPTIONS: timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Hibernate 项目实现
+#+TITLE: 二、Hibernate 客户管理之项目实现
 #+DATE: <2019-03-11 Mon>
 #+AUTHOR: Ynjxsjmh
 #+EMAIL: ynjxsjmh@gmail.com
@@ -18,13 +18,12 @@ CRM系统中客户信息管理模块功能包括：
 - 修改客户信息
 - 删除客户信息
 
-
 * 创建WEB工程，引入Hibernate开发所需要的jar包
 1. MySQL的驱动jar包
 2. Hibernate开发需要的jar包（资料/hibernate-release-5.0.7.Final/lib/required/所有jar包）
 3. 日志jar包（资料/jar包/log4j/所有jar包）
 
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-11-01-01.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-11-01-01.png
 
 * 创建客户表 cst_customer
 #+BEGIN_SRC sql
@@ -50,92 +49,93 @@ CREATE TABLE `cst_customer` (
 - Hibernate/lib/required/*
 - 引入日志记录的包
 
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-11-01-02.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-11-01-02.png
+
 * 创建客户实体
 Customer.java
 对应数据库表的字段来写：
 #+BEGIN_SRC java
 package com.atcast.domain;
 public class Customer {
-	// 以后使用包装类，默认值是null
-	private Long cust_id;
-	private String cust_name;
-	private Long cust_user_id;
-	private Long cust_create_id;
-	private String cust_source;
-	private String cust_industry;
-	private String cust_level;
-	private String cust_linkman;
-	private String cust_phone;
-	private String cust_mobile;
-	
-	public Long getCust_id() {
-		return cust_id;
-	}
-	public void setCust_id(Long cust_id) {
-		this.cust_id = cust_id;
-	}
-	public String getCust_name() {
-		return cust_name;
-	}
-	public void setCust_name(String cust_name) {
-		this.cust_name = cust_name;
-	}
-	public Long getCust_user_id() {
-		return cust_user_id;
-	}
-	public void setCust_user_id(Long cust_user_id) {
-		this.cust_user_id = cust_user_id;
-	}
-	public Long getCust_create_id() {
-		return cust_create_id;
-	}
-	public void setCust_create_id(Long cust_create_id) {
-		this.cust_create_id = cust_create_id;
-	}
-	public String getCust_source() {
-		return cust_source;
-	}
-	public void setCust_source(String cust_source) {
-		this.cust_source = cust_source;
-	}
-	public String getCust_industry() {
-		return cust_industry;
-	}
-	public void setCust_industry(String cust_industry) {
-		this.cust_industry = cust_industry;
-	}
-	public String getCust_level() {
-		return cust_level;
-	}
-	public void setCust_level(String cust_level) {
-		this.cust_level = cust_level;
-	}
-	public String getCust_linkman() {
-		return cust_linkman;
-	}
-	public void setCust_linkman(String cust_linkman) {
-		this.cust_linkman = cust_linkman;
-	}
-	public String getCust_phone() {
-		return cust_phone;
-	}
-	public void setCust_phone(String cust_phone) {
-		this.cust_phone = cust_phone;
-	}
-	public String getCust_mobile() {
-		return cust_mobile;
-	}
-	public void setCust_mobile(String cust_mobile) {
-		this.cust_mobile = cust_mobile;
-	}
-	@Override
-	public String toString() {
-		return "Customer [cust_id=" + cust_id + ", cust_name=" + cust_name + ", cust_user_id=" + cust_user_id
-				+ ", cust_create_id=" + cust_create_id + ", cust_source=" + cust_source + ", cust_industry="
-				+ cust_industry + ", cust_level=" + cust_level + ", cust_linkman=" + cust_linkman + ", cust_phone="
-				+ cust_phone + ", cust_mobile=" + cust_mobile + "]";
-	}
+    // 以后使用包装类，默认值是null
+    private Long cust_id;
+    private String cust_name;
+    private Long cust_user_id;
+    private Long cust_create_id;
+    private String cust_source;
+    private String cust_industry;
+    private String cust_level;
+    private String cust_linkman;
+    private String cust_phone;
+    private String cust_mobile;
+    
+    public Long getCust_id() {
+        return cust_id;
+    }
+    public void setCust_id(Long cust_id) {
+        this.cust_id = cust_id;
+    }
+    public String getCust_name() {
+        return cust_name;
+    }
+    public void setCust_name(String cust_name) {
+        this.cust_name = cust_name;
+    }
+    public Long getCust_user_id() {
+        return cust_user_id;
+    }
+    public void setCust_user_id(Long cust_user_id) {
+        this.cust_user_id = cust_user_id;
+    }
+    public Long getCust_create_id() {
+        return cust_create_id;
+    }
+    public void setCust_create_id(Long cust_create_id) {
+        this.cust_create_id = cust_create_id;
+    }
+    public String getCust_source() {
+        return cust_source;
+    }
+    public void setCust_source(String cust_source) {
+        this.cust_source = cust_source;
+    }
+    public String getCust_industry() {
+        return cust_industry;
+    }
+    public void setCust_industry(String cust_industry) {
+        this.cust_industry = cust_industry;
+    }
+    public String getCust_level() {
+        return cust_level;
+    }
+    public void setCust_level(String cust_level) {
+        this.cust_level = cust_level;
+    }
+    public String getCust_linkman() {
+        return cust_linkman;
+    }
+    public void setCust_linkman(String cust_linkman) {
+        this.cust_linkman = cust_linkman;
+    }
+    public String getCust_phone() {
+        return cust_phone;
+    }
+    public void setCust_phone(String cust_phone) {
+        this.cust_phone = cust_phone;
+    }
+    public String getCust_mobile() {
+        return cust_mobile;
+    }
+    public void setCust_mobile(String cust_mobile) {
+        this.cust_mobile = cust_mobile;
+    }
+    @Override
+    public String toString() {
+        return "Customer [cust_id=" + cust_id + ", cust_name=" + cust_name + ", cust_user_id=" + cust_user_id
+                + ", cust_create_id=" + cust_create_id + ", cust_source=" + cust_source + ", cust_industry="
+                + cust_industry + ", cust_level=" + cust_level + ", cust_linkman=" + cust_linkman + ", cust_phone="
+                + cust_phone + ", cust_mobile=" + cust_mobile + "]";
+    }
 }
 #+END_SRC
 
@@ -146,32 +146,32 @@ Customer.hbm.xml
 <!DOCTYPE hibernate-mapping PUBLIC 
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping>	
-	<!-- 配置类和表结构的映射 -->
+<hibernate-mapping> 
+    <!-- 配置类和表结构的映射 -->
     <!-- name 有没有写错可以通过摁住 Ctrl 键并将鼠标悬浮其上，如果有横向并且能跳转，则没错 -->
     <class name="com.atcast.domain.Customer" table="cst_customer">
-		<!-- 配置 id 主键 
-			见到name属性，是JavaBean的属性
-			见到column属性，是表结构的字段
-		-->
-		<id name="cust_id" column="cust_id">
-			<!-- 主键的生成策略 -->
+        <!-- 配置 id 主键 
+            见到name属性，是JavaBean的属性
+            见到column属性，是表结构的字段
+        -->
+        <id name="cust_id" column="cust_id">
+            <!-- 主键的生成策略 -->
             <!-- 此处是自增长 -->
             <!-- 还有 foreign 等，如果是 foreign 对应一个 Foreign.java 类 -->
-			<generator class="native"/>
-		</id>
-	
-		<!-- 配置其他的属性 -->
-		<property name="cust_name" column="cust_name"/>
-		<property name="cust_user_id" column="cust_user_id"/>
-		<property name="cust_create_id" column="cust_create_id"/>
-		<property name="cust_source" column="cust_source"/>
-		<property name="cust_industry" column="cust_industry"/>
-		<property name="cust_level" column="cust_level"/>
-		<property name="cust_linkman" column="cust_linkman"/>
-		<property name="cust_phone" column="cust_phone"/>
-		<property name="cust_mobile" column="cust_mobile"/>
-	</class>
+            <generator class="native"/>
+        </id>
+    
+        <!-- 配置其他的属性 -->
+        <property name="cust_name" column="cust_name"/>
+        <property name="cust_user_id" column="cust_user_id"/>
+        <property name="cust_create_id" column="cust_create_id"/>
+        <property name="cust_source" column="cust_source"/>
+        <property name="cust_industry" column="cust_industry"/>
+        <property name="cust_level" column="cust_level"/>
+        <property name="cust_linkman" column="cust_linkman"/>
+        <property name="cust_phone" column="cust_phone"/>
+        <property name="cust_mobile" column="cust_mobile"/>
+    </class>
 </hibernate-mapping>
 #+END_SRC
 
@@ -187,34 +187,34 @@ hibernate.cfg.xml
 #+BEGIN_SRC nxml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
-	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-	
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    
 <hibernate-configuration>
-	<!-- 记住：先配置SessionFactory标签，一个数据库对应一个SessionFactory标签 -->
-	<session-factory>
-		<!-- 必须要配置的参数有5个：4大参数，数据库的方言 -->
+    <!-- 记住：先配置SessionFactory标签，一个数据库对应一个SessionFactory标签 -->
+    <session-factory>
+        <!-- 必须要配置的参数有5个：4大参数，数据库的方言 -->
         <!-- 每个用户连接数据库的时候要创建一个连接，使用 JDBC 时连接由连接池创建 -->
-		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <!-- 三个杠是 localhost 的简写 -->
-		<property name="hibernate.connection.url">jdbc:mysql:///crm</property>
-		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password">root</property>
-		<!-- 数据库的方言 -->
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-		<!-- 可选配置 -->
-		<!-- 显示SQL语句，在控制台显示 -->
-		<property name="hibernate.show_sql">true</property>
-		<!-- 格式化SQL语句 -->
-		<property name="hibernate.format_sql">true</property>
-		<!-- 生成数据库的表结构 
-	update：如果没有表结构，创建表结构。如果存在，不会创建，添加数据
-		-->
-		<property name="hibernate.hbm2ddl.auto">update</property>
-		<!-- 映射配置文件，需要引入映射的配置文件 -->
-		<mapping resource="com/atcast/domain/Customer.hbm.xml"/>
-	</session-factory>
-</hibernate-configuration>	
+        <property name="hibernate.connection.url">jdbc:mysql:///crm</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <!-- 数据库的方言 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- 可选配置 -->
+        <!-- 显示SQL语句，在控制台显示 -->
+        <property name="hibernate.show_sql">true</property>
+        <!-- 格式化SQL语句 -->
+        <property name="hibernate.format_sql">true</property>
+        <!-- 生成数据库的表结构 
+    update：如果没有表结构，创建表结构。如果存在，不会创建，添加数据
+        -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- 映射配置文件，需要引入映射的配置文件 -->
+        <mapping resource="com/atcast/domain/Customer.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>  
 #+END_SRC
 
 * 编写Hibernate工具类
@@ -232,26 +232,26 @@ import org.hibernate.cfg.Configuration;
  */
 public class HibernateUtils {
     // 初始化块。类执行时先执行初始化块
-	private static final Configuration CONFIG;
-	private static final SessionFactory FACTORY;
-	
-	// 编写静态代码块
+    private static final Configuration CONFIG;
+    private static final SessionFactory FACTORY;
+    
+    // 编写静态代码块
     // 做初始化工作，只执行一次
-	static{
-		// 加载XML的配置文件
+    static{
+        // 加载XML的配置文件
         // 默认情况下读 src 路径下的 hibernate.cfg.xml
-		CONFIG = new Configuration().configure();
-		// 构造工厂
-		FACTORY = CONFIG.buildSessionFactory();
-	}
-	
-	/**
-	 * 从工厂中获取Session对象
-	 * @return
-	 */
-	public static Session getSession(){
-		return FACTORY.openSession();
-	}
+        CONFIG = new Configuration().configure();
+        // 构造工厂
+        FACTORY = CONFIG.buildSessionFactory();
+    }
+    
+    /**
+     * 从工厂中获取Session对象
+     * @return
+     */
+    public static Session getSession(){
+        return FACTORY.openSession();
+    }
 }
 #+END_SRC
 
@@ -281,206 +281,206 @@ import com.atcast.utils.HibernateUtils;
  * @author Administrator
  */
 public class Demo1 {
-	/**
-	 * 测试保存
-	 */
-	@Test
-	public void testSave3(){
-		Session session = null;
-		Transaction tr = null;
-		try {
-			// 获取session
-			session = HibernateUtils.getSession();
-			// 开启事务
-			tr = session.beginTransaction();
-			// 执行代码
-			Customer c = new Customer();
-			c.setCust_name("哈哈");
-			// 保存
-			session.save(c);
-			// 提交事务事务
-			tr.commit();
-		} catch (Exception e) {
-			// 回滚事务
-			tr.rollback();
-			e.printStackTrace();
-		}finally{
-			// 释放资源
-			session.close();
-		}
-	}
-	
-	/**
-	 * 测试查询的方法
-	 */
-	@Test
-	public void testSel(){
-		// 原来：加载配置文件，获取Factory对象，获取session
-		Session session = HibernateUtils.getSession();
-		Transaction tr = session.beginTransaction();
-		// 创建查询的接口
+    /**
+     * 测试保存
+     */
+    @Test
+    public void testSave3(){
+        Session session = null;
+        Transaction tr = null;
+        try {
+            // 获取session
+            session = HibernateUtils.getSession();
+            // 开启事务
+            tr = session.beginTransaction();
+            // 执行代码
+            Customer c = new Customer();
+            c.setCust_name("哈哈");
+            // 保存
+            session.save(c);
+            // 提交事务事务
+            tr.commit();
+        } catch (Exception e) {
+            // 回滚事务
+            tr.rollback();
+            e.printStackTrace();
+        }finally{
+            // 释放资源
+            session.close();
+        }
+    }
+    
+    /**
+     * 测试查询的方法
+     */
+    @Test
+    public void testSel(){
+        // 原来：加载配置文件，获取Factory对象，获取session
+        Session session = HibernateUtils.getSession();
+        Transaction tr = session.beginTransaction();
+        // 创建查询的接口
         /* 查询得使用 HQL 来查询，不能使用 sql 语句
          * HQL 开发效率高，不用考虑数据库。但是执行效率低，因为存在转换。
          * 所以如果项目对 sql 要求高的话，不宜使用 Hibernate，可以使用 mybaits
          */  
-		Query query = session.createQuery("from Customer");
-		// 查询所有的数据 select * from 表
-		List<Customer> list = query.list();
-		for (Customer customer : list) {
+        Query query = session.createQuery("from Customer");
+        // 查询所有的数据 select * from 表
+        List<Customer> list = query.list();
+        for (Customer customer : list) {
             // print 对象调用的是 toString 方法
-			System.out.println(customer);
-		}
-		
-		// 提交事务
-		tr.commit();
-		// 释放资源
-		session.close();
-	}
-	
-	/**
-	 * 测试添加或者修改
-	 */
-	@Test
-	public void testSaveOrUpdate(){
-		// 原来：加载配置文件，获取Factory对象，获取session
-		Session session = HibernateUtils.getSession();
-		Transaction tr = session.beginTransaction();
-		/*// 演示错误
-		Customer c = new Customer();
-		// c.setCust_id(10L);	千万不能自己设置
-		c.setCust_name("测试");
-		
-		// 保存或者修改
-		session.saveOrUpdate(c);*/
-		// 先查询再改
-		Customer c = session.get(Customer.class, 94L);
-		c.setCust_name("小泽");
-		session.saveOrUpdate(c);
-		// 提交事务
-		tr.commit();
-		// 释放资源
-		session.close();
-	}
-	/**
-	 * 测试修改
-	 */
-	@Test
-	public void testUpdate(){
-		// 原来：加载配置文件，获取Factory对象，获取session
-		Session session = HibernateUtils.getSession();
-		Transaction tr = session.beginTransaction();
-		// 测试查询的方法 2个参数：arg0查询JavaBean的class对象 arg1主键的值
-		Customer c = session.get(Customer.class, 94L);
-		// 设置客户的信息
-		c.setCust_name("小苍");
-		c.setCust_level("3");
-		// 修改
-		session.update(c);
-		// 提交事务
-		tr.commit();
-		// 释放资源
-		session.close();
-	}
-	/**
-	 * 测试删除的方法
-	 * 注意：删除或者修改，先查询再删除或者修改
-	 */
-	@Test
-	public void testDel(){
-		// 原来：加载配置文件，获取Factory对象，获取session
-		Session session = HibernateUtils.getSession();
-		Transaction tr = session.beginTransaction();
-		// 测试查询的方法 2个参数：arg0查询JavaBean的class对象 arg1主键的值
-		Customer c = session.get(Customer.class, 7L);
-		// 删除客户
-		session.delete(c);
-		// 提交事务
-		tr.commit();
-		// 释放资源
-		session.close();
-	}
-	/**
-	 * 测试get()方法，获取查询，通过主键来查询一条记录
-	 */
-	@Test
-	public void testGet(){
-		// 原来：加载配置文件，获取Factory对象，获取session
-		Session session = HibernateUtils.getSession();
-		Transaction tr = session.beginTransaction();
-		// 测试查询的方法 2个参数：arg0查询JavaBean的class对象 arg1主键的值
-		Customer c = session.get(Customer.class, 7L);
-		System.out.println(c);
-		// 提交事务
-		tr.commit();
-		// 释放资源
-		session.close();
-	}
-	
-	/**
-	 * 测试工具类
-	 */
-	@Test
-	public void testSave2(){
-		// 原来：加载配置文件，获取Factory对象，获取session
-		Session session = HibernateUtils.getSession();
-		Transaction tr = session.beginTransaction();
-		Customer c = new Customer();
-		c.setCust_name("小风");
-		session.save(c);
-		// 提交事务
-		tr.commit();
-		// 释放资源
-		session.close();
-	}
-	
-	/**
-	 * 测试保存客户
-	 */
-	@Test
-	public void testSave(){
-		/**
-		 * 	1. 先加载配置文件
-		 * 	2. 创建SessionFactory对象，生成Session对象
-		 *  3. 创建session对象
-		 *  4. 开启事务
-		 *  5. 编写保存的代码
-		 *  6. 提交事务
-		 *  7. 释放资源
-		 */
-		/*// 1. 先加载配置文件
-		Configuration config = new Configuration();
-		// 默认加载src目录下hibernate.cfg.xml的配置文件
-		config.configure();
-		// 了解，手动加载
-		// config.addResource("com/itheima/domain/Customer.hbm.xml");
-		 */		
-		
-		// 简写的方法
-		Configuration config = new Configuration().configure();
-		
-		// 2. 创建SessionFactory对象
-		SessionFactory factory = config.buildSessionFactory();
-		// 3. 创建session对象
-		Session session = factory.openSession();
-		// 4. 开启事务
-		Transaction tr = session.beginTransaction();
-		
-		// 5. 编写保存的代码
-		Customer c = new Customer();
-		// c.setCust_id(cust_id);	主键是自动递增了
-		c.setCust_name("测试3");
-		c.setCust_level("2");
-		c.setCust_phone("110");
-		
-		// 保存数据，操作对象就相当于操作数据库的表结构
-		session.save(c);
-		
-		// 6. 提交事务
-		tr.commit();
-		// 7. 释放资源
-		session.close();
-		factory.close();
-	}
+            System.out.println(customer);
+        }
+        
+        // 提交事务
+        tr.commit();
+        // 释放资源
+        session.close();
+    }
+    
+    /**
+     * 测试添加或者修改
+     */
+    @Test
+    public void testSaveOrUpdate(){
+        // 原来：加载配置文件，获取Factory对象，获取session
+        Session session = HibernateUtils.getSession();
+        Transaction tr = session.beginTransaction();
+        /*// 演示错误
+        Customer c = new Customer();
+        // c.setCust_id(10L);   千万不能自己设置
+        c.setCust_name("测试");
+        
+        // 保存或者修改
+        session.saveOrUpdate(c);*/
+        // 先查询再改
+        Customer c = session.get(Customer.class, 94L);
+        c.setCust_name("小泽");
+        session.saveOrUpdate(c);
+        // 提交事务
+        tr.commit();
+        // 释放资源
+        session.close();
+    }
+    /**
+     * 测试修改
+     */
+    @Test
+    public void testUpdate(){
+        // 原来：加载配置文件，获取Factory对象，获取session
+        Session session = HibernateUtils.getSession();
+        Transaction tr = session.beginTransaction();
+        // 测试查询的方法 2个参数：arg0查询JavaBean的class对象 arg1主键的值
+        Customer c = session.get(Customer.class, 94L);
+        // 设置客户的信息
+        c.setCust_name("小苍");
+        c.setCust_level("3");
+        // 修改
+        session.update(c);
+        // 提交事务
+        tr.commit();
+        // 释放资源
+        session.close();
+    }
+    /**
+     * 测试删除的方法
+     * 注意：删除或者修改，先查询再删除或者修改
+     */
+    @Test
+    public void testDel(){
+        // 原来：加载配置文件，获取Factory对象，获取session
+        Session session = HibernateUtils.getSession();
+        Transaction tr = session.beginTransaction();
+        // 测试查询的方法 2个参数：arg0查询JavaBean的class对象 arg1主键的值
+        Customer c = session.get(Customer.class, 7L);
+        // 删除客户
+        session.delete(c);
+        // 提交事务
+        tr.commit();
+        // 释放资源
+        session.close();
+    }
+    /**
+     * 测试get()方法，获取查询，通过主键来查询一条记录
+     */
+    @Test
+    public void testGet(){
+        // 原来：加载配置文件，获取Factory对象，获取session
+        Session session = HibernateUtils.getSession();
+        Transaction tr = session.beginTransaction();
+        // 测试查询的方法 2个参数：arg0查询JavaBean的class对象 arg1主键的值
+        Customer c = session.get(Customer.class, 7L);
+        System.out.println(c);
+        // 提交事务
+        tr.commit();
+        // 释放资源
+        session.close();
+    }
+    
+    /**
+     * 测试工具类
+     */
+    @Test
+    public void testSave2(){
+        // 原来：加载配置文件，获取Factory对象，获取session
+        Session session = HibernateUtils.getSession();
+        Transaction tr = session.beginTransaction();
+        Customer c = new Customer();
+        c.setCust_name("小风");
+        session.save(c);
+        // 提交事务
+        tr.commit();
+        // 释放资源
+        session.close();
+    }
+    
+    /**
+     * 测试保存客户
+     */
+    @Test
+    public void testSave(){
+        /**
+         *  1. 先加载配置文件
+         *  2. 创建SessionFactory对象，生成Session对象
+         *  3. 创建session对象
+         *  4. 开启事务
+         *  5. 编写保存的代码
+         *  6. 提交事务
+         *  7. 释放资源
+         */
+        /*// 1. 先加载配置文件
+        Configuration config = new Configuration();
+        // 默认加载src目录下hibernate.cfg.xml的配置文件
+        config.configure();
+        // 了解，手动加载
+        // config.addResource("com/itheima/domain/Customer.hbm.xml");
+         */     
+        
+        // 简写的方法
+        Configuration config = new Configuration().configure();
+        
+        // 2. 创建SessionFactory对象
+        SessionFactory factory = config.buildSessionFactory();
+        // 3. 创建session对象
+        Session session = factory.openSession();
+        // 4. 开启事务
+        Transaction tr = session.beginTransaction();
+        
+        // 5. 编写保存的代码
+        Customer c = new Customer();
+        // c.setCust_id(cust_id);   主键是自动递增了
+        c.setCust_name("测试3");
+        c.setCust_level("2");
+        c.setCust_phone("110");
+        
+        // 保存数据，操作对象就相当于操作数据库的表结构
+        session.save(c);
+        
+        // 6. 提交事务
+        tr.commit();
+        // 7. 释放资源
+        session.close();
+        factory.close();
+    }
 }
 #+END_SRC
 
@@ -494,25 +494,25 @@ import org.hibernate.Transaction;
 import com.atcast.domain.Customer;
 import com.atcast.utils.HibernateUtils;
 public class CustomerDao {
-	/**
-	 * 保存客户
-	 * @param c
+    /**
+     * 保存客户
+     * @param c
      * 返回值可要可不要
      * 以前传的参数可能是 int userId, String username
      * 那样耦合度会高，传对象可以解耦
-	 */
-	public void save(Customer c){
-		// 先获取session
-		Session session = HibernateUtils.getSession();
-		// 开启事务
-		Transaction tr = session.beginTransaction();
-		// 保存用户
-		session.save(c);
-		// 提交事务
-		tr.commit();
-		// 关闭资源
-		session.close();
-	}
+     */
+    public void save(Customer c){
+        // 先获取session
+        Session session = HibernateUtils.getSession();
+        // 开启事务
+        Transaction tr = session.beginTransaction();
+        // 保存用户
+        session.save(c);
+        // 提交事务
+        tr.commit();
+        // 关闭资源
+        session.close();
+    }
 }
 #+END_SRC
 
@@ -524,13 +524,13 @@ import com.atcast.dao.CustomerDao;
 import com.atcast.domain.Customer;
 
 public class CustomerService {
-	/**
-	 * 保存客户
-	 * @param c
-	 */
-	public void saveCustomer(Customer c){
-		new CustomerDao().save(c);
-	}
+    /**
+     * 保存客户
+     * @param c
+     */
+    public void saveCustomer(Customer c){
+        new CustomerDao().save(c);
+    }
 }
 #+END_SRC
 
@@ -568,41 +568,41 @@ import com.atcast.service.CustomerService;
  * @author Administrator
  */
 public class SaveCustomer extends HttpServlet {
-	
-	private static final long serialVersionUID = 1L;
-	
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 接收请求的参数
-		request.setCharacterEncoding("UTF-8");
+    
+    private static final long serialVersionUID = 1L;
+    
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 接收请求的参数
+        request.setCharacterEncoding("UTF-8");
         /* String name = (String)request.getParameter("cust_name");
          * c.setCust_name(name)
          * 像那样写就十分麻烦，我们可以使用第三方工具类 BeanUtils 来帮我们完成封装的过程。
          */
-		Map<String, String[]> map = request.getParameterMap();
-		// 封装数据，使用BeanUtils工具，导入jar包
-		Customer c = new Customer();
-		try {
-			// 封装数据
-			BeanUtils.populate(c, map);
-			// 调用业务层
-			new CustomerService().saveCustomer(c);
-			
-			System.out.println("添加客户成功了...");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+        Map<String, String[]> map = request.getParameterMap();
+        // 封装数据，使用BeanUtils工具，导入jar包
+        Customer c = new Customer();
+        try {
+            // 封装数据
+            BeanUtils.populate(c, map);
+            // 调用业务层
+            new CustomerService().saveCustomer(c);
+            
+            System.out.println("添加客户成功了...");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        doGet(request, response);
+    }
 }
 #+END_SRC
 
@@ -650,129 +650,138 @@ add.jsp
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
 <LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
-	rel=stylesheet>
+    rel=stylesheet>
 <META content="MSHTML 6.00.2900.3492" name=GENERATOR>
 </HEAD>
 <BODY>
-	<FORM id=form1 name=form1 action="${pageContext.request.contextPath }/saveCustomer" method="post">
-		
-		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
-			<TBODY>
-				<TR>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_019.jpg"
-						border=0></TD>
-					<TD width="100%" background="${pageContext.request.contextPath }/images/new_020.jpg"
-						height=20></TD>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_021.jpg"
-						border=0></TD>
-				</TR>
-			</TBODY>
-		</TABLE>
-		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
-			<TBODY>
-				<TR>
-					<TD width=15 background=${pageContext.request.contextPath }/images/new_022.jpg><IMG
-						src="${pageContext.request.contextPath }/images/new_022.jpg" border=0></TD>
-					<TD vAlign=top width="100%" bgColor=#ffffff>
-						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
-							<TR>
-		<TD class=manageHead>当前位置：客户管理 &gt; 添加客户</TD>
-							</TR>
-							<TR>
-								<TD height=2></TD>
-							</TR>
-						</TABLE>
-				<TABLE cellSpacing=0 cellPadding=5  border=0>
-							<TR>
-								<td>客户名称：</td>
-								<td>
-		<INPUT class=textbox id=sChannel2
-		style="WIDTH: 180px" maxLength=50 name="cust_name">
-								</td>
-								<td>客户级别 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-		style="WIDTH: 180px" maxLength=50 name="cust_level">
-								</td>
-							</TR>
-							
-							<TR>
-								<td>信息来源 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-		style="WIDTH: 180px" maxLength=50 name="cust_source">
-								</td>
-								<td>联系人：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-	style="WIDTH: 180px" maxLength=50 name="cust_linkman">
-								</td>
-							</TR>
-							
-							<TR>
-								<td>固定电话 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-		style="WIDTH: 180px" maxLength=50 name="cust_phone">
-								</td>
-								<td>移动电话 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-	style="WIDTH: 180px" maxLength=50 name="cust_mobile">
-								</td>
-							</TR>
-							
-							<TR>
-								<td>联系地址 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-	style="WIDTH: 180px" maxLength=50 name="custAddress">
-								</td>
-								<td>邮政编码 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-	style="WIDTH: 180px" maxLength=50 name="custZip">
-								</td>
-							</TR>
-							<TR>
-								<td>客户传真 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-	style="WIDTH: 180px" maxLength=50 name="custFax">
-								</td>
-								<td>客户网址 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-	style="WIDTH: 180px" maxLength=50 name="custWebsite">
-								</td>
-							</TR>
-							<tr>
-								<td rowspan=2>
-		<INPUT class=button id=sButton2 type=submit
-		value=" 保存 " name=sButton2>
-								</td>
-							</tr>
-						</TABLE>
-						
-					</TD>
-					<TD width=15 background="${pageContext.request.contextPath }/images/new_023.jpg">
-					<IMG src="${pageContext.request.contextPath }/images/new_023.jpg" border=0></TD>
-				</TR>
-			</TBODY>
-		</TABLE>
-		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
-			<TBODY>
-				<TR>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_024.jpg"
-						border=0></TD>
-					<TD align=middle width="100%"
-						background="${pageContext.request.contextPath }/images/new_025.jpg" height=15></TD>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_026.jpg"
-						border=0></TD>
-				</TR>
-			</TBODY>
-		</TABLE>
-	</FORM>
+    <FORM id=form1 name=form1 action="${pageContext.request.contextPath }/saveCustomer" method="post">
+        
+        <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+            <TBODY>
+                <TR>
+                    <TD width=15><IMG src="${pageContext.request.contextPath }/images/new_019.jpg"
+                        border=0></TD>
+                    <TD width="100%" background="${pageContext.request.contextPath }/images/new_020.jpg"
+                        height=20></TD>
+                    <TD width=15><IMG src="${pageContext.request.contextPath }/images/new_021.jpg"
+                        border=0></TD>
+                </TR>
+            </TBODY>
+        </TABLE>
+        <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+            <TBODY>
+                <TR>
+                    <TD width=15 background=${pageContext.request.contextPath }/images/new_022.jpg><IMG
+                        src="${pageContext.request.contextPath }/images/new_022.jpg" border=0></TD>
+                    <TD vAlign=top width="100%" bgColor=#ffffff>
+                        <TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
+                            <TR>
+        <TD class=manageHead>当前位置：客户管理 &gt; 添加客户</TD>
+                            </TR>
+                            <TR>
+                                <TD height=2></TD>
+                            </TR>
+                        </TABLE>
+                <TABLE cellSpacing=0 cellPadding=5  border=0>
+                            <TR>
+                                <td>客户名称：</td>
+                                <td>
+        <INPUT class=textbox id=sChannel2
+        style="WIDTH: 180px" maxLength=50 name="cust_name">
+                                </td>
+                                <td>客户级别 ：</td>
+                                <td>
+                                <INPUT class=textbox id=sChannel2
+        style="WIDTH: 180px" maxLength=50 name="cust_level">
+                                </td>
+                            </TR>
+                            
+                            <TR>
+                                <td>信息来源 ：</td>
+                                <td>
+                                <INPUT class=textbox id=sChannel2
+        style="WIDTH: 180px" maxLength=50 name="cust_source">
+                                </td>
+                                <td>联系人：</td>
+                                <td>
+                                <INPUT class=textbox id=sChannel2
+    style="WIDTH: 180px" maxLength=50 name="cust_linkman">
+                                </td>
+                            </TR>
+                            
+                            <TR>
+                                <td>固定电话 ：</td>
+                                <td>
+                                <INPUT class=textbox id=sChannel2
+        style="WIDTH: 180px" maxLength=50 name="cust_phone">
+                                </td>
+                                <td>移动电话 ：</td>
+                                <td>
+                                <INPUT class=textbox id=sChannel2
+    style="WIDTH: 180px" maxLength=50 name="cust_mobile">
+                                </td>
+                            </TR>
+                            
+                            <TR>
+                                <td>联系地址 ：</td>
+                                <td>
+                                <INPUT class=textbox id=sChannel2
+    style="WIDTH: 180px" maxLength=50 name="custAddress">
+                                </td>
+                                <td>邮政编码 ：</td>
+                                <td>
+                                <INPUT class=textbox id=sChannel2
+    style="WIDTH: 180px" maxLength=50 name="custZip">
+                                </td>
+                            </TR>
+                            <TR>
+                                <td>客户传真 ：</td>
+                                <td>
+                                <INPUT class=textbox id=sChannel2
+    style="WIDTH: 180px" maxLength=50 name="custFax">
+                                </td>
+                                <td>客户网址 ：</td>
+                                <td>
+                                <INPUT class=textbox id=sChannel2
+    style="WIDTH: 180px" maxLength=50 name="custWebsite">
+                                </td>
+                            </TR>
+                            <tr>
+                                <td rowspan=2>
+        <INPUT class=button id=sButton2 type=submit
+        value=" 保存 " name=sButton2>
+                                </td>
+                            </tr>
+                        </TABLE>
+                        
+                    </TD>
+                    <TD width=15 background="${pageContext.request.contextPath }/images/new_023.jpg">
+                    <IMG src="${pageContext.request.contextPath }/images/new_023.jpg" border=0></TD>
+                </TR>
+            </TBODY>
+        </TABLE>
+        <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+            <TBODY>
+                <TR>
+                    <TD width=15><IMG src="${pageContext.request.contextPath }/images/new_024.jpg"
+                        border=0></TD>
+                    <TD align=middle width="100%"
+                        background="${pageContext.request.contextPath }/images/new_025.jpg" height=15></TD>
+                    <TD width=15><IMG src="${pageContext.request.contextPath }/images/new_026.jpg"
+                        border=0></TD>
+                </TR>
+            </TBODY>
+        </TABLE>
+    </FORM>
 </BODY>
 </HTML>
 #+END_SRC
+
+
+本章源码见 =HibernateCRM01=
+
+请独立完成客户显示功能，图见：
+
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-11-01-03.png
+
+该源码见  =HibernateCRM02=

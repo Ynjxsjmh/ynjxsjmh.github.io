@@ -3,12 +3,11 @@
 #+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+OPTIONS: timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Spring 介绍
+#+TITLE: 十、Spring 框架的概述
 #+DATE: <2019-03-12 Tue>
 #+AUTHOR: Ynjxsjmh
 #+EMAIL: ynjxsjmh@gmail.com
 #+FILETAGS: ::
-
 
 * 学习内容
 1. Spring框架的概述
@@ -25,7 +24,7 @@
 现在使用 Spring 我们只要告诉 Spring 我们要什么对象对可以了，Spring 会自动传回我们需要的对象并且处理好其依赖关系。
 
 * Spring框架的概述
-** 什么是Spring （Spring 负责所有对象的创建）
+** 什么是Spring（Spring 负责所有对象的创建）
 Spring是一个开源框架，Spring是于2003 年兴起的一个轻量级的Java 开发框架，由Rod Johnson 在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来。它是为了解决企业应用开发的复杂性而创建的。框架的主要优势之一就是其分层架构，分层架构允许使用者选择使用哪一个组件，同时为 J2EE 应用程序开发提供集成的框架。Spring使用基本的JavaBean来完成以前只可能由EJB完成的事情。然而，Spring的用途不仅限于服务器端的开发。从简单性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。Spring的核心是控制反转（IoC）和面向切面（AOP）。简单来说，Spring是一个分层的JavaSE/EEfull-stack(一站式) 轻量级开源框架。
 
 ** Spring提供了一站式解决方案
@@ -55,4 +54,4 @@ Spring是一个开源框架，Spring是于2003 年兴起的一个轻量级的Jav
 ** 面向切面编程AOP
 切面，简单来说来可以理解为一个类，由很多重复性代码形成的类。
 
-切面举例：事务、日志、权限（每个action中需要做用户是否登陆的判断，这些重		   复代码就可以做成一个类，形成切面。）;
+切面举例：事务、日志、权限（每个action中需要做用户是否登陆的判断，这些重复代码就可以做成一个类，形成切面。）;

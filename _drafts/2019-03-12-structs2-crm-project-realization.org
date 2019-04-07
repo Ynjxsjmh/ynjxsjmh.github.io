@@ -3,7 +3,7 @@
 #+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+OPTIONS: timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Structs2 项目实现 
+#+TITLE: 七、Structs2 客户登录之项目实现
 #+DATE: <2019-03-12 Tue>
 #+AUTHOR: Ynjxsjmh
 #+EMAIL: ynjxsjmh@gmail.com
@@ -14,16 +14,16 @@ CRM系统中需要有登录的功能
 
 本功能要实现用户的登录，页面如下：
 
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-12-02-01.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-12-02-01.png
 
 
 项目文件概览：
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-12-02-02.png
 
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-12-02-02.png
 
 * 创建web项目，引入struts - jar包
 
-https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019-03-12-02-03.png
+https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-12-02-03.png
 
 | commons-fileupload-1.2.2.jar | 【文件上传相关包】              |
 | commons-io-2.0.1.jar         | 【io流包】                      |
@@ -51,33 +51,33 @@ hibernate.cfg.xml
 #+BEGIN_SRC nxml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
-	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-	<!-- 记住：先配置SessionFactory标签，一个数据库对应一个SessionFactory标签 -->
-	<session-factory>
-		<!-- 必须要配置的参数有5个，4大参数，数据库的方言 -->
-		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql:///strutscrm</property>
-		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password">root</property>
-		<!-- 数据库的方言 -->
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-		<!-- 可选配置 -->
-		<!-- 显示SQL语句，在控制台显示 -->
-		<property name="hibernate.show_sql">true</property>
-		<!-- 格式化SQL语句 -->
-		<property name="hibernate.format_sql">true</property>
-		<!-- 生成数据库的表结构 
+    <!-- 记住：先配置SessionFactory标签，一个数据库对应一个SessionFactory标签 -->
+    <session-factory>
+        <!-- 必须要配置的参数有5个，4大参数，数据库的方言 -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql:///strutscrm</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <!-- 数据库的方言 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- 可选配置 -->
+        <!-- 显示SQL语句，在控制台显示 -->
+        <property name="hibernate.show_sql">true</property>
+        <!-- 格式化SQL语句 -->
+        <property name="hibernate.format_sql">true</property>
+        <!-- 生成数据库的表结构 
 update：如果没有表结构，创建表结构。如果存在，不会创建，添加数据
-		-->
-		<property name="hibernate.hbm2ddl.auto">update</property>
-		<!-- 开启绑定本地的session -->
-		<property name="hibernate.current_session_context_class">thread</property>
-		<!-- 映射配置文件，需要引入映射的配置文件 -->
-		<mapping resource="com/atcast/domain/User.hbm.xml"/>
-	</session-factory>
-</hibernate-configuration>	
+        -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- 开启绑定本地的session -->
+        <property name="hibernate.current_session_context_class">thread</property>
+        <!-- 映射配置文件，需要引入映射的配置文件 -->
+        <mapping resource="com/atcast/domain/User.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>  
 #+END_SRC
 
 * Hibernate工具类
@@ -95,34 +95,34 @@ import org.hibernate.cfg.Configuration;
  * @author Administrator
  */
 public class HibernateUtils {
-	// ctrl + shift + x
-	private static final Configuration CONFIG;
-	private static final SessionFactory FACTORY;
-	// 编写静态代码块
-	static{
-		// 加载XML的配置文件
-		CONFIG = new Configuration().configure();
-		// 构造工厂
-		FACTORY = CONFIG.buildSessionFactory();
-	}
-	/**
-	 * 从工厂中获取Session对象
-	 * @return
-	 */
-	public static Session getSession(){
-		return FACTORY.openSession();
-	}
-	/**
-	 * // 从ThreadLocal类中获取到session的对象
-	 * @return
-	 */
-	public static Session getCurrentSession(){
-		return FACTORY.getCurrentSession();
-	}
-	public static void main(String[] args) {
-		// 调用获取session的方法
-		getSession();
-	}
+    // ctrl + shift + x
+    private static final Configuration CONFIG;
+    private static final SessionFactory FACTORY;
+    // 编写静态代码块
+    static{
+        // 加载XML的配置文件
+        CONFIG = new Configuration().configure();
+        // 构造工厂
+        FACTORY = CONFIG.buildSessionFactory();
+    }
+    /**
+     * 从工厂中获取Session对象
+     * @return
+     */
+    public static Session getSession(){
+        return FACTORY.openSession();
+    }
+    /**
+     * // 从ThreadLocal类中获取到session的对象
+     * @return
+     */
+    public static Session getCurrentSession(){
+        return FACTORY.getCurrentSession();
+    }
+    public static void main(String[] args) {
+        // 调用获取session的方法
+        getSession();
+    }
 }
 #+END_SRC
 
@@ -131,36 +131,36 @@ User.java
 #+BEGIN_SRC java
 package com.atcast.domain;
 public class User {
-	private Long uid;
-	// 登录名称
-	private String username;
-	private String password;
-	// 真实名称
-	private String name;
-	public Long getUid() {
-		return uid;
-	}
-	public void setUid(Long uid) {
-		this.uid = uid;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+    private Long uid;
+    // 登录名称
+    private String username;
+    private String password;
+    // 真实名称
+    private String name;
+    public Long getUid() {
+        return uid;
+    }
+    public void setUid(Long uid) {
+        this.uid = uid;
+    }
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 #+END_SRC
 
@@ -171,14 +171,14 @@ User.hbm.xml
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.atcast.domain.User" table="sys_user">
-		<id name="uid" column="uid">
-			<generator class="native"/>
-		</id>
-		<property name="username" column="username"/>
-		<property name="password" column="password"/>
-		<property name="name" column="name"/>
-	</class>
+    <class name="com.atcast.domain.User" table="sys_user">
+        <id name="uid" column="uid">
+            <generator class="native"/>
+        </id>
+        <property name="username" column="username"/>
+        <property name="password" column="password"/>
+        <property name="name" column="name"/>
+    </class>
 </hibernate-mapping>    
 #+END_SRC
 
@@ -200,30 +200,30 @@ import com.atcast.utils.HibernateUtils;
  * @author Administrator
  */
 public class UserDao {
-	/**
-	 * 通过用户名和密码查询数据库
-	 * @param user
-	 * @return
-	 */
-	public User findByNameAndPwd(User user){
-		// 先获取
-		Session session = HibernateUtils.getCurrentSession();
-		// 使用用户名和密码进行查询
+    /**
+     * 通过用户名和密码查询数据库
+     * @param user
+     * @return
+     */
+    public User findByNameAndPwd(User user){
+        // 先获取
+        Session session = HibernateUtils.getCurrentSession();
+        // 使用用户名和密码进行查询
         /* sql->hql
          * select * from sys_user WHERE username = and password =
          */
-		Query query = session.createQuery("from User where username = ? and password = ?");
-		// 设置参数
-		query.setParameter(0, user.getUsername());
-		query.setParameter(1, user.getPassword());
-		// 查询
-		List<User> list = query.list();
-		// 有数据
-		if(list.size() > 0){
-			return list.get(0);
-		}
-		return null;
-	}
+        Query query = session.createQuery("from User where username = ? and password = ?");
+        // 设置参数
+        query.setParameter(0, user.getUsername());
+        query.setParameter(1, user.getPassword());
+        // 查询
+        List<User> list = query.list();
+        // 有数据
+        if(list.size() > 0){
+            return list.get(0);
+        }
+        return null;
+    }
 }
 #+END_SRC
 
@@ -252,37 +252,37 @@ import com.atcast.utils.HibernateUtils;
  * @author Administrator
  */
 public class UserService {
-	/**
-	 * 处理登录的功能
-	 * @param user
-	 * @return
-	 */
-	public User login(User user){
-		// 使用事务
-		Session session = HibernateUtils.getCurrentSession();
-		Transaction tr = session.beginTransaction();
-		User existUser = null;
-		try {
-			// 调用持久层，查询数据
-			existUser = new UserDao().findByNameAndPwd(user);
-			tr.commit();
-		} catch (Exception e) {
-			tr.rollback();
-			e.printStackTrace();
-		}
-		return existUser;
-	}
-	
-	@Test
-	public void run(){
-		User user = new User();
-		user.setUsername("admin");
-		user.setPassword("123");
-		User existUser = this.login(user);
-		if(existUser != null){
-			System.out.println("登录成功了...");
-		}
-	}
+    /**
+     * 处理登录的功能
+     * @param user
+     * @return
+     */
+    public User login(User user){
+        // 使用事务
+        Session session = HibernateUtils.getCurrentSession();
+        Transaction tr = session.beginTransaction();
+        User existUser = null;
+        try {
+            // 调用持久层，查询数据
+            existUser = new UserDao().findByNameAndPwd(user);
+            tr.commit();
+        } catch (Exception e) {
+            tr.rollback();
+            e.printStackTrace();
+        }
+        return existUser;
+    }
+    
+    @Test
+    public void run(){
+        User user = new User();
+        user.setUsername("admin");
+        user.setPassword("123");
+        User existUser = this.login(user);
+        if(existUser != null){
+            System.out.println("登录成功了...");
+        }
+    }
 }
 #+END_SRC
 
@@ -358,14 +358,14 @@ web.xml
   <display-name>day32_crm</display-name>
   <!-- 配置 struts2 核心的过滤器 -->
   <filter>
-  	<filter-name>struts2</filter-name>
-	<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
   </filter>
   <filter-mapping>
-  	<filter-name>struts2</filter-name>
+    <filter-name>struts2</filter-name>
     <!-- 匹配所有请求，所有请求都会转发给 struts2 -->
     <!-- 如果有不匹配的，转发给 HttpServlet 处理 -->
-  	<url-pattern>/*</url-pattern>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
   
   <welcome-file-list>
@@ -387,16 +387,16 @@ struts.xml
 #+BEGIN_SRC nxml
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
-	"http://struts.apache.org/dtds/struts-2.3.dtd">
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<package name="crm" namespace="/" extends="struts-default">
-		<!-- 配置用户的模块 -->
-		<action name="user_*" class="com.atcast.action.UserAction" method="{1}">
-			<result name="login">/login.jsp</result>
-			<result name="success">/index.jsp</result>
-		</action>
-	</package>
+    <package name="crm" namespace="/" extends="struts-default">
+        <!-- 配置用户的模块 -->
+        <action name="user_*" class="com.atcast.action.UserAction" method="{1}">
+            <result name="login">/login.jsp</result>
+            <result name="success">/index.jsp</result>
+        </action>
+    </package>
 </struts>
 #+END_SRC
 * 用户的控制层 开发 Action
@@ -419,42 +419,44 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author Administrator
  */
 public class UserAction extends ActionSupport{
-	private static final long serialVersionUID = 1305643617977647333L;
-	/**
-	 * 处理登录功能
-	 * @return
-	 */
-	public String login(){
-		System.out.println("login");
-		// 这边没有学习功能，封装数据，现在还需要使用request对象
-		// 怎么获取request方式
-		HttpServletRequest request = ServletActionContext.getRequest();
-		// 获取请求参数
-		Map<String, String[]> map = request.getParameterMap();
-		User user = new User();
-		try {
-			//login.jsp页面中的属性一定要和User中的属性名一致
-			BeanUtils.populate(user, map);
-			// 调用业务层
-			User existUser = new UserService().login(user);
-			// 判断
-			if(existUser == null){
-				// 说明，用户名或者密码错误了
-				return LOGIN;
-			}else{
-				// 存入到session中
+    private static final long serialVersionUID = 1305643617977647333L;
+    /**
+     * 处理登录功能
+     * @return
+     */
+    public String login(){
+        System.out.println("login");
+        // 这边没有学习功能，封装数据，现在还需要使用request对象
+        // 怎么获取request方式
+        HttpServletRequest request = ServletActionContext.getRequest();
+        // 获取请求参数
+        Map<String, String[]> map = request.getParameterMap();
+        User user = new User();
+        try {
+            //login.jsp页面中的属性一定要和User中的属性名一致
+            BeanUtils.populate(user, map);
+            // 调用业务层
+            User existUser = new UserService().login(user);
+            // 判断
+            if(existUser == null){
+                // 说明，用户名或者密码错误了
+                return LOGIN;
+            }else{
+                // 存入到session中
 request.getSession().setAttribute("existUser", existUser);
-				return SUCCESS;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return NONE;
-	}
-	
-	public String regist(){
-		System.out.println("regist");
-		return "register";
-	}
+                return SUCCESS;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return NONE;
+    }
+    
+    public String regist(){
+        System.out.println("regist");
+        return "register";
+    }
 }
 #+END_SRC
+
+本章源码见 =Struts2CRM01=
