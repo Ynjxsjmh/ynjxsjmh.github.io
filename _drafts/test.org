@@ -17,9 +17,48 @@ And this is an equation [[eqn:1]]
 - <<target>>another item
 Here we refer to item [[target]].  [[target][Find my target]]
 
+1. first thing
+2. second thing
+
+#+BEGIN_SRC python
+print("Insert a block of code")
+#+END_SRC
+
+3. [@3] third thing
+
+[[file:file][file]]
+
+10. [@4] fourth thing
+
+5. fifth thing
+
+
+1. item 1
+2. item 2
+
+This text would interrupt the list and the next item would be 1) on a
+new list
+
+10. [@3] This will be item 3 thanks to [@3]
+4. and this will be item 4
+
 
 $\xRightarrow[\text{below}]{\text{above}}$
 
+** Lord of the Rings
+   My favorite scenes are (in this order)
+   1. The attack of the Rohirrim
+   2. Eowyn's fight with the witch king
+      + this was already my favorite scene in the book
+      + I really like Miranda Otto.
+   3. Peter Jackson being shot by Legolas
+      - on DVD only
+      He makes a really funny face when it happens.
+   But in the end, no individual scenes matter but the film as a whole.
+   Important actors in this film are:
+   - Elijah Wood :: He plays Frodo
+   - Sean Astin :: He plays Sam, Frodo's friend.  I still remember
+     him very well from his role as Mikey Walsh in The Goonies.
 
 
 +------------+-----------+----------+----------+-------------+

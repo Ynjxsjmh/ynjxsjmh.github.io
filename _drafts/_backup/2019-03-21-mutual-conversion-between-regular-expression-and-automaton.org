@@ -58,7 +58,7 @@ https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/20
 这就是我们给出的从正则表达式到自动机的规则，因为正则表达式的运算就是这么几种，我们重复使用这些规则以后，就把每一个边上都拆成了某一个字符，就变成了所谓的自动机
 
 ** 例子
-给出一个正则表达式 (a|b)(c|d)*(e|f), 将其转化为 NFA
+给出一个正则表达式 ~(a|b)(c|d)*(e|f)~ , 将其转化为 NFA
 
 https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/2019/2019-03-26-re-to-nfa-example.png
 

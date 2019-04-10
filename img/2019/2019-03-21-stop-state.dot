@@ -5,7 +5,7 @@ digraph G {
 
     subgraph cluster3 {
         S3 [label="S"];
-        begin3 [style=invis];
+        begin3 [style=invis, fixedsize=true, width=0.01];
         Z3 [label="Z" shape=doublecircle];
         begin3 -> S3;
         S3 -> Z3 [label="a1|a2|a3"];
@@ -15,7 +15,7 @@ digraph G {
         cluster1_one [label="1" shape=doublecircle];
         cluster1_two [label="2" shape=doublecircle];
         cluster1_three [label="3" shape=doublecircle];
-        begin1 [style=invis];
+        begin1 [style=invis, fixedsize=true, width=0.01];
         S1 [label="S"];
         begin1 -> S1;
         S1 -> cluster1_one [label="a1"];
@@ -27,7 +27,7 @@ digraph G {
         cluster2_one [label="1" shape=doublecircle];
         cluster2_two [label="2" shape=doublecircle];
         cluster2_three [label="3" shape=doublecircle];
-        begin2 [style=invis];
+        begin2 [style=invis, fixedsize=true, width=0.01];
         S2 [label="S2"];
         begin2 -> S2;
         S2 -> cluster2_one [label="a1"];

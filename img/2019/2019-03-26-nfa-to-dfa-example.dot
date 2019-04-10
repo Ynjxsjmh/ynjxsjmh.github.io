@@ -7,7 +7,7 @@ digraph G {
     7 [shape=doublecircle]
     9 [shape=doublecircle]
 
-    begin [style=invis];
+    begin [style=invis, fixedsize=true, width=0.01];
     begin -> 1;
     1 -> 5 [label="a"];
     1 -> 2 [label="ε"];

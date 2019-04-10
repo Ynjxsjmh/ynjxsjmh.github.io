@@ -5,61 +5,8 @@ digraph G {
 
     fontname="Microsoft Yahei"
 
-    subgraph cluster1 {
-        label = "正则表达式";
-        begin1 [style=invis];
-        cluster1One [label="1"];
-        cluster1Two [label="2" shape=doublecircle];
-        begin1 -> cluster1One;
-        cluster1One -> cluster1Two [label="ab|d*"];
-    }
-
-    subgraph cluster2 {
-        label = "错误的 NFA";
-        cluster2One [label="1"];
-        cluster2Two [label="2" shape=doublecircle];
-        cluster2OnePlus [label="1"]
-        begin2 [style=invis];
-        begin2 -> cluster2One;
-
-        cluster2One -> cluster2OnePlus [label="a"];
-        cluster2One -> cluster2Two [label="ε"];
-        cluster2OnePlus -> cluster2Two [label="b"];
-        cluster2Two -> cluster2Two [label="d"];
-    }
-
-    subgraph clusterMiddle {
-        beginMiddle [style=invis];
-        clusterMiddleOne [label="1"];
-        clusterMiddleTwo [label="2" shape="doublecircle"];
-        beginMiddle -> clusterMiddleOne;
-        clusterMiddleOne -> clusterMiddleTwo [label="ab"];
-        clusterMiddleOne -> clusterMiddleTwo [label="d*"];
-    }
-
-    subgraph cluster3 {
-        begin3 [style=invis];
-        cluster3One [label="1"];
-        cluster3Two [label="2" shape=doublecircle];
-        begin3 -> cluster3One;
-        cluster3One -> cluster3Two [label="ε"];
-        cluster3Two -> cluster3Two [label="b"];
-    }
-
-    cluster1Two -> beginMiddle [ltail=cluster1 lhead=clusterMiddle];
-    clusterMiddleTwo -> begin2 [ltail=clusterMiddle lhead=cluster2];
-
-
-    subgraph clusterRight {
-        clusterRight_one [label="1"];
-        clusterRight_two [label="2"];
-        clusterRight_three [label="3"];
-        clusterRight_one -> clusterRight_two [label="ε"];
-        clusterRight_two -> clusterRight_three [label="ε"];
-        clusterRight_two -> clusterRight_two [label="b"];
-    }
-
-    subgraph NFARight {
+    subgraph clusterNFARight {
+        // 没有 cluster 就没有框...
         label = "正确的 NFA"
         NFARightOne [label="1"];
         NFARightTwo [label="2" shape=doublecircle];
@@ -72,4 +19,58 @@ digraph G {
         NFARightFour -> NFARightFour [label="d"];
     }
 
+    subgraph clusterRight {
+        label = "正确的 re 到 nfa 转换规则"
+        clusterRight_one [label="1"];
+        clusterRight_two [label="2"];
+        clusterRight_three [label="3"];
+        clusterRight_one -> clusterRight_two [label="ε"];
+        clusterRight_two -> clusterRight_three [label="ε"];
+        clusterRight_two -> clusterRight_two [label="b"];
+    }
+
+    subgraph cluster1 {
+        label = "正则表达式";
+        begin1 [style=invis, fixedsize=true, width=0.01];
+        cluster1One [label="1"];
+        cluster1Two [label="2" shape=doublecircle];
+        begin1 -> cluster1One;
+        cluster1One -> cluster1Two [label="ab|d*"];
+    }
+
+    subgraph cluster2 {
+        label = "错误的 NFA";
+        cluster2One [label="1"];
+        cluster2Two [label="2" shape=doublecircle];
+        cluster2OnePlus [label="1"]
+        begin2 [style=invis, fixedsize=true, width=0.01];
+        begin2 -> cluster2One;
+
+        cluster2One -> cluster2OnePlus [label="a"];
+        cluster2One -> cluster2Two [label="ε"];
+        cluster2OnePlus -> cluster2Two [label="b"];
+        cluster2Two -> cluster2Two [label="d"];
+    }
+
+    subgraph clusterMiddle {
+        beginMiddle [style=invis, fixedsize=true, width=0.01];
+        clusterMiddleOne [label="1"];
+        clusterMiddleTwo [label="2" shape="doublecircle"];
+        beginMiddle -> clusterMiddleOne;
+        clusterMiddleOne -> clusterMiddleTwo [label="ab"];
+        clusterMiddleOne -> clusterMiddleTwo [label="d*"];
+    }
+
+    subgraph cluster3 {
+        label = "如果 re 到 nfa 没有空边"
+        begin3 [style=invis, fixedsize=true, width=0.01];
+        cluster3One [label="1"];
+        cluster3Two [label="2" shape=doublecircle];
+        begin3 -> cluster3One;
+        cluster3One -> cluster3Two [label="ε"];
+        cluster3Two -> cluster3Two [label="b"];
+    }
+
+    cluster1Two -> beginMiddle [ltail=cluster1 lhead=clusterMiddle];
+    clusterMiddleTwo -> begin2 [ltail=clusterMiddle lhead=cluster2];
 }

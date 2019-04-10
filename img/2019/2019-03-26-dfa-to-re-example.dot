@@ -5,7 +5,7 @@ digraph G {
     subgraph cluster2 {
         label = "Conversion Result"
         Z [shape=doublecircle]
-        begin2 [style=invis];
+        begin2 [style=invis, fixedsize=true, width=0.01];
         begin2 -> S;
         S -> Z [label="a(ab|ba)a*b"];
     }
@@ -13,7 +13,7 @@ digraph G {
     subgraph cluster1 {
         6 [shape=doublecircle]
 
-        begin [style=invis];
+        begin [style=invis, fixedsize=true, width=0.01];
         begin -> 1;
         1 -> 2 [label="a"];
         2 -> 3 [label="a"];

@@ -1,14 +1,14 @@
 digraph G {
-node [shape = oval, fixedsize=true, width=1.2, fontname="Microsoft Yahei"]
-rankdir = "LR"
+    node [shape = oval, fixedsize=true, width=1.2, fontname="Microsoft Yahei"]
+    rankdir = "LR"
 
-dfa [label="DFA"]
-nfa [label="NFA"]
-rs [label=" 正则表达式 "]
+    dfa [label="DFA"]
+    nfa [label="NFA"]
+    rs [label=" 正则表达式 "]
 
-nfa -> dfa
+    nfa -> dfa
 
-dfa -> rs
+    dfa -> rs
 
-rs -> nfa
+    rs -> nfa
 }
