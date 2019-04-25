@@ -1,7 +1,7 @@
 # Site settings
 title: 在到处之间找我
 SEOTitle: 在到处之间找我
-header-img: img/post-bg-desk.jpg
+header-img: img/home.jpg
 email: ynjxsjmh@gmail.com
 description: "Every failure is leading towards success."
 keyword: "在到处之间找我"
@@ -39,7 +39,9 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
+# plugins: [jekyll-paginate, jekyll-org]
 plugins: [jekyll-paginate]
+# plugins: [jekyll-org]
 
 
 
