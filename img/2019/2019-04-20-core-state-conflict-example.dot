@@ -1,0 +1,40 @@
+digraph G {
+    node [shape=plaintext, fontname="Microsoft Yahei"]
+
+    state0 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">0</TD></TR>
+            <TR><TD bgcolor="red">Z &rarr; ・aAd <br/> Z &rarr; ・bAc<br/> Z &rarr; ・aBc <br/> Z &rarr; ・bBd </TD><TD>#<br/>#<br/>#<br/>#<br/></TD></TR>
+            </TABLE>>, pos="0,2.5!"];
+
+    state1 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">1</TD></TR>
+            <TR><TD bgcolor="red">Z &rarr; a・Ad <br/> Z &rarr; a・Bc </TD><TD>#<br/>#</TD></TR>
+            <TR><TD bgcolor="green">A &rarr; ・e <br/> B &rarr; ・e </TD><TD>d<br/>c</TD></TR>
+            </TABLE>>, pos="2,3!"];
+
+    state2 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">2</TD></TR>
+            <TR><TD bgcolor="red">Z &rarr; b・Ac <br/> Z &rarr; b・Bd </TD><TD>#<br/>#</TD></TR>
+            <TR><TD bgcolor="green">A &rarr; ・e <br/> B &rarr; ・e </TD><TD>c<br/>d</TD></TR>
+            </TABLE>>, pos="2,1.5!"];
+
+    state3 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">3</TD></TR>
+            <TR><TD bgcolor="red">A &rarr; e・ <br/> B &rarr; e・ </TD><TD>d<br/>c</TD></TR>
+            </TABLE>>, pos="4,3!"];
+
+    state4 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">4</TD></TR>
+            <TR><TD bgcolor="red">A &rarr; e・ <br/> B &rarr; e・ </TD><TD>c<br/>d</TD></TR>
+            </TABLE>>, pos="4,1.5!"];
+
+    state0 -> state1 [xlabel="a"]
+    state0 -> state2 [xlabel="b"]
+    state1 -> state3 [xlabel="e"]
+    state2 -> state4 [xlabel="e"]
+}

@@ -1,0 +1,54 @@
+digraph G {
+    splines=ortho;
+    node [shape=plaintext]
+
+    state0 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">0</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">M &rarr; ・T</TD></TR>
+            <TR><TD PORT="text2" bgcolor="green">T &rarr; ・F <br/> T &rarr;・F*T </TD></TR>
+            <TR><TD PORT="text3" bgcolor="green">E &rarr; ・a </TD></TR>
+            </TABLE>>, pos="0,2.5!"];
+
+    state1 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">1</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">M &rarr; T・</TD></TR>
+            </TABLE>>, pos="2,3!"];
+
+    state2 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">2</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">F &rarr; a・</TD></TR>
+            </TABLE>>, pos="2,2!"];
+
+    state3 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">3</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">T &rarr; F・ <br/> T &rarr; F・*T </TD></TR>
+            </TABLE>>, pos="0,0!"];
+
+    state4 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">4</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red"> T &rarr; F*・T </TD></TR>
+            <TR><TD PORT="text2" bgcolor="green">T &rarr; ・F <br/> T &rarr; ・F*T </TD></TR>
+            <TR><TD PORT="text3" bgcolor="green">E &rarr; ・a </TD></TR>
+            </TABLE>>, pos="2,0!"];
+
+    state5 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">5</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">T &rarr; F*T・ </TD></TR>
+            </TABLE>>, pos="4,0!"];
+
+    state0:title:e -> state1:title:w [xlabel="T"]
+    state0:text2 -> state2:w  [xlabel="a"]
+    state0:s -> state3:n [xlabel="F"]
+
+    state3:title:e -> state4:w  [xlabel="*"]
+
+    state4:text2:w -> state3:text1:e  [xlabel="F"]
+    state4 -> state2 [xlabel="a"]
+    state4:text3:e -> state5:text1:w  [xlabel="T"]
+}

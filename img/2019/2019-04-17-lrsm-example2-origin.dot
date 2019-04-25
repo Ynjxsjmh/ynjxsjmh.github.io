@@ -1,0 +1,136 @@
+digraph G {
+    node [shape=plaintext]
+//    newrank=true;
+
+    subgraph part1 {
+        {rank=same state0, state9, state6}
+        subgraph nest1 {
+            state0 [label=<
+                    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                    <TR><TD PORT="title" bgcolor="yellow">0</TD></TR>
+                    <TR><TD PORT="text1" bgcolor="red">S&rarr; ・E$</TD></TR>
+                    <TR><TD PORT="text2" bgcolor="green">E&rarr; ・E+T <br/> E&rarr;・T </TD></TR>
+                    <TR><TD PORT="text3" bgcolor="green">T&rarr; ・id <br/> T&rarr;・(E)</TD></TR>
+                    </TABLE>>];
+        }
+
+        subgraph nest2 {
+            state6 [label=<
+                    <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                    <TR><TD PORT="title" bgcolor="yellow">6</TD></TR>
+                    <TR><TD PORT="text1" bgcolor="red">T&rarr;(・E) </TD></TR>
+                    <TR><TD PORT="text2" bgcolor="green">E&rarr; ・E+T <br/> E&rarr;・T </TD></TR>
+                    <TR><TD PORT="text3" bgcolor="green">T&rarr; ・id <br/> T&rarr;・(E)</TD></TR>
+                    </TABLE>>];
+        }
+
+        subgraph nest3 {
+            state9 [label=<
+                    <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                    <TR><TD PORT="title" bgcolor="yellow">9</TD></TR>
+                    <TR><TD PORT="text" bgcolor="red">E&rarr;T・ </TD></TR>
+                    </TABLE>>];
+
+            state5 [label=<
+                    <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                    <TR><TD PORT="title" bgcolor="yellow">5</TD></TR>
+                    <TR><TD PORT="text" bgcolor="red">T&rarr;id・ </TD></TR>
+                    </TABLE>>];
+        }
+
+//        {rank=same; nest1; nest2; nest3;}
+//        nest1 -> nest2 -> nest3 [style=invis]
+    }
+
+    subgraph part2 {
+        {rank=same state1, state3, state7}
+        state1 [label=<
+                <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                <TR><TD PORT="title" bgcolor="yellow">1</TD></TR>
+                <TR><TD PORT="text" bgcolor="red">S&rarr;E・$<br/>E&rarr;E・+T</TD></TR>
+                </TABLE>>];
+
+        state7 [label=<
+                <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                <TR><TD PORT="title" bgcolor="yellow">7</TD></TR>
+                <TR><TD PORT="text1" bgcolor="red">T&rarr;(E・) </TD></TR>
+                <TR><TD PORT="text2" bgcolor="green">E&rarr; E・+T</TD></TR>
+                </TABLE>>];
+
+        state3 [label=<
+                <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                <TR><TD PORT="title" bgcolor="yellow">3</TD></TR>
+                <TR><TD PORT="text1" bgcolor="red">E&rarr;E+・T </TD></TR>
+                <TR><TD PORT="text2" bgcolor="green">T&rarr;・id <br/> T&rarr;・(E) </TD></TR>
+                </TABLE>>];
+    }
+
+    subgraph part3 {
+        {rank=same state2, state4, state8}
+
+        state2 [label=<
+                <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                <TR><TD PORT="title" bgcolor="yellow">2</TD></TR>
+                <TR><TD PORT="text" bgcolor="red">S&rarr;E$・ </TD></TR>
+                </TABLE>>];
+
+        state8 [label=<
+                <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                <TR><TD PORT="title" bgcolor="yellow">8</TD></TR>
+                <TR><TD PORT="text" bgcolor="red">T&rarr;(E)・ </TD></TR>
+                </TABLE>>];
+
+        state4 [label=<
+                <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                <TR><TD PORT="title" bgcolor="yellow">4</TD></TR>
+                <TR><TD PORT="text" bgcolor="red">E&rarr;E+T・ </TD></TR>
+                </TABLE>>];
+    }
+
+//    state0:s -> state1:n [label="E"]
+//    state0:title:e -> state9:title:w [label="T"]
+//    state0:text3:e -> state5:text:w [label="id"]
+//    state0:text2:e -> state6:text2:w [label="("]
+
+    state0:s -> state1:n [label="E"]
+    state0 -> state9 [label="T"]
+    state0 -> state5 [label="id"]
+    state0 -> state6 [label="(", weight=100]
+
+    state1:s -> state2:n [label="$"]
+    state1:title:e -> state3:title:w [label="+"]
+
+    state3:s -> state4:n [label="T"]
+    state3:n -> state5:s [label="id"]
+//    state3:title:e -> state6:s [label="("]
+    state3:title:e -> state6 [label="("]
+
+//    state6:text3:w -> state5:text:e [label="id"]
+//    state6:s -> state7:n [label="E"]
+//    state6:title:w -> state9:title:e [label="T"]
+//    state6:title:n -> state6:e [label="("]
+
+    state6:s -> state7:n [label="E"]
+    state6 -> state9 [label="T"]
+    state6 -> state5 [label="id"]
+    state6 -> state6 [label="("]
+
+    state7:text2:w -> state3:text2:e [label="+"]
+    state7:s -> state8:n [label=")"]
+
+    // ------------ Invisible edges to order vertically node groups
+    state9:s -> state5:n [style=invis]
+    state5:s -> state3:n [style=invis]
+    state3:s -> state4:n [style=invis]
+
+    state6:s -> state7:n [style=invis]
+    state7:s -> state8:n [style=invis]
+    // ---------------------------------------------------
+
+    // below two lines make sure the order 1 3 7 | 2 4 8 is right
+    state1 -> state3 -> state7 [style=invis]
+    state2 -> state4 -> state8 [style=invis]
+
+    state0:text1:e -> state9:text1:w [style=invis]
+    state9:text1:e -> state6:text1:w [style=invis]
+}

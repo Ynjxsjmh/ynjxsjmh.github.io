@@ -1,0 +1,21 @@
+digraph G {
+    node [shape=plaintext, fontname="Microsoft Yahei"]
+
+    state1 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">1</TD></TR>
+            <TR><TD bgcolor="red">A &rarr; &alpha;・ <br/> B &rarr; &beta;・ <br/> B &rarr; &alpha;1・a&beta;1 </TD><TD>u1<br/>v1<br/>t1</TD></TR>
+            </TABLE>>, pos="2,5.5!"];
+
+    state2 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">2</TD></TR>
+            <TR><TD bgcolor="red">A &rarr; &alpha;・ <br/> B &rarr; &beta;・ <br/> B &rarr; &alpha;1・a&beta;1 </TD><TD>u2<br/>v2<br/>t2</TD></TR>
+            </TABLE>>, pos="2,4!"];
+
+    state3 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">合并</TD></TR>
+            <TR><TD bgcolor="red">A &rarr; &alpha;・ <br/> B &rarr; &beta;・ <br/> B &rarr; &alpha;1・a&beta;1 </TD><TD>u1 u2<br/>v1 v2<br/>t1 t2</TD></TR>
+            </TABLE>>, pos="2,1.5!"];
+}

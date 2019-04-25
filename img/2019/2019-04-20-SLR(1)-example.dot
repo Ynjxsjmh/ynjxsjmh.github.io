@@ -1,0 +1,54 @@
+digraph G {
+    splines=ortho;
+    node [shape=plaintext]
+
+    state0 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">0</TD></TR>
+            <TR><TD bgcolor="red">Z &rarr; ・T</TD></TR>
+            <TR><TD bgcolor="green">T &rarr; ・F*T<br/> T &rarr;・F</TD></TR>
+            <TR><TD bgcolor="green">F &rarr; ・a </TD></TR>
+            </TABLE>>, pos="0,3!"];
+
+    state1 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">1</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">Z &rarr; T・</TD></TR>
+            </TABLE>>, pos="0,0!"];
+
+    state2 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">2</TD></TR>
+            <TR><TD bgcolor="red">T &rarr; F・*T<br/> T &rarr;F・</TD></TR>
+            </TABLE>>, pos="2,2.5!"];
+
+    state3 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">3</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">F &rarr; a・</TD></TR>
+            </TABLE>>, pos="2,3.5!"];
+
+    state4 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">4</TD></TR>
+            <TR><TD bgcolor="red">T &rarr; F*・T</TD></TR>
+            <TR><TD bgcolor="green">T &rarr; ・F*T<br/> T &rarr;・F</TD></TR>
+            <TR><TD bgcolor="green">F &rarr; ・a </TD></TR>
+            </TABLE>>, pos="4,2.5!"];
+
+    state5 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">5</TD></TR>
+            <TR><TD bgcolor="red">T &rarr; F*T・</TD></TR>
+            </TABLE>>, pos="4,0!"];
+
+    state0 -> state1 [xlabel="T"]
+    state0 -> state2 [xlabel="F"]
+    state0 -> state3 [xlabel="a"]
+
+    state2 -> state4 [xlabel="*"]
+
+    state4 -> state2 [xlabel="F"]
+    state4 -> state3 [xlabel="a"]
+    state4 -> state5 [xlabel="T"]
+}

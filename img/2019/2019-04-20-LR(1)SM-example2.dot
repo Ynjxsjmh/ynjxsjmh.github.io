@@ -1,0 +1,79 @@
+digraph G {
+    splines=ortho;
+    node [shape=plaintext]
+
+    state0 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">0</TD></TR>
+            <TR><TD bgcolor="red">Z &rarr; ・BB</TD><TD>#</TD></TR>
+            <TR><TD bgcolor="green">B &rarr; ・aB <br/> B &rarr; ・b </TD><TD>a/b<br/>a/b</TD></TR>
+            </TABLE>>, pos="0,4!"];
+
+    state1 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">1</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">B &rarr; B・B</TD><TD>#</TD></TR>
+            <TR><TD bgcolor="green">B &rarr; a・B <br/> B &rarr; b・ </TD><TD>#<br/>#</TD></TR>
+            </TABLE>>, pos="2,4!"];
+
+    state2 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">2</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">Z &rarr; BB・</TD><TD>#</TD></TR>
+            </TABLE>>, pos="4,4.5!"];
+
+    state3 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">3</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">B &rarr; b・</TD><TD>#</TD></TR>
+            </TABLE>>, pos="4,3.5!"];
+
+    state4 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">4</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">B &rarr; b・</TD><TD>a/b</TD></TR>
+            </TABLE>>, pos="0,2!"];
+
+    state5 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">5</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">B &rarr; a・B</TD><TD>#</TD></TR>
+            <TR><TD bgcolor="green">B &rarr; ・aB <br/> B &rarr; ・b </TD><TD>#<br/>#</TD></TR>
+            </TABLE>>, pos="2,2!"];
+
+    state6 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">6</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">B &rarr; a・B</TD><TD>a/b</TD></TR>
+            <TR><TD bgcolor="green">B &rarr; ・aB <br/> B &rarr; ・b </TD><TD>a/b<br/>a/b</TD></TR>
+            </TABLE>>, pos="0,0!"];
+
+    state7 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">7</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">B &rarr; aB・</TD><TD>a/b</TD></TR>
+            </TABLE>>, pos="2,0!"];
+
+    state8 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">8</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">B &rarr; aB・</TD><TD>#</TD></TR>
+            </TABLE>>, pos="4,2!"];
+
+    state0 -> state1 [xlabel="B"]
+    state0 -> state4 [xlabel="b"]
+//    state0 -> state6 [xlabel="a"]
+    state6 -> state0 [dir=back, xlabel="a"]
+
+    state1 -> state5 [xlabel="a"]
+    state1 -> state2 [xlabel="B"]
+    state1 -> state3 [xlabel="b"]
+
+    state5 -> state5 [xlabel="a"]
+    state5 -> state3 [xlabel="b"]
+    state5 -> state8 [xlabel="B"]
+
+    state6 -> state4 [xlabel="b"]
+    state6 -> state6 [xlabel="a"]
+    state6 -> state7 [xlabel="B"]
+}

@@ -1,0 +1,91 @@
+digraph G {
+	// using neato as engine
+    splines=ortho;
+    node [shape=plaintext]
+
+    state0 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">0</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">S&rarr; ・E$</TD></TR>
+            <TR><TD PORT="text2" bgcolor="green">E&rarr; ・E+T <br/> E&rarr;・T </TD></TR>
+            <TR><TD PORT="text3" bgcolor="green">T&rarr; ・id <br/> T&rarr;・(E)</TD></TR>
+            </TABLE>>, pos="0,4!"];
+
+    state6 [label=<
+            <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">6</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">T&rarr;(・E) </TD></TR>
+            <TR><TD PORT="text2" bgcolor="green">E&rarr; ・E+T <br/> E&rarr;・T </TD></TR>
+            <TR><TD PORT="text3" bgcolor="green">T&rarr; ・id <br/> T&rarr;・(E)</TD></TR>
+            </TABLE>>, pos="4,4!"];
+
+    state9 [label=<
+            <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">9</TD></TR>
+            <TR><TD PORT="text" bgcolor="red">E&rarr;T・ </TD></TR>
+            </TABLE>>, pos="2,4.7!"];
+
+    state5 [label=<
+            <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">5</TD></TR>
+            <TR><TD PORT="text" bgcolor="red">T&rarr;id・ </TD></TR>
+            </TABLE>>, pos="2,3.3!"];
+
+    state1 [label=<
+            <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">1</TD></TR>
+            <TR><TD PORT="text" bgcolor="red">S&rarr;E・$<br/>E&rarr;E・+T</TD></TR>
+            </TABLE>>, pos="0,1.5!"];
+
+    state7 [label=<
+            <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">7</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">T&rarr;(E・) </TD></TR>
+            <TR><TD PORT="text2" bgcolor="green">E&rarr; E・+T</TD></TR>
+            </TABLE>>, pos="4,1.5!"];
+
+    state3 [label=<
+            <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">3</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">E&rarr;E+・T </TD></TR>
+            <TR><TD PORT="text2" bgcolor="green">T&rarr;・id <br/> T&rarr;・(E) </TD></TR>
+            </TABLE>>, pos="2,1.5!"];
+
+    state2 [label=<
+            <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">2</TD></TR>
+            <TR><TD PORT="text" bgcolor="red">S&rarr;E$・ </TD></TR>
+            </TABLE>>, pos="0,0!"];
+
+    state8 [label=<
+            <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">8</TD></TR>
+            <TR><TD PORT="text" bgcolor="red">T&rarr;(E)・ </TD></TR>
+            </TABLE>>, pos="4,0!"];
+
+    state4 [label=<
+            <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">4</TD></TR>
+            <TR><TD PORT="text" bgcolor="red">E&rarr;E+T・ </TD></TR>
+            </TABLE>>, pos="2,0!"];
+
+    state0:s -> state1:n [xlabel="E"]
+    state0 -> state9 [xlabel="T"]
+    state0:e -> state5:w [xlabel="id"]
+    state0 -> state6 [xlabel="("]
+
+    state1:s -> state2:n [xlabel="$"]
+    state1:title:e -> state3:title:w [xlabel="+"]
+
+    state3:s -> state4:n [xlabel="T"]
+    state3:n -> state5:s [xlabel="id"]
+    state3:title:e -> state6 [xlabel="("]
+
+    state6:s -> state7:n [xlabel="E"]
+    state6 -> state9 [xlabel="T"]
+    state6 -> state5 [xlabel="id"]
+    state6 -> state6 [xlabel="("]
+
+    state7:text2:w -> state3:text2:e [xlabel="+"]
+    state7:s -> state8:n [xlabel=")"]
+}

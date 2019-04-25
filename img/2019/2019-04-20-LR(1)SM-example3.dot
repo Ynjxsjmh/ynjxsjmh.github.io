@@ -1,0 +1,65 @@
+digraph G {
+    splines=ortho;
+    node [shape=plaintext]
+
+    state0 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">0</TD></TR>
+            <TR><TD bgcolor="red">Z &rarr; ・S</TD><TD>#</TD></TR>
+            <TR><TD bgcolor="green">S &rarr; ・AS <br/> S &rarr; ・&epsilon; </TD><TD>#<br/>#</TD></TR>
+            <TR><TD bgcolor="green">A &rarr; ・aA <br/> A &rarr; ・b </TD><TD>#ab<br/>#ab</TD></TR>
+            </TABLE>>, pos="0,5!"];
+
+    state1 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">1</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">Z &rarr; S・</TD><TD>#</TD></TR>
+            </TABLE>>, pos="2,5.5!"];
+
+    state2 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD bgcolor="yellow">2</TD></TR>
+            <TR><TD bgcolor="red">S &rarr; A・S </TD><TD>#</TD></TR>
+            <TR><TD bgcolor="green">S &rarr; ・AS <br/> S &rarr; ・&epsilon; </TD><TD>#<br/>#</TD></TR>
+            <TR><TD bgcolor="green">A &rarr; ・aA <br/> A &rarr; ・b </TD><TD>#ab<br/>#ab</TD></TR>
+            </TABLE>>, pos="2,4!"];
+
+    state3 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">3</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">B &rarr; b・</TD><TD>#</TD></TR>
+            <TR><TD bgcolor="green">A &rarr; ・aA <br/> A &rarr; ・b </TD><TD>#ab<br/>#ab</TD></TR>
+            </TABLE>>, pos="2,1.5!"];
+
+    state4 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">4</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">A &rarr; b・</TD><TD>ab#</TD></TR>
+            </TABLE>>, pos="4,0!"];
+
+    state5 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">5</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">S &rarr; AS・</TD><TD>#</TD></TR>
+            </TABLE>>, pos="4.5,4!"];
+
+    state6 [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="yellow">6</TD></TR>
+            <TR><TD PORT="text1" bgcolor="red">A &rarr; aA・</TD><TD>ab#</TD></TR>
+            </TABLE>>, pos="4,2!"];
+
+    state0 -> state1 [xlabel="S"]
+    state0 -> state2 [xlabel="A"]
+    state0 -> state3 [xlabel="a"]
+    state0 -> state4 [xlabel="b"]
+
+    state2 -> state2 [xlabel="A"]
+    state2 -> state3 [xlabel="a"]
+    state2 -> state4 [xlabel="b"]
+    state2 -> state5 [xlabel="S"]
+
+    state3 -> state3 [xlabel="a"]
+    state3 -> state4 [xlabel="b"]
+    state3 -> state6 [xlabel="A"]
+}

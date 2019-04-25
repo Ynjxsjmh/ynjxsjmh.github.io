@@ -1,0 +1,61 @@
+digraph {
+    node [shape=plaintext]
+
+    E0 [label="E"]
+
+    E1 [label="E"]
+    Plus1 [label="+"]
+    T1 [label="T"]
+
+    T2 [label="T"]
+    F2 [label="F"]
+
+    T3 [label="T"]
+    Ar3 [label="*"]
+    F3 [label="F"]
+    i3 [label="i"]
+
+    F4 [label="F"]
+
+    lb5 [label="("]
+    E5 [label="E"]
+    rb5 [label=")"]
+
+    E6 [label="E"]
+    Plus6 [label="+"]
+    T6 [label="T"]
+
+    T7 [label="T"]
+    F7 [label="F"]
+
+    i8 [label="i"]
+
+    E0 -> E1;
+    E0 -> Plus1;
+    E0 -> T1;
+
+    E1 -> T2;
+    T1 -> F2;
+
+    T2 -> T3;
+    T2 -> Ar3;
+    T2 -> F3;
+
+    F2 -> i3;
+
+    T3 -> F4;
+
+    F4 -> lb5;
+    F4 -> E5;
+    F4 -> rb5;
+
+    E5 -> E6;
+    E5 -> Plus6;
+    E5 -> T6;
+
+    E6 -> T7;
+
+    T6 -> F7;
+
+    F7 -> i8;
+}

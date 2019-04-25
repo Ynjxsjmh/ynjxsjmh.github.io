@@ -1,0 +1,30 @@
+digraph G {
+    node [shape=plaintext]
+    splines=ortho
+    state1 [label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="red">S<sub>i</sub>=IS</TD></TR>
+            <TR><TD PORT="text" bgcolor="green">S&rarr; ・ ABc <br/> A&rarr; ・ e</TD></TR>
+        </TABLE>>];
+    // example edge
+    // state1:title:w -> state1:text:s
+
+    state2 [label=<
+        <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="red">S<sub>j</sub>=Go(S<sub>i</sub>,A)</TD></TR>
+            <TR><TD PORT="text" bgcolor="green">S&rarr;  A・Bc </TD></TR>
+            <TR><TD PORT="text" bgcolor="green">B&rarr;・dbb<br/>B&rarr; ・d</TD></TR>
+        </TABLE>>];
+
+
+    state3 [label=<
+        <TABLE ALIGN="LEFT" BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD PORT="title" bgcolor="red">S<sub>k</sub>=Go(S<sub>i</sub>,e)</TD></TR>
+            <TR><TD PORT="text" bgcolor="green">A&rarr; e・ </TD></TR>
+        </TABLE>>];
+
+    {rank=same; state1, state2}
+
+    state1:e -> state2:w [xlabel="A"];
+    state1:s -> state3 [xlabel="e"]
+}
