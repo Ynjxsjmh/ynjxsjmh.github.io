@@ -1,0 +1,11 @@
+digraph G {
+    rankdir = LR;
+
+    node [shape=record]
+
+    leeterPtr [shape = plaintext]
+
+    letter [label="{1 | subrangeTy | 'a' | 'z' | charPtr}"]
+
+    leeterPtr -> letter
+}

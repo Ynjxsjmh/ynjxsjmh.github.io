@@ -1,0 +1,13 @@
+digraph G {
+
+    intPtr [shape=record, label="1 | pointTy |<3> intPtr", pos="0,0.3!"]
+
+    intPtr [shape=record, label="堆区空间 | 栈区中间 |<3> intPtr", pos="0,0.3!"]
+
+    {rank=same; T1Ptr, intPtr}
+    {rank=same; T2Ptr, realPtr}
+
+    T1Ptr -> intPtr;
+    T2Ptr -> realPtr;
+    intPtr:3 -> realPtr:3 [style=invis]
+}

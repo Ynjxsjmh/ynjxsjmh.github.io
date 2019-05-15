@@ -1,0 +1,15 @@
+digraph G {
+    splines=ortho;
+
+    enumTy [shape=record, label="1 | enumTy | <3>", pos="0,0.3!"]
+
+    enum [shape=plaintext, label=<
+             <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+             <TR><TD PORT="r">red</TD><TD>0</TD></TR>
+             <TR><TD>yellow</TD><TD>1</TD></TR>
+             <TR><TD>blue</TD><TD>2</TD></TR>
+             </TABLE>>, pos="1.5,0!"]
+
+    enumTy:3 -> enum:r:w
+
+}

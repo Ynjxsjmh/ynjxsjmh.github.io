@@ -1,0 +1,20 @@
+digraph G {
+    rankdir = TD;
+
+    datatypePtr [shape=plaintext]
+
+    structTy [shape=record, label="2 | structTy | <3> ", pos="0,0.3!"]
+
+    ch [shape=record, label="ch | charPtr | <3> ", pos="0,0.3!"]
+
+    i [shape=record, label="i | intPtr|  <3> ", pos="0,0.3!"]
+
+    f [shape=record, label="f | intPtr | <3> ", pos="0,0.3!"]
+
+    {rank=same; datatypePtr, structTy}
+
+    datatypePtr -> structTy;
+    structTy:3 -> ch:3;
+    ch:3 -> i:3;
+    i:3 -> f:3;
+}

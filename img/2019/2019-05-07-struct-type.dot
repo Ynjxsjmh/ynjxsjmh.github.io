@@ -1,0 +1,20 @@
+digraph G {
+    rankdir = TD;
+
+    DatePtr [shape=plaintext]
+
+    structTy [shape=record, label="3 | StructTy | <3> ", pos="0,0.3!"]
+
+    year [shape=record, label="year | intPtr | 0 | <4> ", pos="0,0.3!"]
+
+    month [shape=record, label="month | intPtr | 1 | <4> ", pos="0,0.3!"]
+
+    day [shape=record, label="day | intPtr | 2 |<4> null", pos="0,0.3!"]
+
+    {rank=same; DatePtr, structTy}
+
+    DatePtr -> structTy;
+    structTy:3 -> year:4;
+    year:4 -> month:4;
+    month:4->day:4
+}

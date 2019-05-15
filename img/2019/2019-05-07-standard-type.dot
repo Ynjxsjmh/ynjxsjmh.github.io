@@ -1,0 +1,34 @@
+digraph G {
+    node [shape=plaintext]
+
+    ptr [label=<
+             <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+             <TR><TD PORT="intPtr">intPtr</TD></TR>
+             <TR><TD PORT="boolPtr">boolPtr</TD></TR>
+             <TR><TD PORT="charPtr">charPtr</TD></TR>
+             <TR><TD PORT="realPtr">realPtr</TD></TR>
+             </TABLE>>, pos="0,0!"]
+
+    size [label=<
+             <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+             <TR><TD PORT="int">IntSize</TD><TD>intTy</TD></TR>
+             <TR><TD PORT="bool">BoolSize</TD><TD>boolTy</TD></TR>
+             <TR><TD PORT="char">CharSize</TD><TD>charTy</TD></TR>
+             <TR><TD PORT="real">RealSize</TD><TD>realTy</TD></TR>
+             </TABLE>>, pos="1.5,0!"]
+
+    ty [label=<
+             <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+             <TR><TD>1</TD><TD>intTy</TD></TR>
+             <TR><TD>1</TD><TD>boolTy</TD></TR>
+             <TR><TD>1</TD><TD>charTy</TD></TR>
+             <TR><TD>2</TD><TD>realTy</TD></TR>
+             </TABLE>>, pos="3,0!"]
+
+
+    ptr:intPtr -> size:int;
+    ptr:boolPtr -> size:bool;
+    ptr:charPtr -> size:char;
+    ptr:realPtr -> size:real;
+
+}

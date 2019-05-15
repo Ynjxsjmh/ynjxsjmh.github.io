@@ -1,0 +1,17 @@
+digraph G {
+    rankdir = LR;
+
+    BPtr [shape=plaintext]
+
+    APtr [shape=plaintext]
+
+    BTy [shape=record, label="{50 | ArrayTy | 0 | 4 | <5>}", pos="0,0.3!"]
+
+    CharTy [shape=record, label="{10 | ArrayTy | 0 | 9 | CharPtr}", pos="0,0.3!"]
+
+    ATy [shape=record, label="{10 | ArrayTy | 0 | 9 | IntPtr}", pos="0,0.3!"]
+
+    APtr -> ATy;
+    BPtr -> BTy;
+    BTy:5 -> CharTy;
+}
