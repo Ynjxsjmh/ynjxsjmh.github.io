@@ -1,0 +1,21 @@
+digraph G {
+    node [shape = circle, fixedsize=true, width=.8]
+    rankdir = "LR"
+
+    zero [shape = doublecircle, label="0"]
+    first [label="1"]
+    second [label="2"]
+
+    begin [style=invisible]
+    begin -> zero
+
+    zero -> zero [label="0"]
+    zero -> first [label="1"]
+
+
+    first -> zero [label="1"]
+    first -> second [label="0"]
+
+    second -> first [label="0"]
+    second -> second [label="1"]
+}
