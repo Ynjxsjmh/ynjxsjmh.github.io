@@ -29,4 +29,7 @@ https://raw.githubusercontent.com/Ynjxsjmh/ynjxsjmh.github.io/master/img/
 
 最后将修改好的 md 文件复制到 =./_post= 目录下，再使用 =jekyll serve= 或 =jekyll s= 命令就可以在浏览器中预览了。
 
+* 策略转变
+因为博客是Markdown语法，org转到md还要进行一些格式调整，十分的费时间。所以以后写文章干脆直接用Markdown写了。
+
 [fn:1] 如果出现 =org-export-barf-if-invalid-backend: Unknown "nil" back-end: Aborting export= 错误，执行一下 =C-u M-x org-reload=
