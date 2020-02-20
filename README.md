@@ -13,7 +13,7 @@ Some features from [brucezhaor.github.io](https://github.com/BruceZhaoR/brucezha
 - [ ] Search
 - [ ] Accurate post time to minute
 - [ ] Show access number
-- [ ] Show total pages
+- [x] Show total pages
 - [ ] Show article page
 - [ ] Picture changes when clicked
 - [ ] Multi-level toc
