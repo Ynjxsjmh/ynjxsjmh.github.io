@@ -18,3 +18,10 @@ Some features from [brucezhaor.github.io](https://github.com/BruceZhaoR/brucezha
 - [ ] Picture changes when clicked
 - [ ] Multi-level toc
 
+# More themes
+
+Here lists some blog themes I admire
+
+- [ashfinal](https://macplay.github.io/)
+- [Tianyun's Blog](https://doowzs.com/blog/)
+
