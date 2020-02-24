@@ -19,7 +19,7 @@ Some features from [brucezhaor.github.io](https://github.com/BruceZhaoR/brucezha
 - [ ] Picture Preview: https://lucienhsu.github.io
 - [x] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents
 - [ ] Word wrap/overflow on too long toc item
-- [ ] Back to top: https://brucezhaor.github.io/
+- [x] Back to top: https://brucezhaor.github.io/
 
 # More themes
 
