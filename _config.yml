@@ -119,3 +119,6 @@ friends: [
 # url: https://github.com/androiddevelop/jekyll-search
 Jekyll-Search: true             # 是否启用jekyll博客搜索插件
 
+# lightbox 图片预览插件
+lightbox: true
+
