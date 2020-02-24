@@ -182,6 +182,72 @@
     })
 </script>
 
+<!-- back-to-top -->
+<style>
+#back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 2em;
+}
+
+#back-to-top a {
+    background: rgba(0, 0, 0, 0.45);
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    width: 40px;
+    height: 40px;
+    display: block;
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px 3px;
+    text-decoration: none;
+}
+
+#back-to-top a:hover {
+    background-color: #0085a1;
+}
+
+#back-to-top i {
+    font-size: 24px;
+    line-height: 40px;
+    vertical-align: top;
+}
+
+/* 向上图标透明白色 */
+.fa-chevron-up:before {
+    color: rgba(252,252,252,0.81);
+}
+</style>
+
+<div id="back-to-top">
+    <a href="#" data-toggle="tooltip" data-placement="top" title="top">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+<script>
+ $('#back-to-top').hide();
+ $(document).ready(function () {
+	 $(window).scroll(function () {
+         if ($(this).scrollTop() > 250) {
+             $('#back-to-top').fadeIn();
+         } else {
+             $('#back-to-top').fadeOut();
+         }
+     });
+     $('#back-to-top a').click(function () {
+         $('body,html').animate({
+             scrollTop: 0
+         }, 800);
+         return false;
+     });
+ });
+</script>
+
 
 <!-- Google Analytics -->
 {% if site.ga_track_id %}
