@@ -1,7 +1,7 @@
 {
-  "name": "BY Blog",
-  "short_name": "BY Blog",
-  "description": "A personal blog by engineer",
+  "name": "在到处之间找我",
+  "short_name": "在到处之间找我",
+  "description": "Every failure is leading towards success.",
   "icons": [{
     "src": "icons/pwa_icon_128.png",
     "sizes": "128x128",
