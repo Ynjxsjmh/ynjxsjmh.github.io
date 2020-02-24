@@ -27,6 +27,13 @@ description: "Le vent se leve, il faut tenter de vivre."
 <hr>
 {% endfor %}
 
+<style>
+select {
+    border: 0px;
+    outline: 0px;
+}
+</style>
+
 <!-- Pager -->
 <ul class="pager">
     {% if paginator.previous_page %}
@@ -40,7 +47,19 @@ description: "Le vent se leve, il faut tenter de vivre."
     {% endif %}
 
     <li>
-        <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+        <span class="page_number">Page:
+            <select name="pagelist" onchange="javascript:location.href=this.value;">
+                {% for page in (1..paginator.total_pages) %}
+                    {% if page == paginator.page %}
+                        <option selected="selected">{{ page }}</option>
+                    {% elsif page == 1 %}
+                        <option value="{{ site.baseurl }}/">{{ page }}</option>
+                    {% else %}
+                        <option value="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            of {{ paginator.total_pages }}</span>
     </li>
 
     {% if paginator.next_page %}
