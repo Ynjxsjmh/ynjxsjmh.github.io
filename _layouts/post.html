@@ -68,7 +68,7 @@ layout: default
                     {% if page.link %}
                     <p>引用资源：<a href="{{ page.link }}" target="_blank">{{ page.link }}</a></p>
                     {% endif %}
-                    <p>文章链接：<a href="{{ page.url }}" target="_blank">{{ site.url }}/{{ page.url }}</a></p>
+                    <p>文章链接：<a href="{{ page.url }}" target="_blank">{{ site.url }}{{ page.url }}</a></p>
                     <p>发布/更新于：
                         {% if page.updated %}
                         {{ page.updated | date: "%Y-%m-%d %R" }}
