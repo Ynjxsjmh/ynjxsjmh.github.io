@@ -228,6 +228,15 @@
         var P = $('div.post-container'),a,n,t,l,i,c;
         a = P.find('h1,h2,h3,h4,h5,h6');
 
+        String.prototype.format = function() {
+            var formatted = this;
+            for (var i = 0; i < arguments.length; i++) {
+                var regexp = new RegExp('\\{'+i+'\\}', 'gi');
+                formatted = formatted.replace(regexp, arguments[i]);
+            }
+            return formatted;
+        };
+
         var settings = {
             noBackToTopLinks: false,
             title: '<i>Table of content</i>',
@@ -252,9 +261,6 @@
         }), output = $(this);
 
         var get_level = function(ele) {
-            console.log("In get_level");
-            console.log(ele);
-            console.log(ele.tagName)
             return parseInt(ele.tagName.replace("H", ""), 10);
         };
 
@@ -273,32 +279,32 @@
 
         function createLink (header) {
             var innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
-            return "<a href='#" + fixedEncodeURIComponent(header.id) + "'>" + innerText + "</a>";
+            return "<a href='#{0}'>{1}</a>".format(fixedEncodeURIComponent(header.id), innerText);
         }
 
         headers.each(function (index) {
             var header = headers[index];
-            console.log(header)
 
  	        this_level = get_level(header);
 
-            if (this_level === level) // same level as before; same indenting
-                toc += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
-            else if (this_level <= level){ // higher level than before; end parent ol
+            if (this_level === level) {        // same level as before; same indenting
+                toc += "<li class=\"{0}\">".format(settings.classes.item) + createLink(header);
+            } else if (this_level <= level){   // higher level than before; end parent ol
                 for(var i = this_level; i < level; i++) {
-                    toc += "</li></"+settings.listType+">"
+                    toc += "</li></{0}>".format(settings.listType);
                 }
-                toc += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
-            }
-            else if (this_level > level) { // lower level than before; expand the previous to contain a ol
+
+                toc += "<li class=\"{0}\">".format(settings.classes.item) + createLink(header);
+            } else if (this_level > level) {   // lower level than before; expand the previous to contain a ol
                 for(i = this_level; i > level; i--) {
-                    toc += "<" + settings.listType + " class=\"" + settings.classes.list +"\">" +
-                            "<li class=\"" + settings.classes.item + "\">"
+                    toc += "<{0} class=\"{1}\">".format(settings.listType, settings.classes.list) +
+                           "<li class=\"{0}\">".format(settings.classes.item)
                 }
+
                 toc += createLink(header);
             }
-            level = this_level; // update for the next one
 
+            level = this_level;                // update for the next one
         });
 
         $(selector).append(toc);
