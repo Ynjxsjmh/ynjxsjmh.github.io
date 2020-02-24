@@ -15,16 +15,21 @@ sidebar-about-description: "想得到你从未拥有过的东西 <br> 就必须�
 sidebar-avatar: /img/avatar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
+RSS: False
+
+categories_path: categories
+tags_path: tags
+archive_path: archives
+about_path: about
+
 
 # SNS settings
-RSS: false
-# weibo_username:   
+weibo_username:   
 zhihu_username:     
 github_username:    Ynjxsjmh
 facebook_username:  
 jianshu_username:   
-#twitter_username:   
-
+twitter_username:   
 
 
 
