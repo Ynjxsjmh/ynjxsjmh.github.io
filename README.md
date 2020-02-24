@@ -10,13 +10,13 @@ Some features from [brucezhaor.github.io](https://github.com/BruceZhaoR/brucezha
 - [x] Categories: https://brucezhaor.github.io/
 - [x] Tags: https://brucezhaor.github.io/
 - [x] Support math using MathJax
-- [ ] Search
+- [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search
 - [x] Accurate post time to minute: https://learn.cloudcannon.com/jekyll/date-formatting/
 - [ ] Show access number
 - [x] Show total pages
 - [x] Add article info: https://macplay.github.io/
 - [ ] Picture changes when clicked
-- [ ] Picture Preview: https://lucienhsu.github.io
+- [x] Picture Preview: https://lucienhsu.github.io
 - [x] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents
 - [ ] Word wrap/overflow on too long toc item
 - [x] Back to top: https://brucezhaor.github.io/
