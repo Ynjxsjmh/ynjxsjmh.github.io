@@ -6,17 +6,19 @@ Some features from [brucezhaor.github.io](https://github.com/BruceZhaoR/brucezha
 
 # Further work
 
-- [x] Archive
-- [x] Categories
-- [x] Tags
+- [x] Archive: https://brucezhaor.github.io/
+- [x] Categories: https://brucezhaor.github.io/
+- [x] Tags: https://brucezhaor.github.io/
 - [x] Support math using MathJax
 - [ ] Search
-- [ ] Accurate post time to minute
+- [x] Accurate post time to minute: https://learn.cloudcannon.com/jekyll/date-formatting/
 - [ ] Show access number
 - [x] Show total pages
-- [ ] Show article page
+- [x] Add article info: https://macplay.github.io/
 - [ ] Picture changes when clicked
+- [ ] Picture Preview: https://lucienhsu.github.io
 - [ ] Multi-level toc
+- [ ] Back to top: https://brucezhaor.github.io/
 
 # More themes
 
