@@ -113,3 +113,9 @@ friends: [
         href: "#"
     }
 ]
+
+
+# Jekyll-Search settings
+# url: https://github.com/androiddevelop/jekyll-search
+Jekyll-Search: true             # 是否启用jekyll博客搜索插件
+
