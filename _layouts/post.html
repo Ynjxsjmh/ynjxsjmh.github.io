@@ -22,6 +22,7 @@ layout: default
     }
     {% endif %}
 </style>
+
 <header class="intro-header" >
     <div class="header-mask"></div>
     <div class="container">
@@ -40,7 +41,7 @@ layout: default
                     {% comment %} if page.subtitle {% endcomment %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% comment %} endif {% endcomment %}
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%Y-%m-%d %R" }}</span>
                 </div>
             </div>
         </div>
@@ -52,7 +53,7 @@ layout: default
     <div class="container">
         <div class="row">
 
-    <!-- Post Container -->
+            <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
@@ -62,6 +63,7 @@ layout: default
 
                 <hr style="visibility: hidden;">
 
+                <!-- Pager -->
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
@@ -106,16 +108,16 @@ layout: default
                 <!-- Thank DF:https://github.com/NSDingFan/NSDingFan.github.io/issues/3#issuecomment-407496538 -->
                 <script src="{{ site.baseurl }}/assets/js/md5.min.js"></script>
                 <script type="text/javascript">
-                    var gitalk = new Gitalk({
-                    clientID: '{{site.gitalk.clientID}}',
-                    clientSecret: '{{site.gitalk.clientSecret}}',
-                    repo: '{{site.gitalk.repo}}',
-                    owner: '{{site.gitalk.owner}}',
-                    admin: ['{{site.gitalk.admin}}'],
-                    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-                    id: md5(location.pathname),
-                    });
-                    gitalk.render('gitalk-container');
+                 var gitalk = new Gitalk({
+                     clientID: '{{site.gitalk.clientID}}',
+                     clientSecret: '{{site.gitalk.clientSecret}}',
+                     repo: '{{site.gitalk.repo}}',
+                     owner: '{{site.gitalk.owner}}',
+                     admin: ['{{site.gitalk.admin}}'],
+                     distractionFreeMode: {{site.gitalk.distractionFreeMode}},
+                     id: md5(location.pathname),
+                 });
+                 gitalk.render('gitalk-container');
                 </script>
                 {% endif %}
                 <!-- Gitalk end -->
@@ -130,13 +132,13 @@ layout: default
 
             </div>
 
-    <!-- Side Catalog Container -->
-        {% if page.catalog %}
+            <!-- Side Catalog Container -->
+            {% if page.catalog %}
             <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
+                        col-lg-2 col-lg-offset-0
+                        visible-lg-block
+                        sidebar-container
+                        catalog-container">
                 <div class="side-catalog">
                     <hr class="hidden-sm hidden-xs">
                     <h5>
@@ -145,9 +147,9 @@ layout: default
                     <ul class="catalog-body"></ul>
                 </div>
             </div>
-        {% endif %}
+            {% endif %}
 
-    <!-- Sidebar Container -->
+            <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
@@ -161,24 +163,13 @@ layout: default
                     <div class="tags">
         				{% for tag in site.tags %}
                             {% if tag[1].size > site.featured-condition-size %}
-                				<a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
-                                </a>
+                			<a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                {{ tag[0] }}
+                            </a>
                             {% endif %}
         				{% endfor %}
         			</div>
                 </section>
-                {% endif %}
-
-                <!-- Friends Blog -->
-                {% if site.friends %}
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-                    {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
-                    {% endfor %}
-                </ul>
                 {% endif %}
             </div>
         </div>
