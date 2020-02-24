@@ -25,6 +25,14 @@ Here lists some blog themes I admire
 - [ashfinal](https://macplay.github.io/)
 - [Tianyun's Blog](https://doowzs.com/blog/)
 
+# Tips for customization
+
+- [Jekyll cheatsheet](https://devhints.io/jekyll)
+- [Variables](https://jekyllrb.com/docs/variables/)
+- [Directory Structure](https://jekyllrb.com/docs/structure/)
+  - `index.html`: https://jekyllrb.com/docs/pagination/
+
+
 # Tips for myself
 
 Under blog sourcecode folder, run `jekyll serve` or `jekyll s` in cmd then browse `http://127.0.0.1:4000/` to preview the changes.
