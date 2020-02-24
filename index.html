@@ -27,27 +27,27 @@ description: "Le vent se leve, il faut tenter de vivre."
 
 <!-- Pager -->
 <ul class="pager">
-  {% if paginator.previous_page %}
-  <li class="home previous">
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer</a>
-  </li>
-  {% else %}
-  <li class="home previous disabled">
-    <a>&larr; Newer</a>
-  </li>
-  {% endif %}
+    {% if paginator.previous_page %}
+    <li class="home previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer</a>
+    </li>
+    {% else %}
+    <li class="home previous disabled">
+        <a>&larr; Newer</a>
+    </li>
+    {% endif %}
 
-  <li>
-    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  </li>
+    <li>
+        <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    </li>
 
-  {% if paginator.next_page %}
-  <li class="home next">
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older &rarr;</a>
-  </li>
-  {% else %}
-  <li class="home next disabled">
-    <a>Older &rarr;</a>
-  </li>
-  {% endif %}
+    {% if paginator.next_page %}
+    <li class="home next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older &rarr;</a>
+    </li>
+    {% else %}
+    <li class="home next disabled">
+        <a>Older &rarr;</a>
+    </li>
+    {% endif %}
 </ul>
