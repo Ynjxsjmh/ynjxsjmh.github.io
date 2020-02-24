@@ -3,6 +3,8 @@ layout: page
 description: "Le vent se leve, il faut tenter de vivre."
 ---
 
+<!-- https://jekyllrb.com/docs/pagination/-->
+
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
