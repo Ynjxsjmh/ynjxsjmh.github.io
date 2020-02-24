@@ -279,7 +279,7 @@
 
         function createLink (header) {
             var innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
-            return "<a href='#{0}'>{1}</a>".format(fixedEncodeURIComponent(header.id), innerText);
+            return "<a href='#{0}'>{1}</a>".format(header.id, innerText);
         }
 
         headers.each(function (index) {
