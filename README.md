@@ -17,7 +17,7 @@ Some features from [brucezhaor.github.io](https://github.com/BruceZhaoR/brucezha
 - [x] Add article info: https://macplay.github.io/
 - [ ] Picture changes when clicked
 - [ ] Picture Preview: https://lucienhsu.github.io
-- [ ] Multi-level toc
+- [ ] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents
 - [ ] Back to top: https://brucezhaor.github.io/
 
 # More themes
