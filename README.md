@@ -8,7 +8,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Categories: https://brucezhaor.github.io/
 - [x] Tags: https://brucezhaor.github.io/
 - [x] Support math using MathJax
-- [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search
+- [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
 - [x] Accurate post time to minute: https://learn.cloudcannon.com/jekyll/date-formatting/
 - [ ] Show access number
 - [x] Show total pages
