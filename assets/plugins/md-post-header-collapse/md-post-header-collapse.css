@@ -1,0 +1,20 @@
+i.headerbtn:hover {
+    cursor: pointer;
+}
+
+i.headerbtn {
+    font-size: 36px;             /* 这个大小最好和 h1 h2 h3 相对应  */
+    position: relative;
+    float: right;
+    margin-left: -1rem;
+    padding-right: 5px;
+    color: rgb(161, 161, 161);
+    opacity: 0;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+h1:hover i.headerbtn,h2:hover i.headerbtn, h3:hover i.headerbtn {
+    opacity: 1;
+    visibility: visible;
+}
