@@ -24,13 +24,20 @@ about_path: about
 
 
 # SNS settings
-weibo_username:   
-zhihu_username:     
-github_username:    Ynjxsjmh
-facebook_username:  
-jianshu_username:   
-twitter_username:   
-
+sns:
+  weibo_id:
+  douban_id:
+  zhihu_username:
+  jianshu_username:
+  linkedin_username:
+  twitter_username:
+  facebook_username:
+  telegram_username:
+  instagram_username:
+  quora_username:
+  reddit_username:
+  github_username:    Ynjxsjmh
+  stackoverflow_username:
 
 
 # Build settings
