@@ -4,9 +4,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 
 # Further work
 
-- [x] Archive: https://brucezhaor.github.io/
-- [x] Categories: https://brucezhaor.github.io/
-- [x] Tags: https://brucezhaor.github.io/
+- [x] Archive, Categories, Tags: https://brucezhaor.github.io/
 - [x] Support math using MathJax
 - [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
 - [ ] Highlight search keywords in result
