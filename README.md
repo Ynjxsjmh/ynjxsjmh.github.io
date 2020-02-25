@@ -9,9 +9,10 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [ ] Support math using KaTex
 - [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
 - [ ] Highlight search keywords in result
-- [ ] Show random old saying in page header: -> https://program-think.blogspot.com/
+- [ ] Show random old saying in page header: https://program-think.blogspot.com/
 - [x] Accurate post time to minute: https://learn.cloudcannon.com/jekyll/date-formatting/
 - [ ] Show access number
+- [ ] Show read time: http://lsfalimis.github.io/customise-hpstr-jekyll-theme/#decimal
 - [x] Show total pages
 - [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
 - [x] Add article info: https://macplay.github.io/
@@ -31,6 +32,7 @@ Here lists some blog themes I admire
 - [ashfinal](https://macplay.github.io/)
 - [Tianyun's Blog](https://doowzs.com/blog/)
 - [oukohou](https://www.oukohou.wang/)
+- [mmistakes](https://github.com/mmistakes)
 
 # Tips for customization
 
