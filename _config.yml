@@ -115,18 +115,9 @@ blogrolls: [
 ]
 
 
-# Jekyll-Search settings
-# url: https://github.com/androiddevelop/jekyll-search
-Jekyll-Search: true             # 是否启用jekyll博客搜索插件
-
-# lightbox 图片预览插件
-lightbox: true
-
-# 隐藏标题内容
-HeaderCollapse: true
-
-# 阅读进度条
-ReadingProgressBar: true
-
-# 赞赏链接
-donation: true
+# Plugins
+Jekyll-Search:       true     # 是否启用 `jekyll博客搜索` 插件
+lightbox:            true     # 是否启用 `lightbox 图片预览` 插件
+HeaderCollapse:      true     # 是否启用 `隐藏标题内容` 插件
+ReadingProgressBar:  true     # 是否启用 `阅读进度条` 插件
+donation:            true     # 是否启用 `赞赏链接` 插件
