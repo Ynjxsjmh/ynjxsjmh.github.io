@@ -474,3 +474,33 @@
 $.headerCollapseRobot('.post-container', ['h1', 'h2', 'h3'], ['blockquote']);
 </script>
 {% endif %}
+
+
+<!-- Reading Progress Bar -->
+{% if site.ReadingProgressBar %}
+<script>
+$(window).bind('scroll', function () {
+    <!-- var percent = $(window).scrollTop() / ($('body').height() - $(window).height()) -->
+
+    var headerHeight = document.getElementsByClassName('container')[0].clientHeight;
+    var postHeight = document.getElementsByClassName('container')[1].clientHeight;
+    var postInfoHeight = document.getElementsByClassName('post-info')[0].offsetHeight;
+    var postTagsHeight = document.getElementsByClassName('tag_box')[0].offsetHeight;
+    var pagerHeight = document.getElementsByClassName('pager')[0].offsetHeight;
+
+    var readHeight = $(window).scrollTop() - headerHeight;
+    var contentHeight = postHeight - postInfoHeight - 2 * postTagsHeight - pagerHeight;
+    var percent;
+
+    console.log("readHeight " + readHeight);
+
+    if (readHeight < 0) {
+        percent = 0;
+    } else {
+        percent = readHeight / contentHeight;
+    }
+
+    $('div#reading-progress').find('.progress-bar').css('width', percent * 100 + '%');
+});
+</script>
+{% endif %}
