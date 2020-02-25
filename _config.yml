@@ -124,3 +124,6 @@ lightbox: true
 
 # 隐藏标题内容
 HeaderCollapse: true
+
+# 阅读进度条
+ReadingProgressBar: true
