@@ -15,6 +15,7 @@ Some features from [brucezhaor.github.io](https://github.com/BruceZhaoR/brucezha
 - [ ] Show access number
 - [x] Show total pages
 - [x] Add article info: https://macplay.github.io/
+- [x] Add header collapse: https://github.com/szhielelp/md-post-header-collapse
 - [ ] Picture changes when clicked
 - [x] Picture Preview: https://lucienhsu.github.io
 - [x] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents
