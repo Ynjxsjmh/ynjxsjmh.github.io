@@ -1,0 +1,25 @@
+---
+layout: null
+title : Posts JSON data
+doc : https://blog.ryanhalliday.com/2014/12/json-posts-in-jekyll.html
+---
+
+[
+    {% for post in site.posts %}
+        {% if post.keywords %}
+            {% assign keywords = post.keywords %}
+        {% else %}
+            {% assign keywords = post.tags %}
+        {% endif %}
+
+        {
+            "title": {{ post.title | jsonify }},
+            "url": {{ post.url | jsonify }},
+            "date": {{ post.date | date: '%Y-%m-%d %R' | jsonify }},
+            "keywords": {{ keywords | jsonify }},
+            "categories":[{% for categories in post.category %}"{{categories}}"{% if forloop.rindex0 > 0 %}, {% endif %}{% endfor %}],
+            "summary": {{ post.content | strip_html | truncate:120 | jsonify }}
+        }{% unless forloop.last %}, {% endunless %}
+
+    {% endfor %}
+]
