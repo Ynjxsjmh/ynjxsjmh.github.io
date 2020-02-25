@@ -127,3 +127,6 @@ HeaderCollapse: true
 
 # 阅读进度条
 ReadingProgressBar: true
+
+# 赞赏链接
+donation: true
