@@ -19,7 +19,7 @@ RSS: False
 
 categories_path: categories
 tags_path: tags
-archive_path: archives
+archive_path: archive
 about_path: about
 
 
