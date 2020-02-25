@@ -504,3 +504,36 @@ $(window).bind('scroll', function () {
 });
 </script>
 {% endif %}
+
+
+<!-- Donation -->
+{% if site.donation %}
+<style>
+.tctip {
+    left: 0;
+}
+</style>
+
+<script src="{{ "/assets/plugins/tctip/tctip-1.0.3.min.js" | prepend: site.baseurl }}"></script>
+<script>
+    new tctip ({
+        top: '10%',
+        button: {
+            id: 9,
+            type: 'dashang',
+        },
+        list: [
+          {
+              type: 'alipay',
+              qrImg: '//ynjxsjmh.github.io/img/alipay.png'
+          }, {
+              type: 'wechat',
+              qrImg: '//ynjxsjmh.github.io/img/wechat.png'
+          }, {
+              type: 'paypal',
+              qrImg: '//ynjxsjmh.github.io/img/paypal.png',
+          }
+        ],
+    }).init()
+</script>
+{% endif %}
