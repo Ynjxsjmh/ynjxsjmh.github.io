@@ -103,8 +103,8 @@ service-worker: true
 
 
 
-# Friends
-friends: [
+# Blogroll
+blogrolls: [
     {
         title: "朋友",
         href: "#"
