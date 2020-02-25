@@ -6,6 +6,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 
 - [x] Archive, Categories, Tags: https://brucezhaor.github.io/
 - [x] Support math using MathJax
+- [ ] Support math using KaTex
 - [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
 - [ ] Highlight search keywords in result
 - [ ] Show random old saying in page header: -> https://program-think.blogspot.com/
