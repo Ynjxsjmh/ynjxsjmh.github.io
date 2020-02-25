@@ -1,5 +1,6 @@
 <!-- SNS Link -->
 <ul class="list-inline">
+
     {% if site.RSS %}
     <li>
         <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
@@ -11,82 +12,33 @@
     </li>
     {% endif %}
 
-    <!-- add jianshu add target = "_blank" to <a> by BY -->
-    {% if site.jianshu_username %}
-    <li>
-        <a target="_blank" href="https://www.jianshu.com/u/{{ site.jianshu_username }}">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa  fa-stack-1x fa-inverse">简</i>
-            </span>
-        </a>
-    </li>
-    {% endif %}
+    {% for site_hash in site.sns  %}
+        {% if site_hash[1] %}
+            {% assign pair = site_hash[0] | split: "_" %}
+            {% assign domain = pair[0] %}
+            {% assign username = site_hash[1] %}
 
-    {% if site.twitter_username %}
-    <li>
-        <a href="https://twitter.com/{{ site.twitter_username }}">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-            </span>
-        </a>
-    </li>
-    {% endif %}
+            {% if domain == "jianshu" or domain == "stackoverflow" %}
+                {% capture href_str %} "https://{{ domain }}.com/u/{{ username }}" {% endcapture %}
+            {% elsif domain == "reddit" %}
+                {% capture href_str %} "https://{{ domain }}.com/user/{{ username }}" {% endcapture %}
+            {% elsif domain == "quora" %}
+                {% capture href_str %} "https://{{ domain }}.com/profile/{{ username }}" {% endcapture %}
+            {% elsif domain == "linkedin" %}
+                {% capture href_str %} "https://{{ domain }}.com/in/{{ username }}" {% endcapture %}
+            {% else %}
+                {% capture href_str %} "https://{{ domain }}.com/{{ username }}" {% endcapture %}
+            {% endif %}
 
-    {% if site.zhihu_username %}
-    <li>
-        <a target="_blank" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa  fa-stack-1x fa-inverse">知</i>
-            </span>
-        </a>
-    </li>
-    {% endif %}
+            <li>
+                <a target="_blank" href="{{ href_str }}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-{{domain}} fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
 
-    {% if site.weibo_username %}
-    <li>
-        <a target="_blank" href="http://weibo.com/{{ site.weibo_username }}">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-            </span>
-        </a>
-    </li>
-    {% endif %}
-
-    {% if site.facebook_username %}
-    <li>
-        <a target="_blank" href="https://www.facebook.com/{{ site.facebook_username }}">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span>
-        </a>
-    </li>
-    {% endif %}
-
-    {% if site.github_username %}
-    <li>
-        <a target="_blank" href="https://github.com/{{ site.github_username }}">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-            </span>
-        </a>
-    </li>
-    {% endif %}
-
-    {% if site.linkedin_username %}
-    <li>
-        <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-            </span>
-        </a>
-    </li>
-    {% endif %}
+        {% endif %}
+    {% endfor %}
 </ul>
-
