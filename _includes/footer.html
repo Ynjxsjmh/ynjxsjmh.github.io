@@ -541,23 +541,30 @@ $.headerCollapseRobot('.post-container', ['h1', 'h2', 'h3'], ['blockquote']);
 <script src="{{ "/assets/plugins/tctip/tctip-1.0.3.min.js" | prepend: site.baseurl }}"></script>
 <script>
     new tctip ({
-        top: '50%',
+        top: "50%",
         button: {
             id: 9,
-            type: 'dashang',
+            type: "dashang",
         },
         list: [
           {
-              type: 'alipay',
-              qrImg: '//ynjxsjmh.github.io/img/alipay.png'
+              type:  "alipay",
+              qrImg: " {{ "/img/donation/alipay.png" | prepend: site.baseurl }} ",
+              desc:  "请我喝杯咖啡吧~",
           }, {
-              type: 'wechat',
-              qrImg: '//ynjxsjmh.github.io/img/wechat.png'
+              type:  "wechat",
+              qrImg: " {{ "/img/donation/wechat.png" | prepend: site.baseurl }} ",
+              desc:  "请我喝杯咖啡吧~",
           }, {
-              type: 'paypal',
-              qrImg: '//ynjxsjmh.github.io/img/paypal.png',
+              type:  "paypal",
+              qrImg: " {{ "/img/donation/paypal.png" | prepend: site.baseurl }} ",
+              icon:  " {{ "/img/donation/paypal-icon.png" | prepend: site.baseurl }} ",
+              name:  "paypal",
+              desc:  "请我喝杯咖啡吧~",
           }
         ],
+
+        stat: false,
     }).init()
 </script>
 {% endif %}
