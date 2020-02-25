@@ -479,29 +479,53 @@ $.headerCollapseRobot('.post-container', ['h1', 'h2', 'h3'], ['blockquote']);
 <!-- Reading Progress Bar -->
 {% if site.ReadingProgressBar %}
 <script>
-$(window).bind('scroll', function () {
-    <!-- var percent = $(window).scrollTop() / ($('body').height() - $(window).height()) -->
+ $(window).bind('scroll', function () {
+     <!-- var percent = $(window).scrollTop() / ($('body').height() - $(window).height()) -->
 
-    var headerHeight = document.getElementsByClassName('container')[0].clientHeight;
-    var postHeight = document.getElementsByClassName('container')[1].clientHeight;
-    var postInfoHeight = document.getElementsByClassName('post-info')[0].offsetHeight;
-    var postTagsHeight = document.getElementsByClassName('tag_box')[0].offsetHeight;
-    var pagerHeight = document.getElementsByClassName('pager')[0].offsetHeight;
+     var headerHeight, postHeight, postInfoHeight, postTagsHeight, pagerHeight;
 
-    var readHeight = $(window).scrollTop() - headerHeight;
-    var contentHeight = postHeight - postInfoHeight - 2 * postTagsHeight - pagerHeight;
-    var percent;
+     if (document.getElementsByClassName('container')[0] != undefined) {
+         headerHeight = document.getElementsByClassName('container')[0].clientHeight;
+     } else {
+         headerHeight = 0;
+     }
 
-    console.log("readHeight " + readHeight);
+     if (document.getElementsByClassName('container')[1] != undefined) {
+         postHeight = document.getElementsByClassName('container')[1].clientHeight;
+     } else {
+         postHeight = 0;
+     }
 
-    if (readHeight < 0) {
-        percent = 0;
-    } else {
-        percent = readHeight / contentHeight;
-    }
+     if (document.getElementsByClassName('post-info')[0] != undefined) {
+         postInfoHeight = document.getElementsByClassName('post-info')[0].offsetHeight;
+     } else {
+         postInfoHeight = 0;
+     }
 
-    $('div#reading-progress').find('.progress-bar').css('width', percent * 100 + '%');
-});
+     if (document.getElementsByClassName('tag_box')[0] != undefined) {
+         postTagsHeight = document.getElementsByClassName('tag_box')[0].offsetHeight;
+     } else {
+         postTagsHeight = 0;
+     }
+
+     if (document.getElementsByClassName('pager')[0] != undefined) {
+         pagerHeight = document.getElementsByClassName('pager')[0].offsetHeight;
+     } else {
+         pagerHeight = 0;
+     }
+
+     var readHeight = $(window).scrollTop() - headerHeight;
+     var contentHeight = postHeight - postInfoHeight - 2 * postTagsHeight - pagerHeight;
+     var percent;
+
+     if (readHeight < 0) {
+         percent = 0;
+     } else {
+         percent = readHeight / contentHeight;
+     }
+
+     $('div#reading-progress').find('.progress-bar').css('width', percent * 100 + '%');
+ });
 </script>
 {% endif %}
 
