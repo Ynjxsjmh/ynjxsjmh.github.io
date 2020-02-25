@@ -2,8 +2,6 @@
 
 Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github.io)
 
-Some features from [brucezhaor.github.io](https://github.com/BruceZhaoR/brucezhaor.github.io)
-
 # Further work
 
 - [x] Archive: https://brucezhaor.github.io/
@@ -17,6 +15,7 @@ Some features from [brucezhaor.github.io](https://github.com/BruceZhaoR/brucezha
 - [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
 - [x] Add article info: https://macplay.github.io/
 - [x] Add header collapse: https://github.com/szhielelp/md-post-header-collapse
+- [ ] Add donation page: https://awang0608.github.io/ -> https://github.com/greedying/tctip
 - [ ] Picture changes when clicked
 - [x] Picture Preview: https://lucienhsu.github.io
 - [x] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents
