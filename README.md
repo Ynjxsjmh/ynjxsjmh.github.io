@@ -9,6 +9,8 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Tags: https://brucezhaor.github.io/
 - [x] Support math using MathJax
 - [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
+- [ ] Highlight search keywords in result
+- [ ] Show random old saying in page header: -> https://program-think.blogspot.com/
 - [x] Accurate post time to minute: https://learn.cloudcannon.com/jekyll/date-formatting/
 - [ ] Show access number
 - [x] Show total pages
@@ -17,9 +19,10 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Add header collapse: https://github.com/szhielelp/md-post-header-collapse
 - [x] Add donation page: https://github.com/greedying/tctip
 - [ ] Picture changes when clicked
-- [x] Picture Preview: https://lucienhsu.github.io
+- [x] Picture preview: https://lucienhsu.github.io
 - [x] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents
 - [ ] Word wrap/overflow on too long toc item
+- [ ] Toc hover/float left
 - [x] Back to top: https://brucezhaor.github.io/
 
 # More themes
@@ -28,6 +31,7 @@ Here lists some blog themes I admire
 
 - [ashfinal](https://macplay.github.io/)
 - [Tianyun's Blog](https://doowzs.com/blog/)
+- [oukohou](https://www.oukohou.wang/)
 
 # Tips for customization
 
