@@ -14,6 +14,7 @@ Some features from [brucezhaor.github.io](https://github.com/BruceZhaoR/brucezha
 - [x] Accurate post time to minute: https://learn.cloudcannon.com/jekyll/date-formatting/
 - [ ] Show access number
 - [x] Show total pages
+- [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
 - [x] Add article info: https://macplay.github.io/
 - [x] Add header collapse: https://github.com/szhielelp/md-post-header-collapse
 - [ ] Picture changes when clicked
