@@ -137,6 +137,10 @@
 </script>
 {% endif %}
 
+
+
+<!-- Post Catalog -->
+{% if site.PostCatalog %}
 <style>
 .catalog-body ul,
 .catalog-body ol {
@@ -144,13 +148,8 @@
 }
 </style>
 
-<!-- Side Catalog -->
-{% if page.catalog %}
 <script type="text/javascript">
     function generateCatalog (selector) {
-        var P = $('div.post-container'),a,n,t,l,i,c;
-        a = P.find('h1,h2,h3,h4,h5,h6');
-
         String.prototype.format = function() {
             var formatted = this;
             for (var i = 0; i < arguments.length; i++) {
@@ -187,7 +186,6 @@
             return parseInt(ele.tagName.replace("H", ""), 10);
         };
 
-        var get_my_level = function(ele) { return parseInt(ele.prop('tagName').toLowerCase().replace("h", ""), 10); };
         var level = get_level(headers[0]);
         var this_level;
         var highest_level = headers.map(function(_, ele) { return get_level(ele); }).get().sort()[0];
@@ -232,7 +230,10 @@
 
         $(selector).append(toc);
 
-        /* a.each(function () {
+        /* 其实我觉得下面这段代码按level用空格缩进也行  by Ynjxsjmh  */
+        /* var P = $('div.post-container'),a,n,t,l,i,c;
+         * a = P.find('h1,h2,h3,h4,h5,h6');
+         * a.each(function () {
          *     n = $(this).prop('tagName').toLowerCase();
          *     i = "#"+$(this).prop('id');
          *     t = $(this).text();
@@ -274,6 +275,7 @@
     });
 </script>
 {% endif %}
+
 
 
 <!-- back-to-top -->
