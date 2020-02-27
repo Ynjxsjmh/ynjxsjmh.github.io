@@ -6,7 +6,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 
 - [x] Archive, Categories, Tags: https://brucezhaor.github.io/
 - [x] Support math using MathJax: https://pkuwwt.github.io/linux/2013-12-03-jekyll-using-mathjax/ && https://segmentfault.com/a/1190000008317350 
-- [ ] Support math using KaTex
+- [ ] Support math using KaTeX: https://xuc.me/blog/katex-and-jekyll/ & https://karas.io/blog/math-support-with-katex-on-github-pages/
 - [ ] Highlight search keywords in result
 - [ ] Show random old saying in page header: https://program-think.blogspot.com/
 - [x] Accurate post time to minute: https://learn.cloudcannon.com/jekyll/date-formatting/
