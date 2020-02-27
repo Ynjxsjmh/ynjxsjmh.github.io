@@ -13,6 +13,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [ ] Show access number
 - [ ] Show read time: http://lsfalimis.github.io/customise-hpstr-jekyll-theme/#decimal
 - [x] Show total pages
+- [x] Show tag cloud: https://www.oukohou.wang/ || https://jovandeginste.github.io/2016/05/04/add-a-tag-cloud-to-my-jekyll-site.html
 - [x] Add article info: https://macplay.github.io/
 - [ ] Picture changes when clicked
 
