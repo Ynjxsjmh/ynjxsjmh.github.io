@@ -5,7 +5,22 @@ description: "文章标签"
 header-img: "/img/tags-bg.jpg"
 ---
 
-<!-- 小一号图 -->
+<script>
+ /*  By Ynjxsjmh
+  *  From https://stackoverflow.com/a/50290446/10315163
+  * */
+ $(function(){
+     var hash = window.location.hash;
+     $('a[href="' + hash + '"]').tab('show');
+     $('ul.nav.nav-tabs-vertical a').click(function (e) {
+         $(this).tab('show');
+         var scrollmem = $('body').scrollTop();
+         window.location.hash = this.hash;
+     });
+ });
+</script>
+
+<!-- 小一号图 aria-expanded="true"-->
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
     <div class="container">
         <div class="row">
