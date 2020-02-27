@@ -7,23 +7,34 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Archive, Categories, Tags: https://brucezhaor.github.io/
 - [x] Support math using MathJax: https://pkuwwt.github.io/linux/2013-12-03-jekyll-using-mathjax/ && https://segmentfault.com/a/1190000008317350 
 - [ ] Support math using KaTex
-- [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
 - [ ] Highlight search keywords in result
 - [ ] Show random old saying in page header: https://program-think.blogspot.com/
 - [x] Accurate post time to minute: https://learn.cloudcannon.com/jekyll/date-formatting/
 - [ ] Show access number
 - [ ] Show read time: http://lsfalimis.github.io/customise-hpstr-jekyll-theme/#decimal
 - [x] Show total pages
-- [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
 - [x] Add article info: https://macplay.github.io/
-- [x] Add header collapse: https://github.com/szhielelp/md-post-header-collapse
-- [x] Add donation page: https://github.com/greedying/tctip
 - [ ] Picture changes when clicked
-- [x] Picture preview: https://lucienhsu.github.io
-- [x] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents
-- [ ] Word wrap/overflow on too long toc item
-- [ ] Toc hover/float left
+
+
+**Plugins**
+
+[Jekyll Plugins | Find Plugins for Jekyll Blogs](http://www.jekyll-plugins.com/)
+
+[planetjekyll/awesome-jekyll-plugins](https://github.com/planetjekyll/awesome-jekyll-plugins) - https://planetjekyll.github.io/plugins/top
+
 - [x] Back to top: https://brucezhaor.github.io/
+- [ ] Toc
+  - [x] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents
+  - [ ] Word wrap/overflow on too long toc item
+  - [ ] Toc hover/float left
+- [x] Add header collapse: https://github.com/szhielelp/md-post-header-collapse
+- [x] Picture preview: https://lucienhsu.github.io
+- [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
+- [x] Add donation page: https://github.com/greedying/tctip
+- [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
+- [ ] Fancy Box: http://fancyapps.com/fancybox/
+
 
 # More themes
 
