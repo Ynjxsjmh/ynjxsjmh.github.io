@@ -34,6 +34,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Add donation page: https://github.com/greedying/tctip
 - [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
 - [ ] Fancy Box: http://fancyapps.com/fancybox/
+- [ ] Share: https://github.com/overtrue/share.js/
 
 
 # More themes
