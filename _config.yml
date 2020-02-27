@@ -57,7 +57,6 @@ plugins: [jekyll-paginate]
 
 
 
-
 # Markdown settings
 # replace redcarpet to kramdown,
 # although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
@@ -95,9 +94,6 @@ ga_track_id: 'UA-134184168-1'            # Format: UA-xxxxxx-xx
 ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
-
-
-
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
 featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
@@ -128,3 +124,5 @@ lightbox:            true     # 是否启用 `lightbox 图片预览` 插件
 HeaderCollapse:      true     # 是否启用 `隐藏标题内容` 插件
 ReadingProgressBar:  true     # 是否启用 `阅读进度条` 插件
 donation:            true     # 是否启用 `赞赏链接` 插件
+mathjax:             true
+katex:               false
