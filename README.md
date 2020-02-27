@@ -37,9 +37,11 @@ Here lists some blog themes I admire
 # Tips for customization
 
 - [Jekyll cheatsheet](https://devhints.io/jekyll)
-- [Variables](https://jekyllrb.com/docs/variables/)
 - [Directory Structure](https://jekyllrb.com/docs/structure/)
-  - `index.html`: https://jekyllrb.com/docs/pagination/
+├── _config.yml: [Variables](https://jekyllrb.com/docs/variables/)
+├── _layouts: https://www.jekyll.com.cn/tutorials/convert-site-to-jekyll/#how-layouts-work
+│   └── default.html
+└── index.html: https://jekyllrb.com/docs/pagination/
 
 
 # Tips for myself
