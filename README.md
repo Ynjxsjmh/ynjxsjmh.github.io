@@ -40,10 +40,14 @@ Here lists some blog themes I admire
 
 - [Jekyll cheatsheet](https://devhints.io/jekyll)
 - [Directory Structure](https://jekyllrb.com/docs/structure/)
-├── _config.yml: [Variables](https://jekyllrb.com/docs/variables/)
-├── _layouts: https://www.jekyll.com.cn/tutorials/convert-site-to-jekyll/#how-layouts-work
-│   └── default.html
-└── index.html: https://jekyllrb.com/docs/pagination/
+
+ ├── _config.yml: [Variables](https://jekyllrb.com/docs/variables/)
+
+ ├── _layouts: https://www.jekyll.com.cn/tutorials/convert-site-to-jekyll/#how-layouts-work
+
+ │   └── default.html
+
+ └── index.html: https://jekyllrb.com/docs/pagination/
 
 
 # Tips for myself
