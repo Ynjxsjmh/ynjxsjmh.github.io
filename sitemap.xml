@@ -1,7 +1,12 @@
 ---
 # Remember to set production_url in your _config.yml file!
 title : Sitemap
+layout: null
+search: exclude
+doc: https://www.jekyll.com.cn/tutorials/convert-site-to-jekyll/#11-add-a-sitemap
 ---
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for post in site.posts %}
