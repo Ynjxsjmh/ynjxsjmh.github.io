@@ -119,6 +119,7 @@ blogrolls: [
 
 
 # Plugins By Ynjxsjmh
+PostCatalog:         true
 BackToTop:           true
 JekyllSearch:        true     # 是否启用 `jekyll博客搜索` 插件
 lightbox:            true     # 是否启用 `lightbox 图片预览` 插件
