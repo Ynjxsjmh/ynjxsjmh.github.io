@@ -10,10 +10,11 @@ header-img: "/img/tags-bg.jpg"
 By Ynjxsjmh
 From https://stackoverflow.com/a/50290446/10315163
 -->
+
 <script>
  $(function(){
      var hash = window.location.hash;
-     $('a[href="' + hash + '"]').tab('show');
+     $('a[href="' + decodeURIComponent(hash) + '"]').tab('show');
      $('ul.nav.nav-tabs-vertical a').click(function (e) {
          $(this).tab('show');
          var scrollmem = $('body').scrollTop();
