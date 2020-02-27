@@ -1,0 +1,8 @@
+<!-- 隐藏标题内容插件 -->
+{% if site.HeaderCollapse %}
+<link rel="stylesheet" href="{{ "/assets/plugins/md-post-header-collapse/md-post-header-collapse.css" | prepend: site.baseurl }}">
+<script src="{{ "/assets/plugins/md-post-header-collapse/md-post-header-collapse.js" | prepend: site.baseurl }}"></script>
+<script>
+$.headerCollapseRobot('.post-container', ['h1', 'h2', 'h3'], ['blockquote']);
+</script>
+{% endif %}

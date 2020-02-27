@@ -1,0 +1,31 @@
+<!-- KaTeX -->
+{% if site.katex %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.0/katex.min.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.0/katex.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.0/fonts.css" rel="stylesheet" type="text/css">
+
+<script>
+ $("script[type='math/tex']").replaceWith(
+     function(){
+         var tex = $(this).text();
+         return "<span class=\"inline-equation\">" +
+                katex.renderToString(tex) +
+                "</span>";
+     });
+
+ $("script[type='math/tex; mode=display']").replaceWith(
+     function(){
+         var tex = $(this).text();
+         return "<div class=\"katex-display\">" +
+                katex.renderToString("\\displaystyle "+tex) +
+                "</div>";
+     });
+</script>
+
+<!-- <script>
+     document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+     el.outerHTML = katex.renderToString(el.textContent.replace(/%.*/g, ''), { displayMode: true });
+     });
+     </script>
+-->
+{% endif %}

@@ -1,0 +1,136 @@
+<!-- Post Catalog -->
+{% if site.PostCatalog %}
+<style>
+.catalog-body ul,
+.catalog-body ol {
+    padding-left: 10px;
+}
+</style>
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        String.prototype.format = function() {
+            var formatted = this;
+            for (var i = 0; i < arguments.length; i++) {
+                var regexp = new RegExp('\\{'+i+'\\}', 'gi');
+                formatted = formatted.replace(regexp, arguments[i]);
+            }
+            return formatted;
+        };
+
+        var settings = {
+            noBackToTopLinks: false,
+            title: '<i>Table of content</i>',
+            minimumHeaders: 3,
+            headers: 'h1, h2, h3, h4, h5, h6',
+            listType: 'ul',      // values: [ol|ul]
+            showEffect: 'show',  // values: [show|slideDown|fadeIn|none]
+            showSpeed: 'slow',   // set to 0 to deactivate effect
+            classes: {
+                list: '',
+                item: ''
+            }
+        };
+
+	    var headers = $(settings.headers).filter(function() {
+            // get all headers with an ID
+            var previousSiblingName = $(this).prev().attr( "name" );
+            if (!this.id && previousSiblingName) {
+                this.id = $(this).attr( "id", previousSiblingName.replace(/\./g, "-") );
+            }
+            return this.id;
+        }), output = $(this);
+
+        var get_level = function(ele) {
+            return parseInt(ele.tagName.replace("H", ""), 10);
+        };
+
+        var level = get_level(headers[0]);
+        var this_level;
+        var highest_level = headers.map(function(_, ele) { return get_level(ele); }).get().sort()[0];
+
+        var toc = settings.title;
+
+	    function fixedEncodeURIComponent (str) {
+            return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
+                return '%' + c.charCodeAt(0).toString(16);
+            });
+        }
+
+        function createLink (header) {
+            var innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
+            return "<a href='#{0}'>{1}</a>".format(header.id, innerText);
+        }
+
+        headers.each(function (index) {
+            var header = headers[index];
+
+ 	        this_level = get_level(header);
+
+            if (this_level === level) {        // same level as before; same indenting
+                toc += "<li class=\"{0}\">".format(settings.classes.item) + createLink(header);
+            } else if (this_level <= level){   // higher level than before; end parent ol
+                for(var i = this_level; i < level; i++) {
+                    toc += "</li></{0}>".format(settings.listType);
+                }
+
+                toc += "<li class=\"{0}\">".format(settings.classes.item) + createLink(header);
+            } else if (this_level > level) {   // lower level than before; expand the previous to contain a ol
+                for(i = this_level; i > level; i--) {
+                    toc += "<{0} class=\"{1}\">".format(settings.listType, settings.classes.list) +
+                           "<li class=\"{0}\">".format(settings.classes.item)
+                }
+
+                toc += createLink(header);
+            }
+
+            level = this_level;                // update for the next one
+        });
+
+        $(selector).append(toc);
+
+        /* 其实我觉得下面这段代码按level用空格缩进也行  by Ynjxsjmh  */
+        /* var P = $('div.post-container'),a,n,t,l,i,c;
+         * a = P.find('h1,h2,h3,h4,h5,h6');
+         * a.each(function () {
+         *     n = $(this).prop('tagName').toLowerCase();
+         *     i = "#"+$(this).prop('id');
+         *     t = $(this).text();
+         *     c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+         *     l = $('<li class="'+n+'_nav"></li>').append(c);
+         *     $(selector).append(l);
+         * });
+
+         */
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("{{ '/assets/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+{% endif %}

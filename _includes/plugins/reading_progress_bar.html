@@ -1,0 +1,53 @@
+<!-- Reading Progress Bar -->
+{% if site.ReadingProgressBar %}
+<script>
+ $(window).bind('scroll', function () {
+     <!-- var percent = $(window).scrollTop() / ($('body').height() - $(window).height()) -->
+
+     var headerHeight, postHeight, postInfoHeight, postTagsHeight, pagerHeight;
+
+     if (document.getElementsByClassName('container')[0] != undefined) {
+         headerHeight = document.getElementsByClassName('container')[0].clientHeight;
+     } else {
+         headerHeight = 0;
+     }
+
+     if (document.getElementsByClassName('container')[1] != undefined) {
+         postHeight = document.getElementsByClassName('container')[1].clientHeight;
+     } else {
+         postHeight = 0;
+     }
+
+     if (document.getElementsByClassName('post-info')[0] != undefined) {
+         postInfoHeight = document.getElementsByClassName('post-info')[0].offsetHeight;
+     } else {
+         postInfoHeight = 0;
+     }
+
+     if (document.getElementsByClassName('tag_box')[0] != undefined) {
+         postTagsHeight = document.getElementsByClassName('tag_box')[0].offsetHeight;
+     } else {
+         postTagsHeight = 0;
+     }
+
+     if (document.getElementsByClassName('pager')[0] != undefined) {
+         pagerHeight = document.getElementsByClassName('pager')[0].offsetHeight;
+     } else {
+         pagerHeight = 0;
+     }
+
+     var readHeight = $(window).scrollTop() - headerHeight;
+     var contentHeight = postHeight - postInfoHeight - 2 * postTagsHeight - pagerHeight;
+     var percent;
+
+     if (readHeight < 0) {
+         percent = 0;
+     } else {
+         percent = readHeight / contentHeight;
+     }
+
+     $('div#reading-progress').find('.progress-bar').css('width', percent * 100 + '%');
+ });
+</script>
+{% endif %}
+
