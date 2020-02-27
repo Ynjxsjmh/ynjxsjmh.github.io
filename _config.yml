@@ -120,7 +120,7 @@ blogrolls: [
 
 # Plugins
 BackToTop:           true
-Jekyll-Search:       true     # 是否启用 `jekyll博客搜索` 插件
+JekyllSearch:       true     # 是否启用 `jekyll博客搜索` 插件
 lightbox:            true     # 是否启用 `lightbox 图片预览` 插件
 HeaderCollapse:      true     # 是否启用 `隐藏标题内容` 插件
 ReadingProgressBar:  true     # 是否启用 `阅读进度条` 插件
