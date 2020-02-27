@@ -1,4 +1,4 @@
-# Introduce
+# Introduction
 
 Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github.io)
 
@@ -35,6 +35,8 @@ Here lists some blog themes I admire
 - [mmistakes](https://github.com/mmistakes)
 
 # Tips for customization
+
+[Liquid Introduction](https://shopify.github.io/liquid/basics/introduction/)
 
 - [Jekyll cheatsheet](https://devhints.io/jekyll)
 - [Directory Structure](https://jekyllrb.com/docs/structure/)
