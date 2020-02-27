@@ -36,6 +36,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
 - [ ] Fancy Box: http://fancyapps.com/fancybox/
 - [ ] Share: https://github.com/overtrue/share.js/
+- [x] anchorjs: https://github.com/bryanbraun/anchorjs
 
 
 # More themes
