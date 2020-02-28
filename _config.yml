@@ -130,6 +130,6 @@ lightbox:            true     # 是否启用 `lightbox 图片预览` 插件
 HeaderCollapse:      true     # 是否启用 `隐藏标题内容` 插件
 ReadingProgressBar:  true     # 是否启用 `阅读进度条` 插件
 donation:            true     # 是否启用 `赞赏链接` 插件
-mathjax:             true
-katex:               false
+mathjax:             false    # 数学公式渲染，mathjax 和 katex 二选一
+katex:               true
 # ----------------------------------------------
