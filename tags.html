@@ -50,7 +50,7 @@ From https://stackoverflow.com/a/50290446/10315163
         {% for index in (0..site.tags.size) %}{% unless forloop.last %}
           {% capture this_word %}{{ tag_words[index] | strip_newlines }}{% endcapture %}
           <li>
-              <a href="#{{ this_word | replace:' ','-' }}-ref" data-toggle="tab">
+              <a href="#{{ this_word | replace:' ','-' }}" data-toggle="tab">
                   {{ this_word }}<span class="badge pull-right">{{ site.tags[this_word].size }}</span>
               </a>
           </li>
@@ -62,7 +62,7 @@ From https://stackoverflow.com/a/50290446/10315163
 <div class="tab-content col-sm-8 col-xs-7">
     {% for index in (0..site.tags.size) %}{% unless forloop.last %}
       {% capture this_word %}{{ tag_words[index] | strip_newlines }}{% endcapture %}
-      <div class="tab-pane" id="{{ this_word | replace:' ','-' }}-ref">
+      <div class="tab-pane" id="{{ this_word | replace:' ','-' }}">
           <h3 style="margin-top: 0px">Posts tagged  with {{ this_word }}</h3>
           <ul class="list-unstyled">
               {% for post in site.tags[this_word] %}
