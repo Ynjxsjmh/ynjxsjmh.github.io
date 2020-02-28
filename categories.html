@@ -42,7 +42,7 @@ From https://stackoverflow.com/a/50290446/10315163
       {% if categories_list.first[0] == null %}
         {% for category in categories_list %}
             <li>
-                <a href="#{{ category | replace:' ','-' }}-ref" data-toggle="tab">
+                <a href="#{{ category | replace:' ','-' }}" data-toggle="tab">
                   {{ category | capitalize }} <span class="badge pull-right">{{ site.categories[category].size }}</span>
                </a>
             </li>
@@ -50,7 +50,7 @@ From https://stackoverflow.com/a/50290446/10315163
       {% else %}
         {% for category in categories_list %}
             <li>
-                <a href="#{{ category[0] | replace:' ','-' }}-ref" data-toggle="tab">
+                <a href="#{{ category[0] | replace:' ','-' }}" data-toggle="tab">
                     {{ category[0] | capitalize }} <span class="badge pull-right">{{ category[1].size }}</span>
                 </a>
             </li>
@@ -64,7 +64,7 @@ From https://stackoverflow.com/a/50290446/10315163
 
 <div class="tab-content col-sm-8 col-xs-7">
   {% for category in site.categories %}
-    <div class="tab-pane" id="{{ category[0] | replace:' ','-' }}-ref">
+    <div class="tab-pane" id="{{ category[0] | replace:' ','-' }}">
       <h3 style="margin-top: 0px">Posts in {{ category[0] | capitalize }}</h3>
       <ul class="list-unstyled">
         {% assign pages_list = category[1] %}
