@@ -6,8 +6,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 
 - [x] Archive, Categories, Tags: https://brucezhaor.github.io/
 - [x] Support math using MathJax: https://pkuwwt.github.io/linux/2013-12-03-jekyll-using-mathjax/ && https://segmentfault.com/a/1190000008317350 
-- [ ] Support math using KaTeX: https://xuc.me/blog/katex-and-jekyll/ & https://karas.io/blog/math-support-with-katex-on-github-pages/
-- [ ] Highlight search keywords in result
+- [x] Support math using KaTeX: https://xuc.me/blog/katex-and-jekyll/ && https://karas.io/blog/math-support-with-katex-on-github-pages/ && https://stackoverflow.com/a/45301641/10315163
 - [ ] Show random old saying in page header: https://program-think.blogspot.com/
 - [x] Accurate post time to minute: https://learn.cloudcannon.com/jekyll/date-formatting/
 - [ ] Show access number
@@ -32,6 +31,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Add header collapse: https://github.com/szhielelp/md-post-header-collapse
 - [x] Picture preview: https://lucienhsu.github.io
 - [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
+- [ ] Highlight search keywords in result
 - [x] Add donation page: https://github.com/greedying/tctip
 - [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
 - [ ] Fancy Box: http://fancyapps.com/fancybox/
