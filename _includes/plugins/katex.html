@@ -2,9 +2,22 @@
 {% if site.katex %}
 <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.0/katex.min.css" rel="stylesheet" type="text/css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.0/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.0/contrib/auto-render.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.0/fonts.css" rel="stylesheet" type="text/css">
 
 <script>
+ renderMathInElement(
+     document.body,
+     {
+         delimiters: [
+             {left: "$$", right: "$$", display: true},
+             {left: "\\[", right: "\\]", display: true},
+             {left: "$", right: "$", display: false},
+             {left: "\\(", right: "\\)", display: false}
+         ]
+     }
+ );
+
  $("script[type='math/tex']").replaceWith(
      function(){
          var tex = $(this).text();
