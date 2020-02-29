@@ -31,7 +31,30 @@ layout: default
                         col-md-10 col-md-offset-1
                         post-container">
 
-                {{ content }}
+                <div class="post-content">
+                    {{ content }}
+                </div>
+
+                <div class="post-info">
+                    {% include post/post_info.html %}
+                </div>
+
+                <hr>
+
+                <div class="post-category">
+                    {% include post/post_category.html %}
+                </div>
+
+                <div class="post-tag">
+                    {% include post/post_tag.html %}
+                </div>
+
+                <hr>
+
+                <div class="post-navigation">
+                    {% include post/post_navigation.html %}
+                </div>
+
             </div>
 
             <!-- Side Home Container -->
@@ -131,12 +154,13 @@ layout: default
 </article>
 
 {% include plugins/post_catalog.html %}
-{% include plugins/header_collapse.html %}
-{% include plugins/reading_progress_bar.html %}
-{% include plugins/lightbox.html %}
 {% include plugins/anchorjs.html %}
 
 {% endif %}
+
+{% include plugins/reading_progress_bar.html %}
+{% include plugins/header_collapse.html %}
+{% include plugins/lightbox.html %}
 
 <div class="container">
     <div class="row">
