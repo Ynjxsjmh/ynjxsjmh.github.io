@@ -25,8 +25,8 @@ div#reading-progress {
 
      var headerHeight, postHeight, postInfoHeight, postTagsHeight, pagerHeight;
 
-     headerHeight = document.getElementsByClassName('container')[0].clientHeight;
-     postHeight = document.getElementsByClassName('container')[1].clientHeight;
+     headerHeight = document.querySelectorAll('header .container')[0].clientHeight;
+     postHeight = document.querySelectorAll('article .container')[0].clientHeight;
      postInfoHeight = document.getElementsByClassName('post-info')[0].offsetHeight;
      postTagsHeight = document.getElementsByClassName('post-tag')[0].offsetHeight;
      pagerHeight = document.getElementsByClassName('post-navigation')[0].offsetHeight;
