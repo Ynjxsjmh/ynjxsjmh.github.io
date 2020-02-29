@@ -17,7 +17,9 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [ ] Picture changes when clicked
 - [ ] Render HTML exported from Org and AsciiDoc
 - [ ] Playing mp4
-- [ ] video link preview
+- [ ] Video link preview
+- [ ] Make URL clickable
+- [ ] Header and ToC mutual back: https://macplay.github.io/
 
 
 **Plugins**
