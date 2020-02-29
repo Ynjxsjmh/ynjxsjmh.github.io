@@ -1,0 +1,48 @@
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                        col-lg-9 col-lg-offset-0
+                        col-md-10 col-md-offset-1
+                        post-container">
+
+                <div class="post-content">
+                    {{ content }}
+                </div>
+
+                <div class="post-info">
+                    {% include post/post_info.html %}
+                </div>
+
+                <hr>
+
+                <div class="post-category">
+                    {% include post/post_category.html %}
+                </div>
+
+                <div class="post-tag">
+                    {% include post/post_tag.html %}
+                </div>
+
+                <hr>
+
+                <div class="post-navigation">
+                    {% include post/post_navigation.html %}
+                </div>
+
+            </div>
+
+            <!-- Side Home Container -->
+            <div class="
+                        col-lg-3 col-lg-offset-0
+                        visible-lg-block
+                        sidebar-container
+                        home-container">
+            </div>
+
+        </div>
+    </div>
+</article>
