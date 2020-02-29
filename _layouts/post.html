@@ -28,20 +28,6 @@ layout: default
         background-color: rgba(207, 247, 207, 0.1);
         margin-bottom: 1em;
     }
-
-    {% if site.ReadingProgressBar %}
-    div#reading-progress {
-        height: 3px;
-    }
-
-    .fixed-top {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-    {% endif %}
 </style>
 
 <header class="intro-header" >
@@ -49,14 +35,6 @@ layout: default
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-                <!-- Reading Progress Bar -->
-
-                {% if site.ReadingProgressBar %}
-                <div class="progress navbar-fixed-top" id="reading-progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                {% endif %}
 
                 <div class="post-heading">
                     <h1>{{ page.title }}</h1>
@@ -85,7 +63,6 @@ layout: default
                 post-container">
 
                 {{ content }}
-
 
                 <div class="post-info">
                     {% if page.link %}
