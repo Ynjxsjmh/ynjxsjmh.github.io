@@ -99,129 +99,39 @@ layout: default
 
             <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
+                        col-lg-8 col-lg-offset-0
+                        col-md-10 col-md-offset-1
+                        post-container">
 
                 <div class="post-content">
                     {{ content }}
                 </div>
 
                 <div class="post-info">
-                    {% if page.link %}
-                    <p>引用资源：<a href="{{ page.link }}" target="_blank">{{ page.link }}</a></p>
-                    {% endif %}
-                    <p>文章链接：<a href="{{ page.url }}" target="_blank">{{ site.url }}{{ page.url }}</a></p>
-                    <p>发布/更新于：
-                        {% if page.updated %}
-                        {{ page.updated | date: "%Y-%m-%d %R" }}
-                        {% else %}
-                        {{ page.date | date: "%Y-%m-%d %R" }}
-                        {% endif %}
-                    </p>
-                    <p>版权声明：如无特别说明，本站文章均遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a> 协议，转载请注明作者及出处。</p>
+                    {% include post/post_info.html %}
                 </div>
 
                 <hr>
 
-
-                <!-- Post Category -->
                 <div class="post-category">
-                    {% unless page.category == empty %}
-                    <ul class="tag_box list-unstyled list-inline">
-                        <li><i class="fa fa-folder-open"></i></li>
-                        {% assign categories_list = page.category %}
-                        {% if categories_list.first[0] == null %}
-                        {% for category in categories_list %}
-                        <li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category }}">
-                            {{ category | join: "/" }} <span>({{ site.categories[category].size }})</span>
-                            {% unless forloop.last %},{% endunless %}
-                        </a></li>
-                        {% endfor %}
-                        {% else %}
-                        {% for category in categories_list %}
-                        <li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category[0] }}">
-                            {{ category[0] | join: "/" }} <span>/{{ category[1].size }})</span></a>
-                        </li>
-                        {% endfor %}
-                        {% endif %}
-                    </ul>
-                    {% endunless %}
+                    {% include post/post_category.html %}
                 </div>
 
-
-                <!-- Post Tag -->
                 <div class="post-tag">
-                    {% unless page.tags == empty %}
-                    <ul class="list-inline">
-                        <li><i class="fa fa-tags"></i></li>
-                        {% assign tags_list = page.tags %}
-                        {% if tags_list.first[0] == null %}
-                        {% for tag in tags_list %}
-                        <li>
-                            <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag }}">
-                                {{ tag }} <span>({{ site.tags[tag].size }})</span>
-                                {% unless forloop.last %},{% endunless %}
-                            </a>
-                        </li>
-                        {% endfor %}
-                        {% else %}
-                        {% for tag in tags_list %}
-                        <li>
-                            <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag[0] }}">
-                                {{ tag[0] }} <span>({{ tag[1].size }})</span>
-                                {% unless forloop.last %},{% endunless %}
-                            </a>
-                        </li>
-
-                        {% endfor %}
-                        {% endif %}
-                        {% assign tags_list = nil %}
-                    </ul>
-                    {% endunless %}
+                    {% include post/post_tag.html %}
                 </div>
 
                 <hr>
 
-                <!-- Pager -->
-                <ul class="pager">
-                    {% if page.previous.url %}
-                    <li class="previous">
-                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                        Previous<br>
-                        <span>{{page.previous.title}}</span>
-                        </a>
-                    </li>
-                    {% else %}
-                    <li class="previous disabled">
-                        <a>
-                            &larr; Previous <br>
-                            <span>没有更多了</span>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if page.next.url %}
-                    <li class="next">
-                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                        Next<br>
-                        <span>{{page.next.title}}</span>
-                        </a>
-                    </li>
-                    {% else %}
-                    <li class="next disabled">
-                        <a>
-                            Next &rarr; <br>
-                            <span>没有更多了</span>
-                        </a>
-                    </li>
-                    {% endif %}
-                </ul>
+                <div class="post-navigation">
+                    {% include post/post_navigation.html %}
+                </div>
             </div>
 
             <!-- Side Catalog Container -->
             {% if site.PostCatalog %}
             <div class="
-                        col-lg-2 col-lg-offset-0
+                        col-lg-2
                         visible-lg-block
                         sidebar-container
                         catalog-container">
