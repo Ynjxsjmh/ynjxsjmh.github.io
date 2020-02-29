@@ -9,29 +9,7 @@
                         col-md-10 col-md-offset-1
                         post-container">
 
-                <div class="post-content">
-                    {{ content }}
-                </div>
-
-                <div class="post-info">
-                    {% include post/post_info.html %}
-                </div>
-
-                <hr>
-
-                <div class="post-category">
-                    {% include post/post_category.html %}
-                </div>
-
-                <div class="post-tag">
-                    {% include post/post_tag.html %}
-                </div>
-
-                <hr>
-
-                <div class="post-navigation">
-                    {% include post/post_navigation.html %}
-                </div>
+                {% include post/post_body.html %}
 
             </div>
 
