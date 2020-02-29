@@ -15,6 +15,9 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Show tag cloud: https://www.oukohou.wang/ || https://jovandeginste.github.io/2016/05/04/add-a-tag-cloud-to-my-jekyll-site.html
 - [x] Add article info: https://macplay.github.io/
 - [ ] Picture changes when clicked
+- [ ] Render HTML exported from Org and Jekyll
+- [ ] Playing mp4
+- [ ] video link preview
 
 
 **Plugins**
