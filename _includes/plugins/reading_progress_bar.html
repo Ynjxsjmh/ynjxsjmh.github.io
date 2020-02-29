@@ -1,5 +1,24 @@
 <!-- Reading Progress Bar -->
 {% if site.ReadingProgressBar %}
+
+<style>
+div#reading-progress {
+    height: 3px;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+</style>
+
+<div class="progress navbar-fixed-top" id="reading-progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
 <script>
  $(window).bind('scroll', function () {
      <!-- var percent = $(window).scrollTop() / ($('body').height() - $(window).height()) -->
