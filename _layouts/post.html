@@ -6,6 +6,47 @@ layout: default
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
+
+
+{% if page.html == "org" or page.html == "asciidoc" %}
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+            {{ content }}
+            </div>
+
+
+            <!-- Side Catalog Container -->
+            <div class="
+                        col-lg-2 col-lg-offset-0
+                        visible-lg-block
+                        sidebar-container
+                        catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+{% else %}
+
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
@@ -196,15 +237,13 @@ layout: default
     </div>
 </article>
 
-
 {% include plugins/post_catalog.html %}
 {% include plugins/header_collapse.html %}
 {% include plugins/reading_progress_bar.html %}
 {% include plugins/lightbox.html %}
+{% include plugins/anchorjs.html %}
 
+{% endif %}
 
 {% include plugins/commentbox/gittalk.html %}
-
 {% include plugins/commentbox/disqus.html %}
-
-{% include plugins/anchorjs.html %}
