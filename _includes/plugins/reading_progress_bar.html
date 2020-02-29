@@ -25,35 +25,11 @@ div#reading-progress {
 
      var headerHeight, postHeight, postInfoHeight, postTagsHeight, pagerHeight;
 
-     if (document.getElementsByClassName('container')[0] != undefined) {
-         headerHeight = document.getElementsByClassName('container')[0].clientHeight;
-     } else {
-         headerHeight = 0;
-     }
-
-     if (document.getElementsByClassName('container')[1] != undefined) {
-         postHeight = document.getElementsByClassName('container')[1].clientHeight;
-     } else {
-         postHeight = 0;
-     }
-
-     if (document.getElementsByClassName('post-info')[0] != undefined) {
-         postInfoHeight = document.getElementsByClassName('post-info')[0].offsetHeight;
-     } else {
-         postInfoHeight = 0;
-     }
-
-     if (document.getElementsByClassName('tag_box')[0] != undefined) {
-         postTagsHeight = document.getElementsByClassName('tag_box')[0].offsetHeight;
-     } else {
-         postTagsHeight = 0;
-     }
-
-     if (document.getElementsByClassName('pager')[0] != undefined) {
-         pagerHeight = document.getElementsByClassName('pager')[0].offsetHeight;
-     } else {
-         pagerHeight = 0;
-     }
+     headerHeight = document.getElementsByClassName('container')[0].clientHeight;
+     postHeight = document.getElementsByClassName('container')[1].clientHeight;
+     postInfoHeight = document.getElementsByClassName('post-info')[0].offsetHeight;
+     postTagsHeight = document.getElementsByClassName('post-tag')[0].offsetHeight;
+     pagerHeight = document.getElementsByClassName('post-navigation')[0].offsetHeight;
 
      var readHeight = $(window).scrollTop() - headerHeight;
      var contentHeight = postHeight - postInfoHeight - 2 * postTagsHeight - pagerHeight;
@@ -69,4 +45,3 @@ div#reading-progress {
  });
 </script>
 {% endif %}
-
