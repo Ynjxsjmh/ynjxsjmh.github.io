@@ -113,14 +113,12 @@ ga_domain: auto               # 默认的是 auto, 这里我是自定义了的�
 # ----------------------------------------------
 
 
-# Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
-
-
 # ------------插件配置--------------------------
 # Plugins
-anchorjs: true                # if you want to customize anchor. check out line:27 of `anchorjs.html`
+anchorjs: true                     # if you want to customize anchor. check out line:27 of `anchorjs.html`
+chrome-tab-theme-color: "#000000"  # Progressive Web Apps
+service-worker: true               # Progressive Web Apps
+
 
 # Plugins By Ynjxsjmh
 ## Site
