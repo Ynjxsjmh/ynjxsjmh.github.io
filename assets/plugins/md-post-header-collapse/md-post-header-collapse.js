@@ -74,7 +74,8 @@ Example:
 				})
 				$(e).prepend('<i class="fa fa-minus-square-o p-1 headerbtn" aria-hidden="true"></i>');
 			}
-			$(e).on('click', () => {
+
+			$(e).find('i.headerbtn').on('click', () => {
 				collapse($(e));
 			})
 		})
