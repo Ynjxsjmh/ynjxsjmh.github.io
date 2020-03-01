@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="{{ "/assets/css/rtd-full.css" | prepend: site.baseurl }}"/>
+<link rel="stylesheet" href="{{ "/assets/css/htmlize.css" | prepend: site.baseurl }}"/>
+<link rel="stylesheet" href="{{ "/assets/css/readtheorg.css" | prepend: site.baseurl }}"/>
+<script src="{{ "/assets/js/readtheorg.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/js/jquery.stickytableheaders.min.js" | prepend: site.baseurl }}"></script>
+
+<style>
+ pre.src {
+     overflow: auto !important;
+ }
+</style>
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                        col-lg-9 col-lg-offset-0
+                        col-md-10 col-md-offset-1
+                        post-container">
+                {% include post/post_content.html %}
+            </div>
+
+            <!-- Side Home Container -->
+            <div class="
+                        col-lg-3 col-lg-offset-0
+                        visible-lg-block
+                        sidebar-container
+                        home-container">
+            </div>
+
+        </div>
+
+        <style>
+         li {
+             margin-left: 0px !important;
+         }
+        </style>
+
+        <div class="row">
+            <div class="
+                        col-lg-9 col-lg-offset-3
+                        col-md-10 col-md-offset-1
+                        post-container">
+
+                <hr style="visibility: hidden;">
+
+                {% include post/post_tail.html %}
+            </div>
+        </div>
+    </div>
+</article>
