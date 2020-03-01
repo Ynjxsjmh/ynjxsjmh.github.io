@@ -18,9 +18,14 @@ layout: default
     </div>
 </header>
 
-{% if page.html == "org" or page.html == "asciidoc" %}
+
+{% if page.html == "asciidoc" %}
 
 {% include post/html_asciidoc_post.html %}
+
+{% elsif page.html == "readtheorg" %}
+
+{% include post/html_readtheorg_post.html %}
 
 {% else %}
 
