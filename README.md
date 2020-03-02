@@ -10,14 +10,11 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [ ] Show random old saying in page header: https://program-think.blogspot.com/
 - [x] Accurate post time to minute: https://learn.cloudcannon.com/jekyll/date-formatting/
 - [ ] Show access number
-- [ ] Show read time: http://lsfalimis.github.io/customise-hpstr-jekyll-theme/#decimal
 - [x] Show total pages
 - [x] Show tag cloud: https://www.oukohou.wang/ || https://jovandeginste.github.io/2016/05/04/add-a-tag-cloud-to-my-jekyll-site.html
 - [x] Add article info: https://macplay.github.io/
 - [ ] Picture changes when clicked
 - [ ] Render HTML exported from Org and AsciiDoc
-- [ ] Playing mp4
-- [ ] Video link preview
 - [ ] Make URL clickable
 - [ ] Header and ToC mutual back: https://macplay.github.io/ -> toc-backref
 
@@ -29,6 +26,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 [Jekyll Plugins | Find Plugins for Jekyll Blogs](http://www.jekyll-plugins.com/)
 
 [planetjekyll/awesome-jekyll-plugins](https://github.com/planetjekyll/awesome-jekyll-plugins) - https://planetjekyll.github.io/plugins/top
+
 
 - [x] Back to top: https://brucezhaor.github.io/
 - [ ] Toc
@@ -42,8 +40,19 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Add donation page: https://awang0608.github.io/ -> https://github.com/greedying/tctip
 - [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
 - [ ] Fancy Box: http://fancyapps.com/fancybox/
-- [ ] Share: https://github.com/overtrue/share.js/
+- [ ] Share: https://github.com/overtrue/share.js/ || https://jekyllcodex.org/without-plugin/share-buttons/
 - [x] anchorjs: https://github.com/bryanbraun/anchorjs
+- [ ] Show read time: https://jekyllcodex.org/without-plugin/reading-time-indicator/ || http://lsfalimis.github.io/customise-hpstr-jekyll-theme/#decimal
+- [x] Media
+  - [x] Embed web mp4
+    1. Use iframe: https://stackoverflow.com/questions/10529859
+    2. Use https://jekyllcodex.org/without-plugin/open-embed/ -> Synatx: Just paste `path-to-video-file.mp4` in your markdown file. eg: `https://youtu.be/iMvdG4guQf4`.
+    3. Search `Jekyll Embed mp4` in Google
+  - [x] Embed local vedio: Maybe [html audio/video elements example](https://github.com/mmistakes/minimal-mistakes/issues/1827)
+  - [x] Embed mp3
+    1. Use https://jekyllcodex.org/without-plugin/open-embed/ -> Synatx: Just paste `path-to-audio-file.mp3` in your markdown file, either relative or absolute path is ok. eg: `https://www.web3.wang/assets/audio/napianhai.mp3`.
+    2. Search `jekyll embed mp3` in Google
+
 
 
 # More themes
