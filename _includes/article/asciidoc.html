@@ -1,3 +1,16 @@
+<script>
+ window.onscroll = function() {
+     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+     var postContainerPosition = $('.post-container').position().top;
+     var bannerHeight = $('.intro-header').height();
+     if(scrollTop <= bannerHeight){
+         jQuery("#toc").css('top', (bannerHeight-scrollTop)+'px');
+     }else{
+         jQuery("#toc").css('top','0px');
+     }
+ }
+</script>
+
 <!-- Post Content -->
 <article>
     <div class="container">
