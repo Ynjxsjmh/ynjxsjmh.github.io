@@ -24,6 +24,8 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 
 **Plugins**
 
+[Jekyll without plugins](https://jekyllcodex.org/without-plugins/)
+
 [Jekyll Plugins | Find Plugins for Jekyll Blogs](http://www.jekyll-plugins.com/)
 
 [planetjekyll/awesome-jekyll-plugins](https://github.com/planetjekyll/awesome-jekyll-plugins) - https://planetjekyll.github.io/plugins/top
