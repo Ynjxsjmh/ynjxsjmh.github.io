@@ -19,7 +19,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [ ] Playing mp4
 - [ ] Video link preview
 - [ ] Make URL clickable
-- [ ] Header and ToC mutual back: https://macplay.github.io/
+- [ ] Header and ToC mutual back: https://macplay.github.io/ -> toc-backref
 
 
 **Plugins**
@@ -37,7 +37,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Picture preview: https://lucienhsu.github.io
 - [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
 - [ ] Highlight search keywords in result
-- [x] Add donation page: https://github.com/greedying/tctip
+- [x] Add donation page: https://awang0608.github.io/ -> https://github.com/greedying/tctip
 - [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
 - [ ] Fancy Box: http://fancyapps.com/fancybox/
 - [ ] Share: https://github.com/overtrue/share.js/
@@ -67,6 +67,19 @@ Here lists some blog themes I admire
  │   └── default.html
 
  └── index.html: https://jekyllrb.com/docs/pagination/
+
+# Possible Error
+
+```
+Liquid Exception: Liquid syntax error (line **): Variable '{{1,2,3}' was not
+ properly terminated with regexp: /\}\}/ in ...
+```
+
+https://github.com/imathis/octopress/issues/466
+
+Replace `{{` with `{ {` and `}}` with `} }`
+
+
 
 
 # Tips for myself
