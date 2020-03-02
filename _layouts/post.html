@@ -27,7 +27,7 @@ layout: default
 
 {% include article/readtheorg.html %}
 
-{% elsif page.type == "markdown" or page.type == false %}
+{% elsif page.type == "markdown" or page.type == "" or page.type == nil %}
 
 {% include article/markdown.html %}
 
@@ -36,15 +36,10 @@ layout: default
 
 {% else %}
 
-{% raw %}
-"Page type invalid"
-{% endraw %}
+"Post type invalid, your type is {{page.type}}, which is not a valid type."
 
 {% endif %}
 
-{% include plugins/reading_progress_bar.html %}
-{% include plugins/header_collapse.html %}
-{% include plugins/lightbox.html %}
 
 <div class="container">
     <div class="row">
@@ -57,3 +52,8 @@ layout: default
         </div>
     </div>
 </div>
+
+
+{% include plugins/reading_progress_bar.html %}
+{% include plugins/header_collapse.html %}
+{% include plugins/lightbox.html %}
