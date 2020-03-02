@@ -53,6 +53,25 @@ Here lists some blog themes I admire
 - [oukohou](https://www.oukohou.wang/)
 - [mmistakes](https://github.com/mmistakes)
 
+# Post [front matter](https://jekyllrb.com/docs/front-matter/)
+
+```
+---
+layout:     post
+title:      
+subtitle:
+date:       2020-02-29 13:26
+author:     
+header-img: img/post-default-bg.jpg
+category:   []
+tags:       []
+link:       转载连接
+type:       markdown(default) | asciidoc | readtheorg
+toc:        Designed for asciidoc. If you use `toc:left` in asciidoc, fill it with `left`. Otherwise, you don't need to define this value.
+---
+```
+
+
 # Tips for customization
 
 [Liquid Introduction](https://shopify.github.io/liquid/basics/introduction/)
