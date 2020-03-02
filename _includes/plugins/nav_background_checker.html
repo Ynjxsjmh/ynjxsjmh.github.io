@@ -1,0 +1,22 @@
+<script src="{{ "/assets/js/background-check.min.js" | prepend: site.baseurl }}"></script>
+
+<script>
+BackgroundCheck.init({
+  targets: '.bg-checker',
+  images: '.intro-header'
+});
+</script>
+
+<style>
+bg-checker.background--light {
+  color: black;
+}
+
+bg-checker.background--dark {
+  color: white;
+}
+
+bg-checker.background--complex {
+  color: gray;
+}
+</style>
