@@ -1,0 +1,4 @@
+{% assign readtime = content | number_of_words | divided_by: site.WordsPerMinute | ceil %}
+
+
+{{ readtime | append: ' minutes to read' }}
