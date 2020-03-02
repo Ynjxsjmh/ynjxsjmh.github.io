@@ -19,20 +19,26 @@ layout: default
 </header>
 
 
-{% if page.html == "asciidoc" %}
+{% if page.type == "asciidoc" %}
 
 {% include article/asciidoc.html %}
 
-{% elsif page.html == "readtheorg" %}
+{% elsif page.type == "readtheorg" %}
 
 {% include article/readtheorg.html %}
 
-{% else %}
+{% elsif page.type == "markdown" or page.type == false %}
 
 {% include article/markdown.html %}
 
 {% include plugins/post_catalog.html %}
 {% include plugins/anchorjs.html %}
+
+{% else %}
+
+{% raw %}
+"Page type invalid"
+{% endraw %}
 
 {% endif %}
 
