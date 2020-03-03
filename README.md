@@ -31,7 +31,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 
 - [x] Back to top: https://brucezhaor.github.io/
 - [ ] Toc
-  - [x] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents
+  - [x] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents || https://github.com/Huxpro/huxpro.github.io/issues/116#issuecomment-306086066
   - [ ] Word wrap/overflow on too long toc item
   - [ ] Toc hover/float left
 - [x] Add header collapse: https://github.com/szhielelp/md-post-header-collapse
@@ -63,7 +63,7 @@ Here lists some blog themes I admire
 - [ashfinal](https://macplay.github.io/)
 - [Tianyun's Blog](https://doowzs.com/blog/)
 - [oukohou](https://www.oukohou.wang/)
-- [mmistakes](https://github.com/mmistakes)
+- [mmistakes](https://github.com/mmistakes) -> https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
 
 # Post [front matter](https://jekyllrb.com/docs/front-matter/)
 
