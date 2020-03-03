@@ -21,7 +21,12 @@ layout: default
 
 {% if page.type == "asciidoc" %}
 
-{% include article/asciidoc.html %}
+  {% if page.toc == "left" %}
+    {% include article/asciidoc.html %}
+  {% else %}
+    {% include article/asciidoc_without_side_toc.html %}
+    {% include plugins/post_catalog.html %}
+  {% endif %}
 
 {% elsif page.type == "readtheorg" %}
 
@@ -34,6 +39,16 @@ layout: default
 {% include plugins/open_embed.html %}
 {% include plugins/post_catalog.html %}
 {% include plugins/anchorjs.html %}
+
+{% elsif page.type == "html" or page.type == "asciidoc" %}
+
+{% comment %}
+这里针对没有左侧/右侧目录的 asciidoc 导出的 html或者纯html
+{% endcomment %}
+
+{% include article/markdown.html %}
+
+{% include plugins/post_catalog.html %}
 
 {% else %}
 
