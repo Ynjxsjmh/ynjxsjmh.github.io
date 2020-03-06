@@ -58,7 +58,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 
 # More themes
 
-Here lists some blog themes I admire
+Here list some blog themes I admire
 
 - [ashfinal](https://macplay.github.io/)
 - [Tianyun's Blog](https://doowzs.com/blog/)
