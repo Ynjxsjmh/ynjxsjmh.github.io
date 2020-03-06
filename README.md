@@ -63,6 +63,7 @@ Here list some blog themes I admire
 - [ashfinal](https://macplay.github.io/)
 - [Tianyun's Blog](https://doowzs.com/blog/)
 - [oukohou](https://www.oukohou.wang/)
+- [Frank Lin](https://frankindev.com/)
 - [mmistakes](https://github.com/mmistakes) -> https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
 
 # Post [front matter](https://jekyllrb.com/docs/front-matter/)
