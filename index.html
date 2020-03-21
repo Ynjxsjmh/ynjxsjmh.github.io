@@ -55,7 +55,7 @@ select {
 
     <li>
         <span class="page_number">Page:
-            <select name="pagelist" onchange="javascript:location.href=this.value;">
+            <select name="pagelist" onchange="javascript:location.href=this.value;" style="margin-top: 0px;">
                 {% for page in (1..paginator.total_pages) %}
                     {% if page == paginator.page %}
                         <option selected="selected">{{ page }}</option>
