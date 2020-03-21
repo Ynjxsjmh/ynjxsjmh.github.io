@@ -88,6 +88,9 @@ toc:        Designed for asciidoc. If you use `toc:left` in asciidoc, fill it wi
 
 # Tips for customization
 
+Some files have a minified version, which is used by default. If you modify something in non-minified file and find it is not working as you expect, please check if you modify the corresponding minified file.
+
+
 [Liquid Introduction](https://shopify.github.io/liquid/basics/introduction/)
 
 - [Jekyll cheatsheet](https://devhints.io/jekyll)
