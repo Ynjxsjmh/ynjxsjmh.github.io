@@ -58,10 +58,12 @@
   padding-bottom: 40px;
   width: 195px;
 }
-.side-catalog.fixed {
-  position: fixed;
-  top: -21px;
-}
+
+/* .side-catalog.fixed { */
+/*   position: fixed; */
+/*   top: -21px; */
+/* } */
+
 .side-catalog.fold .catalog-toggle::before {
   content: "+";
 }

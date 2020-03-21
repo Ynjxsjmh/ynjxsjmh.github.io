@@ -133,4 +133,71 @@
         });
     });
 </script>
+
+<script type="text/javascript">
+ function controlCatalogState () {
+     const SPACING = -21;
+
+     const $toc = $('.side-catalog');
+     const $footer = $('.post-navigation');
+
+     var tocBodyHeight = $('.catalog-body').height();
+     var tocHeight = 0;
+
+     if (tocBodyHeight > $toc.height()) {
+         tocHeight = $toc.height();
+     } else {
+         tocHeight = tocBodyHeight;
+     }
+
+     $(window).scroll(function() {
+
+         var headerHeight = document.querySelectorAll('header .container')[0].clientHeight;
+         var postHeight = document.getElementsByTagName('article')[0].clientHeight;
+         var postInfoHeight = document.getElementsByClassName('post-info')[0].offsetHeight;
+         var postTagsHeight = document.getElementsByClassName('post-tag')[0].offsetHeight;
+         var postCategoryHeight = document.getElementsByClassName('post-category')[0].offsetHeight;
+         var pagerHeight = document.getElementsByClassName('post-navigation')[0].offsetHeight;
+         var contentHeight = postHeight - postInfoHeight - postCategoryHeight - postTagsHeight - pagerHeight;
+
+         const minScrollTop = headerHeight - SPACING;
+         const maxScrollTop = headerHeight + contentHeight - tocHeight - SPACING;
+
+         const tocState = {
+             start: {
+                 'position': 'relative',
+                 'top': 'auto',
+                 'visibility' : 'visible',
+             },
+             process: {
+                 'position': 'fixed',
+                 'top': SPACING,
+                 'visibility' : 'visible',
+             },
+             end: {
+                 'position': 'absolute',
+                 'top': maxScrollTop,
+                 'visibility' : 'hidden',
+             },
+         };
+
+         //adjust the appearance of side-catalog
+         $toc.show()
+
+         const scrollTop = $(window).scrollTop();
+
+         if (scrollTop < minScrollTop) {
+             $toc.css(tocState.start);
+         } else if (scrollTop > maxScrollTop) {
+             $toc.css(tocState.end);
+         } else {
+             $toc.css(tocState.process);
+         }
+
+     });
+ };
+
+ controlCatalogState();
+</script>
+
 {% endif %}
