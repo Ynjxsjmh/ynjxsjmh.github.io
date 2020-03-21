@@ -30,10 +30,11 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 
 
 - [x] Back to top: https://brucezhaor.github.io/
-- [ ] Toc
+- [ ] Toc: https://talk.jekyllrb.com/t/any-tutorials-for-styling-table-of-content/4052
   - [x] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents || https://github.com/Huxpro/huxpro.github.io/issues/116#issuecomment-306086066
   - [ ] Word wrap/overflow on too long toc item
   - [ ] Toc hover/float left
+  - [ ] Keep toc in article container: https://github.com/olOwOlo/hugo-theme-even
 - [x] Add header collapse: https://github.com/szhielelp/md-post-header-collapse
 - [x] Picture preview: https://lucienhsu.github.io
 - [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
