@@ -4,13 +4,16 @@ description: "Le vent se leve, il faut tenter de vivre."
 ---
 
 
-{% for post in site.posts %}
-  {% if post.pin %}
-    {% include post_assemble/post_preview.html %}
-    <hr style="visibility: hidden;">
-  {% endif %}
-{% endfor %}
-
+{% assign after_size = page.url | size | minus: 1 %}
+{% assign after_url = page.url | slice: 0,after_size %}
+{% if site.baseurl == after_url %}
+  {% for post in site.posts %}
+    {% if post.pin %}
+      {% include post_assemble/post_preview.html %}
+      <hr style="visibility: hidden;">
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 <!-- https://jekyllrb.com/docs/pagination/-->
 
