@@ -22,7 +22,9 @@ for poetry in data:
     is_first = True
 
     poetry_content += '<div class="poetry-title">' + poetry["title"].split("/")[0] + "</div>" + "\n"
-    poetry_content += '<div class="poetry-author">' + poetry["author"] + "</div>" + "\n"
+    poetry_author = '<span class="poetry-author">{0}</span>'.format(poetry["author"])
+    poetry_dynasty = '<span class="poetry-dynasty">{0}</span>'.format(poetry["dynasty"])
+    poetry_content += '<div class="poetry-meta">{0} {1}</div>\n'.format(poetry_author, poetry_dynasty)
     poetry_content += '<div class="poetry-cotent">\n'
 
     for p in poetry["paragraphs"]:
@@ -37,5 +39,5 @@ for poetry in data:
 
 content += "\n</div>"
 
-with open(f'{file_name}.html', 'w', encoding="utf-8") as f:
+with open(f'random_{file_name}.html', 'w', encoding="utf-8") as f:
     f.write(content)
