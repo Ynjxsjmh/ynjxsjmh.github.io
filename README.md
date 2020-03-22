@@ -17,6 +17,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [ ] Render HTML exported from Org and AsciiDoc
 - [ ] Make URL clickable
 - [x] Change navbar content color according to background image color: https://stackoverflow.com/questions/32928517 -> https://github.com/kennethcachia/Background-Check
+- [ ] Hide timestamp in image
 
 -----
 
