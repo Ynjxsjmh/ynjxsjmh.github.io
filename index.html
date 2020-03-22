@@ -3,12 +3,20 @@ layout: page
 description: "Le vent se leve, il faut tenter de vivre."
 ---
 
+
+{% for post in site.posts %}
+  {% if post.pin %}
+    {% include post_assemble/post_preview.html %}
+    <hr style="visibility: hidden;">
+  {% endif %}
+{% endfor %}
+
+
 <!-- https://jekyllrb.com/docs/pagination/-->
 
 {% for post in paginator.posts %}
-
-{% include post_assemble/post_preview.html %}
-<hr style="visibility: hidden;">
+  {% include post_assemble/post_preview.html %}
+  <hr style="visibility: hidden;">
 {% endfor %}
 
 <style>

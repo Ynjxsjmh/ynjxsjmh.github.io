@@ -42,11 +42,21 @@
      padding: 0px 4.2em 5px 25px;
      float: left;
  }
+
+ div.pin {
+     background: rgba(50,60,70,.04);
+ }
 </style>
 
 
-<div class="post-preview">
+<div class="post-preview {% if post.pin %}pin{% endif %}">
     <h2 class="post-title">
+        {% if post.pin %}
+        <span class="pin">
+            <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+        </span>
+        {% endif %}
+
         <a href="{{ post.url | prepend: site.baseurl }}">
             {{ post.title }}
         </a>
