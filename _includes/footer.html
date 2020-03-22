@@ -1,28 +1,88 @@
+<style>
+ footer {
+     margin-top: 50px;
+     padding: 50px 0 10px;
+     background-color: black;
+     background-color: rgb(16, 18, 21);
+     background-image: url('{{ site.baseurl }}/img/footer-default-bg.jpg');
+     box-shadow: rgb(16, 18, 21) 0px -3px 5px;
+     font-size: 20px;
+ }
+
+ .blogroll-container ul {
+     -webkit-column-count: 1; /* Chrome, Safari, Opera */
+     -moz-column-count: 1;    /* Firefox */
+     column-count: 1;
+     column-gap: 10px;
+     list-style-type: none;
+     list-style-position: outside;
+     margin: 0 0 0 0;
+ }
+
+ .blogroll-container li {
+     width: 80px;
+     font-size: 15px;
+ }
+
+ .copyright {
+     margin-top: 30px;
+ }
+</style>
+
+
 <!-- Footer -->
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-                <div class="text-center">
+            <div class="col-lg-5 col-lg-offset-1">
+                <div class="contact-container">
+                    <h5 class="bg-checker" style="margin-bottom: 20px;">Contact</h5>
                     {% include sidebar/sns_link.html %}
                 </div>
-
-                <p class="copyright text-muted">
-                    Copyright &copy; {{ site.title }} 2018-{{ site.time | date: '%Y' }}
-                    <br>
-                    Theme on <a href="{{ site.github_repo }}">GitHub</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user={{ site.github_username }}&repo={{ site.github_username }}.github.io&type=star&count=true" >
-                    </iframe>
-                </p>
             </div>
+
+            <div class="col-lg-4">
+                {% if site.blogrolls %}
+                <div class="blogroll-container">
+                    <h5 class="bg-checker">Blogroll</h5>
+                    <ul>
+                        {% for blogroll in site.blogrolls %}
+                        <li><a class="bg-checker" href="{{blogroll.href}}">{{blogroll.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <p class="copyright text-muted bg-checker">
+                Copyright &copy; <a href="{{ site.url }}">{{ site.title }}</a> 2018-{{ site.time | date: '%Y' }}.
+                &nbsp;
+                Powered by <a href="https://jekyllrb.com/">Jekyll</a>.
+                &nbsp;
+                Theme on <a href="{{ site.github_repo }}">GitHub</a> |
+                <iframe
+                    style="margin-left: 2px; margin-bottom:-5px;"
+                    frameborder="0" scrolling="0" width="100px" height="20px"
+                    src="https://ghbtns.com/github-btn.html?user={{ site.sns.github_username }}&repo={{ site.sns.github_username }}.github.io&type=star&count=true" >
+                </iframe>
+            </p>
         </div>
     </div>
 </footer>
 
+<script>
+ var ul = document.querySelector(".blogroll-container ul");
+ var listSize = {{ site.blogrolls.size }};
+ var oneColSize = 5;
+ var colNum = Math.ceil(listSize/oneColSize);
+
+ ul.style.webkitColumnCount = colNum;
+ ul.style["-moz-column-count"] = colNum;
+ ul.style.columnCount = colNum;
+</script>
 
 
 <!-- load plugins -->
