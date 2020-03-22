@@ -3,6 +3,13 @@ import json
 import sys
 
 
+__author__ = "Ynjxsjmh"
+__version__ = "1.1"
+__maintainer__ = "Ynjxsjmh"
+__email__ = "ynjxsjmh@gmail.com"
+__status__ = "Production"
+
+
 with open(sys.argv[1], 'r', encoding="utf-8") as f:
     file_name = sys.argv[1].split(".")[0]
     content = f.read()

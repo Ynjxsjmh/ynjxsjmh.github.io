@@ -1,6 +1,14 @@
 import re
 from bs4 import BeautifulSoup
 
+
+__author__ = "Ynjxsjmh"
+__version__ = "1.1"
+__maintainer__ = "Ynjxsjmh"
+__email__ = "ynjxsjmh@gmail.com"
+__status__ = "Production"
+
+
 soup = BeautifulSoup(open("random_old_saying.html", 'rb'), "html.parser")
 
 li_list = soup.findAll("li")
