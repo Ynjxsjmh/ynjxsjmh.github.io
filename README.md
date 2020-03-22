@@ -35,6 +35,8 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [ ] Hide timestamp in image
 - [x] Article preview: http://moxfive.xyz/
 - [x] Pin an article: https://github.com/ibrado/jekyll-stickyposts
+- [ ] Render preview content: http://moxfive.xyz/
+- [ ] Clickable right side menu: https://szhshp.org/content.html
 
 -----
 
@@ -64,6 +66,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
 - [ ] Highlight search keywords in result
 - [x] Add donation page: https://awang0608.github.io/ -> https://github.com/greedying/tctip
+- [x] Non aggresive donation link
 - [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
 - [ ] Fancy Box: http://fancyapps.com/fancybox/
 - [ ] Share: https://github.com/overtrue/share.js/ || https://jekyllcodex.org/without-plugin/share-buttons/
