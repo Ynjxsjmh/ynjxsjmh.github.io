@@ -1,6 +1,6 @@
 ---
 title: Tags
-layout: default
+layout: page
 description: "文章标签"
 header-img: "/img/tags-bg.jpg"
 ---
@@ -23,20 +23,6 @@ From https://stackoverflow.com/a/50290446/10315163
  });
 </script>
 
-<!-- 小一号图 aria-expanded="true"-->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading" id="tag-heading">
-                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-                    <span class="subheading">{{ page.description }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
 {% capture site_tags %}
 {% for tag in site.tags %}
 {{ tag | first }}{% unless forloop.last %},{% endunless %}
@@ -45,7 +31,7 @@ From https://stackoverflow.com/a/50290446/10315163
 
 {% assign tag_words = site_tags | split:',' | sort %}
 
-<div class="col-sm-2 col-sm-offset-2 col-xs-5">
+<div class="col-lg-4">
     <ul class="nav nav-tabs-vertical">
         {% for index in (0..site.tags.size) %}{% unless forloop.last %}
           {% capture this_word %}{{ tag_words[index] | strip_newlines }}{% endcapture %}
@@ -59,7 +45,7 @@ From https://stackoverflow.com/a/50290446/10315163
 </div>
 
 <!-- Tab panes -->
-<div class="tab-content col-sm-8 col-xs-7">
+<div class="tab-content col-lg-8">
     {% for index in (0..site.tags.size) %}{% unless forloop.last %}
       {% capture this_word %}{{ tag_words[index] | strip_newlines }}{% endcapture %}
       <div class="tab-pane" id="{{ this_word | replace:' ','-' }}">
