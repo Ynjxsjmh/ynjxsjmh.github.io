@@ -1,0 +1,20 @@
+<style>
+.widget ul {
+    color: #6E7173;
+    list-style-type: disc;
+    margin-left: 18px;
+    padding: 0;
+}
+</style>
+
+<div class="widget">
+    <hr>
+    <h5><a href="{{'/categories/' | prepend: site.baseurl }}">CATEGORIES</a></h5>
+    <ul class="category-list">
+      {% for category in site.categories %}
+        <li class="category-list-item">
+          <a class="category-list-link" href="{{ site.baseurl }}/categories/#{{ category[0] }}">{{ category[0] }} ({{ category[1] | size }})</a>
+        </li>
+      {% endfor %}
+    </ul>
+</div>
