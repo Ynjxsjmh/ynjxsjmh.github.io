@@ -16,8 +16,13 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [ ] Picture changes when clicked
 - [ ] Render HTML exported from Org and AsciiDoc
 - [ ] Make URL clickable
-- [ ] Header and ToC mutual back: https://macplay.github.io/ -> toc-backref
 - [x] Change navbar content color according to background image color: https://stackoverflow.com/questions/32928517 -> https://github.com/kennethcachia/Background-Check
+
+-----
+
+- [ ] Stop targeting tags: https://frontstuff.io/you-need-to-stop-targeting-tags-in-css
+- [ ] Use External CSS/JS
+- [ ] Upgrade to less/sass: https://github.com/sarahdayan/frontstuff
 
 
 **Plugins**
@@ -32,9 +37,10 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Back to top: https://brucezhaor.github.io/
 - [ ] Toc: https://talk.jekyllrb.com/t/any-tutorials-for-styling-table-of-content/4052
   - [x] Multi-level toc: https://github.com/ghiculescu/jekyll-table-of-contents || https://github.com/Huxpro/huxpro.github.io/issues/116#issuecomment-306086066
-  - [ ] Word wrap/overflow on too long toc item
+  - [ ] Word wrap/Overflow on too long toc item
   - [ ] Toc hover/float left
   - [ ] Keep toc in article container: https://github.com/olOwOlo/hugo-theme-even
+  - [ ] Header and ToC mutual back: https://macplay.github.io/ -> toc-backref
 - [x] Add header collapse: https://github.com/szhielelp/md-post-header-collapse
 - [x] Picture preview: https://lucienhsu.github.io
 - [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
