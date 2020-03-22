@@ -22,7 +22,8 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Archive, Categories, Tags: https://brucezhaor.github.io/
 - [x] Support math using MathJax: https://pkuwwt.github.io/linux/2013-12-03-jekyll-using-mathjax/ && https://segmentfault.com/a/1190000008317350 
 - [x] Support math using KaTeX: https://xuc.me/blog/katex-and-jekyll/ && https://karas.io/blog/math-support-with-katex-on-github-pages/ && https://stackoverflow.com/a/45301641/10315163
-- [ ] Show random old saying in page header: https://program-think.blogspot.com/ -> https://program-think.blogspot.com/2014/08/maxim.html?q=%E7%8C%AA%E6%A0%8F%E7%9A%84%E7%90%86%E6%83%B3
+- [x] Show random old saying in page header: https://program-think.blogspot.com/ -> https://program-think.blogspot.com/2014/08/maxim.html?q=%E7%8C%AA%E6%A0%8F%E7%9A%84%E7%90%86%E6%83%B3 && https://jekyllcodex.org/without-plugin/randomize/
+- [x] Show random poetry in page footer: https://github.com/chinese-poetry/huajianji && https://github.com/chinese-poetry/chinese-poetry
 - [x] Accurate post time to minute: https://learn.cloudcannon.com/jekyll/date-formatting/
 - [ ] Show access number
 - [x] Show total pages
