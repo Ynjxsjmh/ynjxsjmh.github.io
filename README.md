@@ -27,18 +27,20 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [ ] Show access number
 - [x] Show total pages
 - [x] Show tag cloud: https://www.oukohou.wang/ || https://jovandeginste.github.io/2016/05/04/add-a-tag-cloud-to-my-jekyll-site.html
-- [x] Add article info: https://macplay.github.io/
+- [x] Add article info: https://macplay.github.io/ || http://moxfive.xyz/
 - [ ] Picture changes when clicked
 - [ ] Render HTML exported from Org and AsciiDoc
 - [ ] Make URL clickable
 - [x] Change navbar content color according to background image color: https://stackoverflow.com/questions/32928517 -> https://github.com/kennethcachia/Background-Check
 - [ ] Hide timestamp in image
+- [x] Article preview: http://moxfive.xyz/
+- [x] Pin an article: https://github.com/ibrado/jekyll-stickyposts
 
 -----
 
 - [ ] Stop targeting tags: https://frontstuff.io/you-need-to-stop-targeting-tags-in-css
 - [ ] Use External CSS/JS
-- [ ] Upgrade to less/sass: https://github.com/sarahdayan/frontstuff
+- [ ] Upgrade to less/sass: https://frontstuff.io/ -> https://github.com/sarahdayan/frontstuff
 
 
 **Plugins**
@@ -112,6 +114,7 @@ toc:        Designed for asciidoc. If you use `toc:left` in asciidoc, fill it wi
 
 Some files have a minified version, which is used by default. If you modify something in non-minified file and find it is not working as you expect, please check if you modify the corresponding minified file.
 
+https://jekyllrb.com/docs/ruby-101/
 
 [Liquid Introduction](https://shopify.github.io/liquid/basics/introduction/)
 
