@@ -4,11 +4,6 @@
      padding-left: 2%;
      margin-left: 2%;
  }
-
- .post-heading {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
- }
 </style>
 
 <article>
@@ -39,11 +34,11 @@
                         post-container
                         grid-spacing">
 
-                <div class="post-heading">
-                    {% include post/post_heading.html %}
-                </div>
+                {% include post_assemble/post_heading.html %}
 
-                {% include post/post_body.html %}
+                {% include post_assemble/post_body.html %}
+
+                {% include post_assemble/post_tail.html %}
 
             </div>
 
