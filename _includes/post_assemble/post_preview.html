@@ -1,0 +1,43 @@
+<style>
+ .post-preview p {
+     margin: 10px 0;
+ }
+
+ .post-preview .post-title:hover {
+     text-decoration: underline
+ }
+
+ .post-preview .post-content {
+     display: inline-block;
+     margin-bottom: 1.6rem;
+     color: var(--text-color);
+     text-decoration: none
+ }
+</style>
+
+
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+    </a>
+
+    {% if post.subtitle %}
+    <h3 class="post-subtitle">
+        {{ post.subtitle }}
+    </h3>
+    {% endif %}
+
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%Y-%m-%d %R" }}
+    </p>
+
+    <div class="post-content-preview">
+        {{ post.content | strip_html | truncate:200 }}
+    </div>
+
+    <p class="readmore">
+        <a href="{{ post.url | prepend: site.baseurl }}">阅读更多</a>
+    </p>
+</div>
