@@ -29,7 +29,7 @@ Array.prototype.forEach.call(elements, function(parentel, i){
             }
             if(el.querySelector('*')) {
                 Array.prototype.forEach.call(el.querySelectorAll('*'), function(subel, j){
-                    subel.setAttribute('style',imgel.getAttribute('data-style'));
+                    subel.setAttribute('style',subel.getAttribute('data-style'));
                 });
             }
         }
