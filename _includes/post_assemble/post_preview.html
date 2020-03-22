@@ -1,27 +1,56 @@
 <style>
+ .post-preview {
+     border: 1px solid #ddd;
+     border-radius: 3px;
+     overflow: hidden;
+ }
+
  .post-preview p {
      margin: 10px 0;
  }
 
  .post-preview .post-title:hover {
-     text-decoration: underline
+     border-left: 5px solid #9c9;
  }
 
- .post-preview .post-content {
+ .post-preview .post-title a:hover {
+     color: #b0a0aa;
+     text-decoration: none;
+ }
+
+ .post-preview .post-title {
+     border-left: 6px solid #eee;
+     padding: 5px 8.2em 0px 25px;
+ }
+
+ .post-preview .post-subtitle {
+     padding: 5px 8.2em 0px 30px;
+ }
+
+ .post-preview .post-meta {
+     padding: 5px 8.2em 0px 25px;
+ }
+
+ .post-preview .post-content-preview {
+     padding: 5px 4.2em 0px 30px;
      display: inline-block;
      margin-bottom: 1.6rem;
-     color: var(--text-color);
      text-decoration: none
+ }
+
+ .post-preview .readmore {
+     padding: 0px 4.2em 5px 25px;
+     float: left;
  }
 </style>
 
 
 <div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
+    <h2 class="post-title">
+        <a href="{{ post.url | prepend: site.baseurl }}">
             {{ post.title }}
-        </h2>
-    </a>
+        </a>
+    </h2>
 
     {% if post.subtitle %}
     <h3 class="post-subtitle">
