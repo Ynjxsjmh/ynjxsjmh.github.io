@@ -109,6 +109,7 @@ tags:       []
 link:       转载连接
 type:       markdown(default) | asciidoc | readtheorg
 toc:        Designed for asciidoc. If you use `toc:left` in asciidoc, fill it with `left`. Otherwise, you don't need to define this value.
+pin:        true/false
 ---
 ```
 
