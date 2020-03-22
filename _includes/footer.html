@@ -27,6 +27,24 @@
  .copyright {
      margin-top: 30px;
  }
+
+ .poetry {
+     text-align: center;
+ }
+
+ .poetry-title {
+     font-size: 2.2rem;
+     padding-bottom: .5rem;
+ }
+
+ .poetry-meta {
+     font-size: .5rem;
+ }
+
+ .poetry-cotent {
+     font-size: 1.5rem;
+     padding-top: 1.5rem;
+ }
 </style>
 
 
@@ -35,13 +53,13 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-5 col-lg-offset-1">
+            <div class="col-lg-7">
                 <div class="bg-checker poetry-container">
                     {% include sidebar/random_tangshi.html %}
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 {% if site.blogrolls %}
                 <div class="blogroll-container">
                     <h5 class="bg-checker">Blogroll</h5>
