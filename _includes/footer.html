@@ -10,9 +10,9 @@
  }
 
  .blogroll-container ul {
-     -webkit-column-count: 1; /* Chrome, Safari, Opera */
-     -moz-column-count: 1;    /* Firefox */
-     column-count: 1;
+     -webkit-column-count: 4; /* Chrome, Safari, Opera */
+     -moz-column-count: 4;    /* Firefox */
+     column-count: 4;
      column-gap: 10px;
      list-style-type: none;
      list-style-position: outside;
@@ -89,18 +89,6 @@
         </div>
     </div>
 </footer>
-
-<script>
- var ul = document.querySelector(".blogroll-container ul");
- var listSize = {{ site.blogrolls.size }};
- var oneColSize = 5;
- var colNum = Math.ceil(listSize/oneColSize);
-
- ul.style.webkitColumnCount = colNum;
- ul.style["-moz-column-count"] = colNum;
- ul.style.columnCount = colNum;
-</script>
-
 
 <!-- load plugins -->
 {% include plugins/fastclick.html %}
