@@ -3,6 +3,10 @@ layout: default
 ---
 
 
+{% include sidebar.html %}
+
+<div class="wrap">
+
 <!-- Post Header -->
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}'); width: auto;">
     <div class="container">
@@ -68,6 +72,29 @@ layout: default
         </div>
     </div>
 </div>
+
+</div>
+
+<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+<script>
+ (function(document) {
+     var toggle = document.querySelector('.sidebar-toggle');
+     var sidebar = document.querySelector('#sidebar');
+     var checkbox = document.querySelector('#sidebar-checkbox');
+
+     document.addEventListener('click', function(e) {
+         var target = e.target;
+
+         if(!checkbox.checked ||
+            sidebar.contains(target) ||
+            (target === checkbox || target === toggle)) return;
+
+         checkbox.checked = false;
+     }, false);
+ })(document);
+</script>
+
 
 
 {% include plugins/reading_progress_bar.html %}
