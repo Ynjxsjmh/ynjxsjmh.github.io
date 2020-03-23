@@ -1,5 +1,11 @@
 <link rel="stylesheet" href="{{ "/assets/css/lanyon.css" | prepend: site.baseurl }}">
 
+<style>
+ .short-about img {
+     width: 80%;
+ }
+</style>
+
 
 <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
      styles, `#sidebar-checkbox` for behavior. -->
@@ -9,6 +15,10 @@
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
     <p>{{ site.description }}</p>
+  </div>
+
+  <div class="sidebar-item">
+      {% include sidebar/short_about.html %}
   </div>
 
   <nav class="sidebar-nav">
@@ -32,8 +42,6 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>
-      &copy; {{ site.time | date: '%Y' }}. All rights reserved.
-    </p>
+      {% include sidebar/random_old_saying.html %}
   </div>
 </div>
