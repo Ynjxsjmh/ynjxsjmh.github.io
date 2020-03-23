@@ -11,7 +11,7 @@ layout: default
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}'); width: auto;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-lg-8 offset-2 col-md-10 offset-1">
                 <div class="post-heading">
                     <h1></h1>
                     <h2 class="subheading"></h2>
@@ -64,8 +64,8 @@ layout: default
 <div class="container">
     <div class="row">
         <div class="
-                    col-lg-8 col-lg-offset-2
-                    col-md-10 col-md-offset-1
+                    col-lg-8 offset-2
+                    col-md-10 offset-1
                     commentbox-container">
             {% include plugins/commentbox/gittalk.html %}
             {% include plugins/commentbox/disqus.html %}
@@ -75,22 +75,22 @@ layout: default
 
 </div>
 
-<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+<badge badge-pill for="sidebar-form-check" class="sidebar-toggle"></badge badge-pill>
 
 <script>
  (function(document) {
      var toggle = document.querySelector('.sidebar-toggle');
      var sidebar = document.querySelector('#sidebar');
-     var checkbox = document.querySelector('#sidebar-checkbox');
+     var form-check = document.querySelector('#sidebar-form-check');
 
      document.addEventListener('click', function(e) {
          var target = e.target;
 
-         if(!checkbox.checked ||
+         if(!form-check.checked ||
             sidebar.contains(target) ||
-            (target === checkbox || target === toggle)) return;
+            (target === form-check || target === toggle)) return;
 
-         checkbox.checked = false;
+         form-check.checked = false;
      }, false);
  })(document);
 </script>

@@ -6,7 +6,7 @@ layout: default
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+            <div class="col-lg-8 offset-2 col-md-10 offset-1 ">
                 <div class="site-heading">
                     <h1></h1>
                     <span class="subheading"></span>
@@ -25,14 +25,14 @@ layout: default
         {% if site.sidebar == false %}
         <!-- NO SIDEBAR -->
         <!-- PostList Container -->
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 postlist-container">
+        <div class="col-lg-8 offset-2 col-md-10 offset-1 postlist-container">
             {{ content }}
         </div>
 
         <!-- Sidebar Container -->
         <div class="
-                    col-lg-8 col-lg-offset-2
-                    col-md-10 col-md-offset-1
+                    col-lg-8 offset-2
+                    col-md-10 offset-1
                     sidebar-container">
 
             {% include sidebar/featured_tags.html %}
@@ -43,8 +43,8 @@ layout: default
         <!-- USE SIDEBAR -->
         <!-- PostList Container -->
     	<div class="
-                    col-lg-8 col-lg-offset-1
-                    col-md-8 col-md-offset-1
+                    col-lg-8 offset-1
+                    col-md-8 offset-1
                     col-sm-12
                     col-xs-12
                     postlist-container
@@ -54,8 +54,8 @@ layout: default
 
         <!-- Sidebar Container -->
         <div class="
-                    col-lg-3 col-lg-offset-0
-                    col-md-3 col-md-offset-0
+                    col-lg-3 offset-0
+                    col-md-3 offset-0
                     col-sm-12
                     col-xs-12
                     sidebar-container

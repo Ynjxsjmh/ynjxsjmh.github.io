@@ -28,7 +28,7 @@
             showSpeed: 'slow',   // set to 0 to deactivate effect
             classes: {
                 list: '',
-                item: ''
+                carousel-item: ''
             }
         };
 
@@ -68,17 +68,17 @@
  	        this_level = get_level(header);
 
             if (this_level === level) {        // same level as before; same indenting
-                toc += "<li class=\"{0}\">".format(settings.classes.item) + createLink(header);
+                toc += "<li class=\"{0}\">".format(settings.classes.carousel-item) + createLink(header);
             } else if (this_level <= level){   // higher level than before; end parent ol
                 for(var i = this_level; i < level; i++) {
                     toc += "</li></{0}>".format(settings.listType);
                 }
 
-                toc += "<li class=\"{0}\">".format(settings.classes.item) + createLink(header);
+                toc += "<li class=\"{0}\">".format(settings.classes.carousel-item) + createLink(header);
             } else if (this_level > level) {   // lower level than before; expand the previous to contain a ol
                 for(i = this_level; i > level; i--) {
                     toc += "<{0} class=\"{1}\">".format(settings.listType, settings.classes.list) +
-                           "<li class=\"{0}\">".format(settings.classes.item)
+                           "<li class=\"{0}\">".format(settings.classes.carousel-item)
                 }
 
                 toc += createLink(header);

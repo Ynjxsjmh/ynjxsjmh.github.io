@@ -3,23 +3,23 @@
      margin: 1em 0 0 0;
  }
 
- .item {
+ .carousel-item {
      color: rgba(0, 0, 0, 0.4);
      margin-left: 5px;
  }
 </style>
 
 <div class="post-meta">
-    <span class="item">
+    <span class="carousel-item">
         By {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}
     </span>
 
-    <span class="item">
+    <span class="carousel-item">
         on {{ page.date | date: "%Y-%m-%d %R" }}
     </span>
 
     {% if site.ReadingTime %}
-    <span class="item">
+    <span class="carousel-item">
         About {% include plugins/reading_time.html %}
     </span>
     {% endif %}

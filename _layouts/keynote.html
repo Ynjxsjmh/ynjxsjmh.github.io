@@ -32,7 +32,7 @@ layout: default
     <iframe src="{{page.iframe}}"/>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-lg-8 offset-2 col-md-10 offset-1">
                 <div class="post-heading">
                     <div class="tags">
                         {% for tag in page.tags %}
@@ -61,8 +61,8 @@ layout: default
 
             <!-- Post Container -->
             <div class="post-container
-                        col-lg-8 col-lg-offset-2
-                        col-md-10 col-md-offset-1 ">
+                        col-lg-8 offset-2
+                        col-md-10 offset-1 ">
 
 				{{ content }}
 
@@ -92,8 +92,8 @@ layout: default
 
             <!-- Sidebar Container -->
             <div class="sidebar-container
-                        col-lg-8 col-lg-offset-2
-                        col-md-10 col-md-offset-1 ">
+                        col-lg-8 offset-2
+                        col-md-10 offset-1 ">
 
                 {% include sidebar/featured_tags.html %}
 
