@@ -19,16 +19,7 @@ sidebar-avatar: /img/avatar.jpg         # use absolute URL, seeing it's used in 
 featured-tags: true                     # 是否使用首页标签
 featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
 
-# Blogroll
-blogrolls: [
-    {
-        title: "朋友",
-        href: "#"
-    },{
-        title: "friend",
-        href: "#"
-    }
-]
+# Put Blogroll at the bottom
 # -----------------------------------------------
 
 RSS: False
@@ -136,3 +127,19 @@ lightbox:            true     # 是否启用 `lightbox 图片预览` 插件
 ReadingTime:         false    # 是否启用 `reading_tine` 插件
 WordsPerMinute:      180
 # ----------------------------------------------
+
+# Blogroll
+blogrolls: [
+    {
+        title: "friend",
+        href: "#"
+    },
+    {
+        title: "friend",
+        href: "#"
+    },
+    {
+        title: "friend",
+        href: "#"
+    },
+]
