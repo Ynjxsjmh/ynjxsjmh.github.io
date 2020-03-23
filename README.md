@@ -37,12 +37,13 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Article preview: http://moxfive.xyz/
 - [x] Pin an article: https://github.com/ibrado/jekyll-stickyposts
 - [ ] Render preview content: http://moxfive.xyz/
-- [ ] Clickable right side menu: https://szhshp.org/content.html
+- [x] Clickable right side menu: https://github.com/poole/lanyon || https://github.com/cloudflare-apps/SideNav
 
 -----
 
 - [ ] Stop targeting tags: https://frontstuff.io/you-need-to-stop-targeting-tags-in-css
 - [ ] Use External CSS/JS
+- [ ] Upgrade to Bootstrap v4
 - [ ] Upgrade to less/sass: https://frontstuff.io/ -> https://github.com/sarahdayan/frontstuff
 
 
@@ -67,7 +68,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
 - [ ] Highlight search keywords in result
 - [x] Add donation page: https://awang0608.github.io/ -> https://github.com/greedying/tctip
-- [x] Non aggresive donation link
+- [x] Non aggresive donation link: https://www.oukohou.wang/ 
 - [x] Show reading progress bar: https://github.com/szhielelp/JekyllTheme-ProjectGaia
 - [ ] Fancy Box: http://fancyapps.com/fancybox/
 - [ ] Share: https://github.com/overtrue/share.js/ || https://jekyllcodex.org/without-plugin/share-buttons/
