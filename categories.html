@@ -14,7 +14,7 @@ From https://stackoverflow.com/a/50290446/10315163
      var hash = window.location.hash;
      console.log('a[href="' + decodeURIComponent(hash) + '"]')
      $('a[href="' + decodeURIComponent(hash) + '"]').tab('show');
-     $('ul.nav.nav-tabs-vertical a').click(function (e) {
+     $('ul.nav.flex-column a').click(function (e) {
          $(this).tab('show');
          var scrollmem = $('body').scrollTop();
          window.location.hash = this.hash;
@@ -22,21 +22,23 @@ From https://stackoverflow.com/a/50290446/10315163
  });
 </script>
 
-<div class="col-lg-4">
-    <ul class="nav nav-tabs-vertical">
+<div class="row">
+
+<div class="col-lg-3 offset-1">
+    <ul class="nav flex-column">
       {% assign categories_list = site.categories %}
       {% if categories_list.first[0] == null %}
         {% for category in categories_list %}
-            <li>
-                <a href="#{{ category | replace:' ','-' }}" data-toggle="tab">
+            <li class="nav-item">
+                <a class="nav-link" href="#{{ category | replace:' ','-' }}" data-toggle="tab">
                   {{ category | capitalize }} <span class="badge pull-right">{{ site.categories[category].size }}</span>
                </a>
             </li>
         {% endfor %}
       {% else %}
         {% for category in categories_list %}
-            <li>
-                <a href="#{{ category[0] | replace:' ','-' }}" data-toggle="tab">
+            <li class="nav-item">
+                <a class="nav-link" href="#{{ category[0] | replace:' ','-' }}" data-toggle="tab">
                     {{ category[0] | capitalize }} <span class="badge pull-right">{{ category[1].size }}</span>
                 </a>
             </li>
@@ -68,3 +70,5 @@ From https://stackoverflow.com/a/50290446/10315163
 </div>
 
 <div class="clearfix"></div>
+
+</div>

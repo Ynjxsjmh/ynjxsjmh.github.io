@@ -15,7 +15,7 @@ From https://stackoverflow.com/a/50290446/10315163
  $(function(){
      var hash = window.location.hash;
      $('a[href="' + decodeURIComponent(hash) + '"]').tab('show');
-     $('ul.nav.nav-tabs-vertical a').click(function (e) {
+     $('ul.nav.flex-column a').click(function (e) {
          $(this).tab('show');
          var scrollmem = $('body').scrollTop();
          window.location.hash = this.hash;
@@ -31,12 +31,14 @@ From https://stackoverflow.com/a/50290446/10315163
 
 {% assign tag_words = site_tags | split:',' | sort %}
 
-<div class="col-lg-4">
-    <ul class="nav nav-tabs-vertical">
+<div class="row">
+
+<div class="col-lg-3 offset-1">
+    <ul class="nav flex-column">
         {% for index in (0..site.tags.size) %}{% unless forloop.last %}
           {% capture this_word %}{{ tag_words[index] | strip_newlines }}{% endcapture %}
-          <li>
-              <a href="#{{ this_word | replace:' ','-' }}" data-toggle="tab">
+          <li class="nav-item">
+              <a class="nav-link" href="#{{ this_word | replace:' ','-' }}" data-toggle="tab">
                   {{ this_word }}<span class="badge pull-right">{{ site.tags[this_word].size }}</span>
               </a>
           </li>
@@ -62,3 +64,5 @@ From https://stackoverflow.com/a/50290446/10315163
 </div>
 
 <div class="clearfix"></div>
+
+</div>
