@@ -75,22 +75,22 @@ layout: default
 
 </div>
 
-<badge badge-pill for="sidebar-form-check" class="sidebar-toggle"></badge badge-pill>
+<badge badge-pill for="sidebar-checkbox" class="sidebar-toggle"></badge badge-pill>
 
 <script>
  (function(document) {
      var toggle = document.querySelector('.sidebar-toggle');
      var sidebar = document.querySelector('#sidebar');
-     var form-check = document.querySelector('#sidebar-form-check');
+     var checkbox = document.querySelector('#sidebar-checkbox');
 
      document.addEventListener('click', function(e) {
          var target = e.target;
 
-         if(!form-check.checked ||
+         if(!checkbox.checked ||
             sidebar.contains(target) ||
-            (target === form-check || target === toggle)) return;
+            (target === checkbox || target === toggle)) return;
 
-         form-check.checked = false;
+         checkbox.checked = false;
      }, false);
  })(document);
 </script>
