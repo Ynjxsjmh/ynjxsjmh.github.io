@@ -26,6 +26,18 @@ def get_all_files_in_folder(folder):
 
 
 def upgrade_bsv3_to_bsv4(content):
+    # [Grid system](https://getbootstrap.com/docs/4.0/migration/#grid-system)
+    # Added a new sm grid tier below 768px for more granular control. We now have xs, sm, md, lg, and xl.
+    # This also means every tier has been bumped up one level (so .col-md-6 in v3 is now .col-lg-6 in v4).
+    # https://getbootstrap.com/docs/3.3/css/#grid-options
+    # https://getbootstrap.com/docs/4.1/layout/grid/
+    bsv3_grid = ["xs", "sm", "md", "lg"]
+    bsv4_grid = ["sm", "md", "lg". "xl"]
+
+    for i in range(3, -1, -1):
+        # You can only run this code once
+        content = re.sub(r"col-{0}-(\d+)".format(bsv3_grid[i]), r"col-{0}-\1".format(bsv4_grid[i]))
+
     content = re.sub(r"col-[a-z]+-offset-(\d+)", r"offset-\1", content)
     content = re.sub(r"col-[a-z]+-push-(\d+)", r"order-\1-2", content)
     content = re.sub(r"col-[a-z]+-pull-(\d+)", r"order-\1-1", content)
