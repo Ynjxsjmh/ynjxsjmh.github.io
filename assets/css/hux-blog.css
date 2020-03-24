@@ -318,7 +318,7 @@ pre code {
 	 * Since V1.6 we use absolute positioning to prevent to expand container-fluid
 	 * which would cover tags. A absolute positioning make a new layer.
 	 */
-  .navbar-default .navbar-collapse {
+  .navbar-light .navbar-collapse {
     position: absolute;
     right: 0;
     border: none;
@@ -972,15 +972,15 @@ img::-moz-selection {
   margin: 1.5em auto 1.6em auto;
 }
 /* Hux Optimize UserExperience */
-.navbar-default .navbar-toggle:focus,
-.navbar-default .navbar-toggle:hover {
+.navbar-light .navbar-toggler:focus,
+.navbar-light .navbar-toggler:hover {
   background-color: inherit;
 }
-.navbar-default .navbar-toggle:active {
+.navbar-light .navbar-toggler:active {
   background-color: rgba(255, 255, 255, 0.25);
 }
 /* Hux customize Style for navBar button */
-.navbar-default .navbar-toggle {
+.navbar-light .navbar-toggler {
   border-color: transparent;
   padding: 19px 16px;
   margin-top: 2px;
@@ -988,12 +988,12 @@ img::-moz-selection {
   margin-bottom: 2px;
   border-radius: 50%;
 }
-.navbar-default .navbar-toggle .icon-bar {
+.navbar-light .navbar-toggler .icon-bar {
   width: 18px;
   border-radius: 0px;
   background-color: white;
 }
-.navbar-default .navbar-toggle .icon-bar + .icon-bar {
+.navbar-light .navbar-toggler .icon-bar + .icon-bar {
   margin-top: 3px;
 }
 /* Hux customize Style for Duoshuo */
