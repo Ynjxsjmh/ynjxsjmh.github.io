@@ -43,7 +43,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 
 - [ ] Stop targeting tags: https://frontstuff.io/you-need-to-stop-targeting-tags-in-css
 - [ ] Use External CSS/JS
-- [ ] Upgrade to Bootstrap v4
+- [x] Upgrade to Bootstrap v4
 - [ ] Upgrade to less/sass: https://frontstuff.io/ -> https://github.com/sarahdayan/frontstuff
 
 
