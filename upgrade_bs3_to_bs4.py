@@ -69,16 +69,26 @@ def upgrade_bsv3_to_bsv4(content):
     content = content.replace("img-rounded", "rounded")
     content = content.replace("form-horizontal", "removed)")
     content = content.replace("radio", "form-check")
+
+    # 注意
     content = content.replace("checkbox", "form-check")
+
     content = content.replace("input-lg", "form-control-lg")
     content = content.replace("input-sm", "form-control-sm")
     content = content.replace("control-label", "col-form-label")
     content = content.replace("table-condensed", "table-sm")
+
+    # 注意
     content = content.replace("item", "carousel-item")
     content = content.replace("help-block", "form-text")
+
+    # https://getbootstrap.com/docs/4.0/migration/#utilities
     content = content.replace("pull-right", "float-right")
     content = content.replace("pull-left", "float-left")
+
     content = content.replace("center-block", "mx-auto d-block")
+
+    # https://stackoverflow.com/questions/35351353/missing-visible-and-hidden-in-bootstrap-v4
     content = content.replace("hidden-xs", "d-none")
     content = content.replace("hidden-sm", "d-sm-none")
     content = content.replace("hidden-md", "d-md-none")
@@ -87,6 +97,7 @@ def upgrade_bsv3_to_bsv4(content):
     content = content.replace("visible-sm", "d-none d-sm-block d-md-none")
     content = content.replace("visible-md", "d-none d-md-block d-lg-none")
     content = content.replace("visible-lg", "d-none d-lg-block d-xl-none")
+
     content = content.replace("label", "badge")
     content = content.replace("badge", "badge badge-pill")
 
