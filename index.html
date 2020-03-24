@@ -30,19 +30,19 @@ select {
 </style>
 
 <!-- Pager -->
-<ul class="pager">
+<ul class="pagination pagination-lg justify-content-between">
     {% if paginator.previous_page %}
-    <li class="home previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer</a>
+    <li class="page-item previous">
+        <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer</a>
     </li>
     {% else %}
-    <li class="home previous disabled">
-        <a>&larr; Newer</a>
+    <li class="page-item previous disabled">
+        <a class="page-link">&larr; Newer</a>
     </li>
     {% endif %}
 
-    <li>
-        <span class="page_number">Page:
+    <li class="page-item">
+        <a class="page-link">Page:
             <select name="pagelist" onchange="javascript:location.href=this.value;" style="margin-top: 0px;">
                 {% for page in (1..paginator.total_pages) %}
                     {% if page == paginator.page %}
@@ -54,16 +54,55 @@ select {
                     {% endif %}
                 {% endfor %}
             </select>
-            of {{ paginator.total_pages }}</span>
+            of {{ paginator.total_pages }}</a>
     </li>
 
     {% if paginator.next_page %}
-    <li class="home next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older &rarr;</a>
+    <li class="page-item next">
+        <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older &rarr;</a>
     </li>
     {% else %}
-    <li class="home next disabled">
-        <a>Older &rarr;</a>
+    <li class="page-item next disabled">
+        <a class="page-link">Older &rarr;</a>
     </li>
     {% endif %}
 </ul>
+
+
+<div class="d-flex justify-content-between">
+    {% if paginator.previous_page %}
+    <div class="pager-button btn btn-outline-primary">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer</a>
+    </div>
+    {% else %}
+    <div class="pager-button btn btn-outline-primary disabled">
+        <a>&larr; Newer</a>
+    </div>
+    {% endif %}
+
+    <div class="pager-button btn btn-outline-primary">
+        <a>Page:
+            <select name="pagelist" onchange="javascript:location.href=this.value;" style="margin-top: 0px;">
+                {% for page in (1..paginator.total_pages) %}
+                    {% if page == paginator.page %}
+                        <option selected="selected">{{ page }}</option>
+                    {% elsif page == 1 %}
+                        <option value="{{ site.baseurl }}/">{{ page }}</option>
+                    {% else %}
+                        <option value="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            of {{ paginator.total_pages }}</a>
+    </div>
+
+    {% if paginator.next_page %}
+    <div class="pager-button btn btn-outline-primary">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older &rarr;</a>
+    </div>
+    {% else %}
+    <div class="pager-button btn btn-outline-primary disabled">
+        <a>Older &rarr;</a>
+    </div>
+    {% endif %}
+</div>
