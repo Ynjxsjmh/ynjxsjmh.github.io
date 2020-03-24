@@ -1,32 +1,39 @@
+<style>
+ .post-navigation li {
+   width: 48%;
+ }
+</style>
+
+<!-- Pager -->
 <div class="post-navigation">
-    <!-- Pager -->
-    <ul class="pager">
+    <ul class="list-inline">
         {% if page.previous.url %}
-        <li class="previous">
+        <li class="list-inline-item btn btn-outline-secondary">
             <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
                 Previous<br>
                 <span>{{page.previous.title}}</span>
             </a>
         </li>
         {% else %}
-        <li class="previous disabled">
+        <li class="list-inline-item btn btn-outline-secondary disabled">
             <a>
-                &larr; Previous <br>
+                Previous <br>
                 <span>没有更多了</span>
             </a>
         </li>
         {% endif %}
+
         {% if page.next.url %}
-        <li class="next">
+        <li class="list-inline-item btn btn-outline-secondary">
             <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
                 Next<br>
                 <span>{{page.next.title}}</span>
             </a>
         </li>
         {% else %}
-        <li class="next disabled">
+        <li class="list-inline-item btn btn-outline-secondary disabled">
             <a>
-                Next &rarr; <br>
+                Next <br>
                 <span>没有更多了</span>
             </a>
         </li>
