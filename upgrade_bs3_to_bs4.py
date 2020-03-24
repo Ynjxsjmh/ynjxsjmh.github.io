@@ -42,10 +42,15 @@ def upgrade_bsv3_to_bsv4(content):
     content = content.replace("panel-danger", "card bg-danger text-white")
     content = content.replace("well", "card card-body")
     content = content.replace("thumbnail", "card card-body")
+
+    # https://stackoverflow.com/questions/40178386/bootstrap-4-navbar-items-on-right-side
     content = content.replace("navbar-right", "ml-auto")
+    content = content.replace("navbar-toggle", "navbar-toggler")
+    content = content.replace("navbar-default", "navbar-light")
     content = content.replace("navbar-btn", "nav-item")
     content = content.replace("navbar-fixed-top", "fixed-top")
     content = content.replace("nav-stacked", "flex-column")
+
     content = content.replace("btn-default", "btn-secondary")
     content = content.replace("img-responsive", "img-fluid")
     content = content.replace("img-circle", "rounded-circle")
