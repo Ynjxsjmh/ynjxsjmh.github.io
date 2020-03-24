@@ -11,7 +11,7 @@
     <h5><a href="{{'/categories/' | prepend: site.baseurl }}">CATEGORIES</a></h5>
     <ul class="category-list">
       {% for category in site.categories %}
-        <li class="category-list-carousel-item">
+        <li class="category-list-item">
           <a class="category-list-link" href="{{ site.baseurl }}/categories/#{{ category[0] }}">{{ category[0] }} ({{ category[1] | size }})</a>
         </li>
       {% endfor %}
