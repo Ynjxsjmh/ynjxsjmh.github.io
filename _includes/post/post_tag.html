@@ -1,11 +1,11 @@
 <div class="post-tag">
     {% unless page.tags == empty %}
     <ul class="list-inline">
-        <li><i class="fa fa-tags"></i></li>
+        <li class="list-inline-item"><i class="fa fa-tags"></i></li>
         {% assign tags_list = page.tags %}
         {% if tags_list.first[0] == null %}
         {% for tag in tags_list %}
-        <li>
+        <li class="list-inline-item">
             <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag }}">
                 {{ tag }} <span>({{ site.tags[tag].size }})</span>
                 {% unless forloop.last %},{% endunless %}
@@ -14,7 +14,7 @@
         {% endfor %}
         {% else %}
         {% for tag in tags_list %}
-        <li>
+        <li class="list-inline-item">
             <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag[0] }}">
                 {{ tag[0] }} <span>({{ tag[1].size }})</span>
                 {% unless forloop.last %},{% endunless %}
