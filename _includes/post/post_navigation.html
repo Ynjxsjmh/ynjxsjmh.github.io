@@ -2,6 +2,16 @@
  .post-navigation li {
    width: 48%;
  }
+
+ .post-navigation li > a {
+     color: #404040;
+ }
+
+ .post-navigation li.btn-outline-secondary > a > span {
+     color: gray;
+     font-weight: 400;
+    letter-spacing: .5px;
+ }
 </style>
 
 <!-- Pager -->
@@ -15,7 +25,7 @@
             </a>
         </li>
         {% else %}
-        <li class="list-inline-item btn btn-outline-secondary disabled">
+        <li class="list-inline-item btn btn-secondary disabled">
             <a>
                 Previous <br>
                 <span>没有更多了</span>
@@ -31,7 +41,7 @@
             </a>
         </li>
         {% else %}
-        <li class="list-inline-item btn btn-outline-secondary disabled">
+        <li class="list-inline-item btn btn-secondary disabled">
             <a>
                 Next <br>
                 <span>没有更多了</span>
