@@ -38,6 +38,10 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Pin an article: https://github.com/ibrado/jekyll-stickyposts
 - [ ] Render preview content: http://moxfive.xyz/
 - [x] Clickable right side menu: https://github.com/poole/lanyon || https://github.com/cloudflare-apps/SideNav
+- [ ] Brand icon:
+  - Font awesome
+  - https://github.com/olOwOlo/hugo-theme-even
+  - https://github.com/MOxFIVE/hexo-theme-yelee
 
 -----
 
@@ -62,7 +66,7 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
   - [ ] Word wrap/Overflow on too long toc item
   - [ ] Toc hover/float left
   - [ ] Keep toc in article container: https://github.com/olOwOlo/hugo-theme-even
-  - [ ] Header and ToC mutual back: https://macplay.github.io/ -> toc-backref
+  - [x] Header and ToC mutual back: https://github.com/Ynjxsjmh/toc-backref
 - [x] Add header collapse: https://github.com/szhielelp/md-post-header-collapse
 - [x] Picture preview: https://lucienhsu.github.io
 - [x] Search: https://lucienhsu.github.io -> https://github.com/androiddevelop/jekyll-search && https://www.oukohou.wang/
