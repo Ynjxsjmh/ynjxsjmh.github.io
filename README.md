@@ -35,13 +35,14 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Change navbar content color according to background image color: https://stackoverflow.com/questions/32928517 -> https://github.com/kennethcachia/Background-Check
 - [ ] Hide timestamp in image
 - [x] Article preview: http://moxfive.xyz/
-- [x] Pin an article: https://github.com/ibrado/jekyll-stickyposts
 - [ ] Render preview content: http://moxfive.xyz/
+- [x] Pin an article: https://github.com/ibrado/jekyll-stickyposts
 - [x] Clickable right side menu: https://github.com/poole/lanyon || https://github.com/cloudflare-apps/SideNav
-- [ ] Brand icon:
-  - Font awesome
-  - https://github.com/olOwOlo/hugo-theme-even
-  - https://github.com/MOxFIVE/hexo-theme-yelee
+- [ ] Icon
+  - [ ] Brand icon:
+    - Font awesome: https://fontawesome.com/icons
+    - https://github.com/olOwOlo/hugo-theme-even
+    - https://github.com/MOxFIVE/hexo-theme-yelee
 
 -----
 
@@ -92,8 +93,20 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 
 # More themes
 
+Except Jekyll. there exist a bunch of blog frameworks for you to choose:
+
+- [Hugo](https://github.com/gohugoio/hugo)
+- [Hexo](https://github.com/hexojs/hexo)
+- [Nikola](https://github.com/getnikola/nikola)
+  - https://github.com/macplay/macplay.github.io
+- [pelican](https://github.com/getpelican/pelican)
+  - https://github.com/honmaple/honmaple.github.io
+  
+Want more?  [![](./images/20200327_190259_SlIkSt.png)](https://www.google.com/search?q=blog+framework)
+
 Here list some blog themes I admire
 
+- [Org Mode 生成静态站点 Site](https://emacs-china.org/t/org-mode-site-v0-0-3/11409)
 - [ashfinal](https://macplay.github.io/)
 - [Tianyun's Blog](https://doowzs.com/blog/)
 - [oukohou](https://www.oukohou.wang/)
