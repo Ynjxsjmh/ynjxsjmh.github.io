@@ -113,6 +113,9 @@ Here list some blog themes I admire
 - [Frank Lin](https://frankindev.com/)
 - [mmistakes](https://github.com/mmistakes) -> https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
 
+Every theme from [Mark Otto](https://github.com/mdo), the creator of Bootstrap, is worth reading. The most popular theme - [lanyon](https://github.com/poole/lanyon) developed by him is used by Emacs guru [Oleh Krehel (AKA abo-abo)](https://github.com/abo-abo).
+
+
 # Post [front matter](https://jekyllrb.com/docs/front-matter/)
 
 ```
