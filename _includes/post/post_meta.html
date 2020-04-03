@@ -15,4 +15,13 @@
         About {% include plugins/reading_time.html %}
     </span>
     {% endif %}
+
+    {% assign postTimestap = page.date | date: "%s" %}
+    {% assign currTimestamp = "now" | date: "%s" %}
+    {% assign diffSeconds = currTimestamp | minus: postTimestap %}
+    {% assign diffYears = diffSeconds | divided_by: 3600 | divided_by: 24 | divided_by: 365 %}
+    {% if diffYears >= 1 %}
+    <div class="alert alert-warning mt-4" role="alert">这是一篇发表已超过 {{diffYears}} 年的旧文，文中的信息可能已经有所发展或是发生改变。</div>
+    {% endif %}
+
 </div>
