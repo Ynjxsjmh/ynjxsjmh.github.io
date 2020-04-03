@@ -7,6 +7,7 @@ __maintainer__ = "Ynjxsjmh"
 __email__ = "ynjxsjmh@gmail.com"
 __status__ = "Production"
 
+# TODO Only in-place replace class in `class=""`
 
 tarpath = "./html"
 despath = "./build"
