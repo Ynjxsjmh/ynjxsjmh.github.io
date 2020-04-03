@@ -3,6 +3,6 @@
 <script src="{{ "/assets/plugins/toc-backref/toc-backref.js" | prepend: site.baseurl }}"></script>
 
 <script>
-$.generateToc('.post-container .post-content', ['h1', 'h2', 'h3']);
+$.tocBackRefProxy('.post-container .post-content', ['h1', 'h2', 'h3']);
 </script>
 {% endif %}
