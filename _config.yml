@@ -24,12 +24,6 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 RSS: False
 
-categories_path: categories
-tags_path: tags
-archive_path: archive
-about_path: about
-
-
 # SNS settings
 sns:
   weibo_id:
