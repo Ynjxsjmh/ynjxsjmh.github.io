@@ -5,7 +5,7 @@ header-img: img/home.jpg
 email: ynjxsjmh@gmail.com
 description: "Every failure is leading towards success."
 keyword: "在到处之间找我"
-url: "http://ynjxsjmh.github.io"          # your host, for absolute URL
+url: "ynjxsjmh.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/Ynjxsjmh/ynjxsjmh.github.io.git" # you code repository
 
