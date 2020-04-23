@@ -1,69 +1,68 @@
 ---
-layout: page
-description: "Le vent se leve, il faut tenter de vivre."
+layout: home
+motto: "Le vent se leve, il faut tenter de vivre."
 ---
 
-
-{% assign after_size = page.url | size | minus: 1 %}
-{% assign after_url = page.url | slice: 0,after_size %}
-{% if site.baseurl == after_url %}
-  {% for post in site.posts %}
-    {% if post.pin %}
-      {% include post_assemble/post_preview.html %}
-      <hr style="visibility: hidden;">
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-<!-- https://jekyllrb.com/docs/pagination/-->
-
-{% for post in paginator.posts %}
-  {% include post_assemble/post_preview.html %}
-  <hr style="visibility: hidden;">
-{% endfor %}
-
 <style>
-.pagination select {
-    border: 0px;
-    outline: 0px;
-}
+ body, html {
+     height: 100%;
+ }
 </style>
 
-<!-- Pager -->
-<ul class="pagination pagination-lg justify-content-between">
-    {% if paginator.previous_page %}
-    <li class="page-item">
-        <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer</a>
-    </li>
-    {% else %}
-    <li class="page-item disabled">
-        <a class="page-link">&larr; Newer</a>
-    </li>
-    {% endif %}
+<div class="container h-100">
+    <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+            <div id="home-card" class="card">
+                <div class="card-header text-center" onclick="backgroundImage();return false;">
+                    <h3>{{site.title}}<span class="font-weight-light">的个人网站</span></h3>
+                    <p class="font-italic">Ynjxsjmh's Personal Website</p>
+                </div>
+                <div class="card-body">
+                    <div class="card-text d-flex justify-content-between">
+                        <p class="command"> » cd "网络日志（Blog）"</p>
+                        <p class="execute"><a class="execute" href="blog/" role="button">RET ⏎</a></p>
+                    </div>
+                    <div class="card-text">
+                        <p class="command"> » whatis motto</p>
+                        <p class="result">{{page.motto}}</p>
+                    </div>
+                </div>
+                <div class="card-footer text-right font-italic">
+                    <p><a href="{{site.BASE_PATH}}/contact.html">Contact</a> | {{ site.url}}</p>
+                    <span id="img_placer"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <li class="page-item">
-        <a class="page-link">Page:
-            <select name="pagelist" onchange="javascript:location.href=this.value;" style="margin-top: 0px;">
-                {% for page in (1..paginator.total_pages) %}
-                    {% if page == paginator.page %}
-                        <option selected="selected">{{ page }}</option>
-                    {% elsif page == 1 %}
-                        <option value="{{ site.baseurl }}/">{{ page }}</option>
-                    {% else %}
-                        <option value="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-            of {{ paginator.total_pages }}</a>
-    </li>
+<script>
+ var pub_img_current_image;
+ function backgroundImage(){
+     var pub_img_path='http://www.ruanyifeng.com/images_pub/';
 
-    {% if paginator.next_page %}
-    <li class="page-item">
-        <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older &rarr;</a>
-    </li>
-    {% else %}
-    <li class="page-item disabled">
-        <a class="page-link">Older &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
+     var pub_img_num = 355;
+
+     var pub_img_current_no = function(){return Math.floor(Math.random()*pub_img_num+1);};
+
+     var pub_img_url = function(){return pub_img_path+'pub_'+pub_img_current_no()+'.jpg';};
+
+     if (pub_img_current_image === undefined ) pub_img_current_image = pub_img_url();
+
+     if ('querySelector' in document) {
+         var body = document.querySelector('body').style;
+     } else {
+         var body = document.body.style;
+     }
+
+     body.backgroundSize = 'cover';
+     body.backgroundRepeat = 'no-repeat';
+     body.backgroundImage = 'url('+ pub_img_current_image +')';
+
+     var span = document.getElementById('img_placer');
+     span.innerHTML = '<span style="background-image: url('+(pub_img_current_image=pub_img_url())+');width: 0px;height: 0px;display: inline;"></span>';
+ }
+
+ backgroundImage();
+
+</script>
