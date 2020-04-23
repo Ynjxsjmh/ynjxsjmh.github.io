@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<style>
+ .postlist-row {
+     margin-top: 6rem;
+ }
+
+ .navbar-custom .navbar-brand,
+ .navbar-custom .nav li a {
+     color: rgba(0,0,0,.95);
+ }
+
+ .navbar-custom .navbar-brand:focus,
+ .navbar-custom .navbar-brand:hover,
+ .navbar-custom .nav li a:focus,
+ .navbar-custom .nav li a:hover {
+     color: #007bff;
+ }
+</style>
+
+<!-- Main Content -->
+<div class="container-fluid">
+	<div class="row postlist-row">
+        {% if site.sidebar == false %}
+        <!-- NO SIDEBAR -->
+        <!-- PostList Container -->
+        <div class="col-xl-8 offset-2 col-lg-10 offset-1 postlist-container">
+            {{ content }}
+        </div>
+
+        {% else %}
+        <!-- USE SIDEBAR -->
+        <!-- PostList Container -->
+    	<div class="
+                    col-xl-8 offset-1
+                    col-lg-8 offset-1
+                    col-sm-12
+                    col-xs-12
+                    postlist-container
+                    ">
+    		{{ content }}
+    	</div>
+
+        <!-- Sidebar Container -->
+        <div class="
+                    col-xl-3 offset-0
+                    col-lg-3 offset-0
+                    col-sm-12
+                    col-xs-12
+                    sidebar-container
+                    ">
+
+            {% include sidebar/search_box.html %}
+            <hr>
+            {% include sidebar/random_old_saying.html %}
+            <hr>
+            {% include sidebar/featured_tags.html %}
+            <hr>
+            {% include sidebar/tagcloud.html %}
+            <hr>
+            {% include sidebar/short_about.html %}
+            <hr>
+            {% include sidebar/category_list.html %}
+
+    	</div>
+        {% endif %}
+	</div>
+</div>
+
+{% include plugins/donation.html %}
+{% include plugins/jekyll_search.html %}

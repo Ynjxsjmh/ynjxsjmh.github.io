@@ -1,0 +1,67 @@
+---
+layout: postlist
+---
+
+{% assign after_size = page.url | size | minus: 1 %}
+{% assign after_url = page.url | slice: 0, after_size %}
+{% if "/blog" == after_url %}
+  {% for post in site.posts %}
+    {% if post.pin %}
+      {% include post_assemble/post_preview.html %}
+      <hr style="visibility: hidden;">
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<!-- https://jekyllrb.com/docs/pagination/-->
+
+{% for post in paginator.posts %}
+  {% include post_assemble/post_preview.html %}
+  <hr style="visibility: hidden;">
+{% endfor %}
+
+<style>
+ .postlist-container .pagination select {
+    border: 0px;
+    outline: 0px;
+}
+</style>
+
+<!-- Pager -->
+<ul class="pagination pagination-lg justify-content-between">
+    {% if paginator.previous_page %}
+    <li class="page-item">
+        <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+        <a class="page-link">&larr; Newer</a>
+    </li>
+    {% endif %}
+
+    <li class="page-item">
+        <a class="page-link">Page:
+            <select name="pagelist" onchange="javascript:location.href=this.value;" style="margin-top: 0px;">
+                {% for page in (1..paginator.total_pages) %}
+                    {% if page == paginator.page %}
+                        <option selected="selected">{{ page }}</option>
+                    {% elsif page == 1 %}
+                        <option value="{{ site.baseurl }}/blog">{{ page }}</option>
+                    {% else %}
+                        <option value="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            of {{ paginator.total_pages }}</a>
+    </li>
+
+    {% if paginator.next_page %}
+    <li class="page-item">
+        <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older &rarr;</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+        <a class="page-link">Older &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
