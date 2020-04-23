@@ -3,12 +3,12 @@
 **Table of Contents**
 
 - [Introduction](#introduction)
-- [Further work](#further-work)
-- [More themes](#more-themes)
 - [Post [front matter](https://jekyllrb.com/docs/front-matter/)](#post-front-matterhttpsjekyllrbcomdocsfront-matter)
 - [Tips for customization](#tips-for-customization)
 - [Possible Error](#possible-error)
 - [Tips for myself](#tips-for-myself)
+- [Further work](#further-work)
+- [More themes](#more-themes)
 
 <!-- markdown-toc end -->
 
@@ -16,6 +16,63 @@
 # Introduction
 
 Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github.io)
+
+# Post [front matter](https://jekyllrb.com/docs/front-matter/)
+
+```
+---
+layout:     post
+title:      
+subtitle:
+date:       2020-02-29 13:26
+author:     
+header-img: img/post-default-bg.jpg
+category:   []
+tags:       []
+link:       转载连接
+type:       markdown(default) | asciidoc | readtheorg
+toc:        Designed for asciidoc. If you use `toc:left` in asciidoc, fill it with `left`. Otherwise, you don't need to define this value.
+pin:        true/false
+---
+```
+
+
+# Tips for customization
+
+Some files have a minified version, which is used by default. If you modify something in non-minified file and find it is not working as you expect, please check if you modify the corresponding minified file.
+
+https://jekyllrb.com/docs/ruby-101/
+
+[Liquid Introduction](https://shopify.github.io/liquid/basics/introduction/)
+
+- [Jekyll cheatsheet](https://devhints.io/jekyll)
+- [Directory Structure](https://jekyllrb.com/docs/structure/)
+
+ ├── _config.yml: [Variables](https://jekyllrb.com/docs/variables/)
+
+ ├── _layouts: https://www.jekyll.com.cn/tutorials/convert-site-to-jekyll/#how-layouts-work
+
+ │   └── default.html
+
+ └── index.html: https://jekyllrb.com/docs/pagination/
+
+# Possible Error
+
+```
+Liquid Exception: Liquid syntax error (line **): Variable '{{1,2,3}' was not
+ properly terminated with regexp: /\}\}/ in ...
+```
+
+https://github.com/imathis/octopress/issues/466
+
+Replace `{{` with `{ {` and `}}` with `} }`
+
+
+
+
+# Tips for myself
+
+Under blog sourcecode folder, run `jekyll serve` or `jekyll s` in cmd then browse `http://127.0.0.1:4000/` to preview the changes.
 
 # Further work
 
@@ -29,15 +86,17 @@ Fork from [qiubaiying.github.io](https://github.com/qiubaiying/qiubaiying.github
 - [x] Show total pages
 - [x] Show tag cloud: https://www.oukohou.wang/ || https://jovandeginste.github.io/2016/05/04/add-a-tag-cloud-to-my-jekyll-site.html
 - [x] Add article info: https://macplay.github.io/ || http://moxfive.xyz/
-- [ ] Picture changes when clicked
+- [x] Picture changes when clicked: http://www.ruanyifeng.com/home.html
 - [ ] Render HTML exported from Org and AsciiDoc
 - [ ] Make URL clickable
 - [x] Change navbar content color according to background image color: https://stackoverflow.com/questions/32928517 -> https://github.com/kennethcachia/Background-Check
 - [ ] Hide timestamp in image
 - [x] Article preview: http://moxfive.xyz/
 - [ ] Render preview content: http://moxfive.xyz/
+- [ ] Slide: https://raw.githubusercontent.com/scateu/scateu.github.io/master/_posts/2016-12-30-reveal-demo.md
 - [x] Pin an article: https://github.com/ibrado/jekyll-stickyposts
 - [x] Clickable right side menu: https://github.com/poole/lanyon || https://github.com/cloudflare-apps/SideNav
+- [ ] agnoster theme: https://github.com/FrancisMurillo/francismurillo.github.io
 - [ ] Icon
   - [ ] Brand icon:
     - Font awesome: https://fontawesome.com/icons
@@ -116,60 +175,4 @@ Here list some blog themes I admire
 Every theme from [Mark Otto](https://github.com/mdo), the creator of Bootstrap, is worth reading. The most popular theme - [lanyon](https://github.com/poole/lanyon) developed by him is used by Emacs guru [Oleh Krehel (AKA abo-abo)](https://github.com/abo-abo).
 
 
-# Post [front matter](https://jekyllrb.com/docs/front-matter/)
-
-```
----
-layout:     post
-title:      
-subtitle:
-date:       2020-02-29 13:26
-author:     
-header-img: img/post-default-bg.jpg
-category:   []
-tags:       []
-link:       转载连接
-type:       markdown(default) | asciidoc | readtheorg
-toc:        Designed for asciidoc. If you use `toc:left` in asciidoc, fill it with `left`. Otherwise, you don't need to define this value.
-pin:        true/false
----
-```
-
-
-# Tips for customization
-
-Some files have a minified version, which is used by default. If you modify something in non-minified file and find it is not working as you expect, please check if you modify the corresponding minified file.
-
-https://jekyllrb.com/docs/ruby-101/
-
-[Liquid Introduction](https://shopify.github.io/liquid/basics/introduction/)
-
-- [Jekyll cheatsheet](https://devhints.io/jekyll)
-- [Directory Structure](https://jekyllrb.com/docs/structure/)
-
- ├── _config.yml: [Variables](https://jekyllrb.com/docs/variables/)
-
- ├── _layouts: https://www.jekyll.com.cn/tutorials/convert-site-to-jekyll/#how-layouts-work
-
- │   └── default.html
-
- └── index.html: https://jekyllrb.com/docs/pagination/
-
-# Possible Error
-
-```
-Liquid Exception: Liquid syntax error (line **): Variable '{{1,2,3}' was not
- properly terminated with regexp: /\}\}/ in ...
-```
-
-https://github.com/imathis/octopress/issues/466
-
-Replace `{{` with `{ {` and `}}` with `} }`
-
-
-
-
-# Tips for myself
-
-Under blog sourcecode folder, run `jekyll serve` or `jekyll s` in cmd then browse `http://127.0.0.1:4000/` to preview the changes.
 
