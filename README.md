@@ -25,6 +25,7 @@ layout:     post
 title:      
 subtitle:
 date:       2020-02-29 13:26
+updated:    last updated time
 author:     
 header-img: img/post-default-bg.jpg
 category:   []
