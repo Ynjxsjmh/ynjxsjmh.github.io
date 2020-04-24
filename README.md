@@ -98,6 +98,7 @@ Under blog sourcecode folder, run `jekyll serve` or `jekyll s` in cmd then brows
 - [x] Pin an article: https://github.com/ibrado/jekyll-stickyposts
 - [x] Clickable right side menu: https://github.com/poole/lanyon || https://github.com/cloudflare-apps/SideNav
 - [ ] agnoster theme: https://github.com/FrancisMurillo/francismurillo.github.io
+- [ ] Button to change among 简/繁/En
 - [ ] Icon
   - [ ] Brand icon:
     - Font awesome: https://fontawesome.com/icons
