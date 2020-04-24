@@ -163,7 +163,7 @@ Except Jekyll. there exist a bunch of blog frameworks for you to choose:
 - [pelican](https://github.com/getpelican/pelican)
   - https://github.com/honmaple/honmaple.github.io
   
-Want more?  [![](./images/20200327_190259_SlIkSt.png)](https://www.google.com/search?q=blog+framework)
+Want more?  [![](./img/the_open_door.png)](https://www.google.com/search?q=blog+framework)
 
 Here list some blog themes I admire
 
