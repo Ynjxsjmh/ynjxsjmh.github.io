@@ -23,17 +23,27 @@
     if (tocUlSelector == 'undefined') {
       var isTocExist = false;
       var possibleUlSelector = contentSelector + " ul:first";
-      var ul = $(possibleUlSelector);
+      var firstUl = $(possibleUlSelector);
 
-      if ($(ul).length) {
-        var li = $("li", ul).first();
+      if ($(firstUl).length) {
+        var firstLi = $("li", firstUl).first();
 
-        if ($(li).length) {
-          var a = $(li).find('a:first');
+        if ($(firstLi).length) {
+          var firstA = $(firstLi).find("a:first"), firstH;
           var content = $(contentSelector);
-          var h1 = content.find("h1").first();
 
-          if ($(h1).text() == $(a).text()) {
+          for (var i = 0; i < hTagsArr.length; i++) {
+            firstH = content.find(hTagsArr[i]).first();
+            if ($(firstH).length > 0) {
+              break;
+            }
+          }
+
+          var hText = $(firstH).text();
+          var aText = $(firstA).text();
+
+          if ($(firstA).length &&
+              (hText == aText || hText.includes(aText.replace('.', '')))) {
             isTocExist = true;
           }
         }
@@ -82,7 +92,8 @@
         aHref = $(a).prop('href');
         aText = $(a).text();
 
-        if (aHref == hId || aText == hText) {
+        if (aHref == hId || aText == hText ||
+            hText.replace(/\./g, '').includes(aText.replace(/\./g, ''))) {
           if (aId == '' || aId == null || aId == 'undefined') {
             aId = tocId;
             $(a).attr("id", aId);
