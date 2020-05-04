@@ -54,7 +54,7 @@ layout: default
 
   {% include plugins/post_catalog.html %}
 
-{% elsif page.type == "markdown" or page.type == "" or page.type == nil %}
+{% elsif page.type == "markdown" or page.type == "thought" or page.type == "" or page.type == nil %}
 
   {% comment %}
   默认的类型，可以不指定或指定为 markdown
