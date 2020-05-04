@@ -15,6 +15,7 @@
  * Contents
  * Home Card
  * Primary Sidebar
+ * Thought
  * Post Container
  * Footer
  */
@@ -128,6 +129,57 @@
   -moz-box-shadow: none;
   box-shadow: none;
 }
+
+
+/*
+ * Thought
+ *
+ */
+
+ table.inside-article-noborder {
+     background-color: #E7E7F7;
+     border-collapse: collapse;
+ }
+
+ .thought {
+     background-color: #bbbbff;
+     padding: 10px;
+     width: 600px;
+     margin-right: 6px;
+     font-family: KaiTi, KaiTi_GB2312, FangSong, FangSong_GB2312;
+     text-indent: 0px;
+     font-size: 17px;
+     box-shadow: 5px 5px 3px #888;
+     -moz-box-shadow: 5px 5px 3px #888;
+     -webkit-box-shadow: 5px 5px 3px #888;
+ }
+
+ .thought-brief {
+     background-color: #f5f5dc;
+     padding: 10px;
+     text-indent: 0px;
+     font-size: 14px;
+     box-shadow: 5px 5px 3px #888;
+     -moz-box-shadow: 5px 5px 3px #888;
+     -webkit-box-shadow: 5px 5px 3px #888;
+     display: inline-block;
+     vertical-align: top;
+     width: 100%;
+ }
+
+ .thought-meta {
+     background-color: #bbffbb;
+     padding: 10px;
+     margin-top: 10px;
+     text-indent: 0px;
+     font-size: 14px;
+     box-shadow: 5px 5px 3px #888;
+     -moz-box-shadow: 5px 5px 3px #888;
+     -webkit-box-shadow: 5px 5px 3px #888;
+     display: inline-block;
+     vertical-align: bottom;
+     width: 100%;
+ }
 
 
 /*
