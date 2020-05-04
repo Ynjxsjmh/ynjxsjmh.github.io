@@ -25,6 +25,10 @@ layout: default
 
 {% if page.type == "asciidoc" %}
 
+  {% comment %}
+  针对 Asciidoc 导出的 html，目前只支持左目录和主目录
+  {% endcomment %}
+
   {% if page.toc == "left" %}
     {% include article/asciidoc.html %}
   {% else %}
@@ -34,29 +38,41 @@ layout: default
 
 {% elsif page.type == "readtheorg" %}
 
-{% include article/readtheorg.html %}
+  {% comment %}
+  针对 Org 使用 readtheorg 模板导出的 html
+  {% endcomment %}
+
+  {% include article/readtheorg.html %}
+
+{% elsif page.type == "html" %}
+
+  {% comment %}
+  针对纯 html
+  {% endcomment %}
+
+  {% include article/markdown.html %}
+
+  {% include plugins/post_catalog.html %}
 
 {% elsif page.type == "markdown" or page.type == "" or page.type == nil %}
 
-{% include article/markdown.html %}
+  {% comment %}
+  默认的类型，可以不指定或指定为 markdown
+  {% endcomment %}
 
-{% include plugins/open_embed.html %}
-{% include plugins/post_catalog.html %}
-{% include plugins/anchorjs.html %}
+  {% include article/markdown.html %}
 
-{% elsif page.type == "html" or page.type == "asciidoc" %}
-
-{% comment %}
-这里针对没有左侧/右侧目录的 asciidoc 导出的 html或者纯html
-{% endcomment %}
-
-{% include article/markdown.html %}
-
-{% include plugins/post_catalog.html %}
+  {% include plugins/open_embed.html %}
+  {% include plugins/post_catalog.html %}
+  {% include plugins/anchorjs.html %}
 
 {% else %}
 
-"Post type invalid, your type is {{page.type}}, which is not a valid type."
+  {% comment %}
+  可能某个 type 没拼对
+  {% endcomment %}
+
+  "Post type invalid, your type is {{page.type}}, which is not a valid type."
 
 {% endif %}
 
