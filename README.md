@@ -31,7 +31,7 @@ header-img: img/post-default-bg.jpg
 category:   []
 tags:       []
 link:       转载连接
-type:       markdown(default) | asciidoc | readtheorg
+type:       markdown(default) | asciidoc | readtheorg | thought
 toc:        Designed for asciidoc. If you use `toc:left` in asciidoc, fill it with `left`. Otherwise, you don't need to define this value.
 pin:        true/false
 ---
@@ -104,6 +104,7 @@ Under blog sourcecode folder, run `jekyll serve` or `jekyll s` in cmd then brows
     - Font awesome: https://fontawesome.com/icons
     - https://github.com/olOwOlo/hugo-theme-even
     - https://github.com/MOxFIVE/hexo-theme-yelee
+- [x] Create a layout for thought: https://www.changhai.org/
 
 -----
 
